@@ -3,10 +3,10 @@ from _spy.vitollino.main import Cena, STYLE
 
 STYLE['width'] = 700
 
-cretaceo_s = "https://imgur.com/FV4goWj"
-cretaceo_o = "https://imgur.com/FV4goWj"
-cretaceo_n = "https://imgur.com/FV4goWj"
-cretaceo_l = "https://imgur.com/FV4goWj"
+cretaceo_s = "https://i.imgur.com/FV4goWj.jpg"
+cretaceo_o = "https://i.imgur.com/FV4goWj.jpg"
+cretaceo_n = "https://i.imgur.com/FV4goWj.jpg"
+cretaceo_l = "https://i.imgur.com/FV4goWj.jpg"
 
 class CenaCretaceo():
   def __init__(self):
