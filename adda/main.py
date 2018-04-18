@@ -2,6 +2,7 @@
 from _spy.vitollino.main import Cena, STYLE
 
 STYLE['width'] = 700
+STYLE['height'] = 700
 #colocar as imagens 
 frutosDaTerra_n = "https://drive.google.com/open?id=1HigI3FQMSNJnskLqi30cvTxndG6_CLSE"
 #cretaceo_n = "https://i.imgur.com/EwPWbms.jpg"
