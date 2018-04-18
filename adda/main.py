@@ -3,7 +3,7 @@ from _spy.vitollino.main import Cena, STYLE
 
 STYLE['width'] = 700
 
-cretaceo_s = "https://i.imgur.com/FV4goWj.jpg"
+#cretaceo_s = "https://i.imgur.com/FV4goWj.jpg"
 #cretaceo_o = "https://i.imgur.com/FV4goWj.jpg"
 FrutosDaTerra = "https://i.imgur.com/FV4goWj.jpg"
 Calcita = "https://i.imgur.com/biw6bwh.jpg"
@@ -12,11 +12,11 @@ class CenaFrutosDaTerra():
   def __init__(self):
     self.cena_f = Cena(img = FrutosDaTerra)
     self.cena_c = Cena(Calcita, direita=self.cena_f)
-    self.cena_s  = Cena(cretaceo_s, direita=self.cena_f)
+    #self.cena_s  = Cena(cretaceo_s, direita=self.cena_f)
     #self.cena_l  = Cena(cretaceo_l, direita=self.cena_s,
     #esquerda = self.cena_n)
     self.cena_f = self.cena_c
-    self.cena_s.meio = Cena(vai=self.vai_sul)
+    #self.cena_s.meio = Cena(vai=self.vai_sul)
     #self.cena_n.direita = self.cena_l
     #self.cena_o.esquerda = self.cena_s
     #self.cena_s.esquerda = self.cena_l
