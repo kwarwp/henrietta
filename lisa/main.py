@@ -14,8 +14,6 @@ class CenaDino():
     self.cena_direita.direita = self.cena_esquerda
     self.cena_esquerda.direita = self.cena_direita
     self.cena_esquerda.esquerda = self.cena_direita
-    #cena2 = Cena2()
-    #self.cena1.direita = cena2
     
     
     
