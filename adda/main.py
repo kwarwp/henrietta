@@ -3,7 +3,7 @@ from _spy.vitollino.main import Cena, STYLE
 
 #STYLE['width'] = 700
 
-#cretaceo_s = "https://i.imgur.com/FV4goWj.jpg"
+cretaceo_s = "https://i.imgur.com/FV4goWj.jpg"
 #cretaceo_o = "https://i.imgur.com/FV4goWj.jpg"
 FrutosDaTerra = "https://i.imgur.com/FV4goWj.jpg"
 Calcita = "https://i.imgur.com/biw6bwh.jpg"
