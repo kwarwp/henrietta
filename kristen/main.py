@@ -4,9 +4,9 @@ from _spy.vitollino.main import Cena, STYLE
 STYLE['width'] = 700
 
 cretaceo_n = "https://i.imgur.com/EwPWbms.jpg"
-cretaceo_o = "https://i.imgur.com/c9IK8Vm.jpg"
+cretaceo_o = "https://i.imgur.com/c9lK8Vm.jpg"
 cretaceo_s = "https://i.imgur.com/QFLIccY.jpg"
-cretaceo_l = "https://i.imgur.com/QFLIccY.jpg"
+cretaceo_l = "https://i.imgur.com/K1LChZw.jpg"
 
 class CenaCretaceo():
   def __init__(self):
