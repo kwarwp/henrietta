@@ -5,7 +5,7 @@ STYLE['width'] = 700
 
 cretaceo_s = "https://i.imgur.com/EwPWbms.jpg"
 cretaceo_o = "https://i.imgur.com/c9lK8Vm.jpg"
-cretaceo_n = "https://drive.google.com/open?id=1HigI3FQMSNJnskLqi30cvTxndG6_CLSE"
+cretaceo_n = "https://i.imgur.com/QFLlccY.jpg"
 cretaceo_l = "https://i.imgur.com/K1LChZw.jpg"
 
 class CenaCretaceo():
