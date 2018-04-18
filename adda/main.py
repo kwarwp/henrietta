@@ -1,7 +1,7 @@
 # henrietta.adda.main.py
 from _spy.vitollino.main import Cena, STYLE
 
-STYLE['width'] = 700
+#STYLE['width'] = 700
 
 cretaceo_s = "https://i.imgur.com/FV4goWj.jpg"
 cretaceo_o = "https://i.imgur.com/FV4goWj.jpg"
