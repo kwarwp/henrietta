@@ -19,9 +19,9 @@ class CenaDino():
     
     
     
-def do_dino():
+def sala():
   cena_dino = CenaDino()
   cena_dino.vai()
   
   if __name__ == "__main__":
-  	do_dino()
+  	sala()
