@@ -15,7 +15,7 @@ class Cenatectonica():
     self.parede3 = Cena(parede3, direita=self.parede2)
     
     def Game():
-  cena1 = Cenatectonica
+  cena1 = Cenatectonica()
   cena1.vai()
 
 if __name__ == "__main__":
