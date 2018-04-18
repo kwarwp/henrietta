@@ -11,7 +11,7 @@ class CenaFrutosDaTerra():
     self.cena_f = Cena(img = FrutosDaTerra)
     self.cena_c = Cena(Calcita, direita=self.cena_f)
     self.cena_f = self.cena_c
-    self.cena_f.meio = Cena(vai=self.vai_sul)
+    self.cena_c.meio = Cena(vai=self.vai_sul)
 
     self.cena_f.vai()
   def vai(self, *_):
