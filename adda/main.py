@@ -11,7 +11,7 @@ Calcita = "https://i.imgur.com/biw6bwh.jpg"
 class CenaFrutosDaTerra():
   def __init__(self):
     self.cena_f = Cena(img = FrutosDaTerra)
-    self.cena_c = Cena(Calcita, direita=self.cena_n)
+    self.cena_c = Cena(Calcita, direita=self.cena_f)
     #self.cena_s  = Cena(cretaceo_s, direita=self.cena_o)
     #self.cena_l  = Cena(cretaceo_l, direita=self.cena_s,
     #esquerda = self.cena_n)
