@@ -5,12 +5,12 @@ from _spy.vitollino.main import Cena, STYLE
 
 #cretaceo_s = "https://i.imgur.com/FV4goWj.jpg"
 #cretaceo_o = "https://i.imgur.com/FV4goWj.jpg"
-cretaceo_n = "https://i.imgur.com/FV4goWj.jpg"
+FrutosDaTerra = "https://i.imgur.com/FV4goWj.jpg"
 #cretaceo_l = "https://i.imgur.com/FV4goWj.jpg"
 
 class CenaFrutosDaTerra():
   def __init__(self):
-    self.cena_n = Cena(img = cretaceo_n)
+    self.cena_n = Cena(img = FrutosDaTerra)
     #self.cena_o = Cena(cretaceo_o, direita=self.cena_n)
     #self.cena_s  = Cena(cretaceo_s, direita=self.cena_o)
     #self.cena_l  = Cena(cretaceo_l, direita=self.cena_s,
