@@ -19,7 +19,7 @@ class CenaAnhanguera():
     self.cenavoa.vai()
     
 
-def GAME():
+  def GAME():
 GAME()
     
 
