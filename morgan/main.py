@@ -13,6 +13,11 @@ class Cenatectonica():
     self.parede2 = Cena(parede2, direita=self.parede1)
     self.parede3 = Cena(parede3, esquerda=self.parede2)
     
+    
+    self.parede2.vai()
+   def vai(self, *_):
+    self.parede2.vai()
+    
 def Game():
   parede2 = Cenatectonica()
   parede2.vai()
