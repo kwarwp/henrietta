@@ -10,3 +10,4 @@ class CenaFrutosDaTerra():
 __def __init__(self):
 	#from meredith.main import Cena2
     self.cena_n = Cena(img = frutosDaTerra_n)
+end
