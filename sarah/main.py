@@ -24,10 +24,9 @@ class Cenasalapedras():
     def vai_sul(self, *_):
         from CenaDino.main import CenaDino
         CenaDino().vai()
-     
-    def Game():
-    cena_1 = Cenasalapedras()
-    cena_1.vai()
+def Game():
+        cena_1 = Cenasalapedras()
+        cena_1.vai()
 
 if __name__ == "__main__":
 	Game()
