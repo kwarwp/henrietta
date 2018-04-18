@@ -8,7 +8,7 @@ cretaceo_o = "https://i.imgur.com/FV4goWj.jpg"
 cretaceo_n = "https://i.imgur.com/FV4goWj.jpg"
 cretaceo_l = "https://i.imgur.com/FV4goWj.jpg"
 
-class CenaCretaceo():
+class CenaFrutosDaTerra():
   def __init__(self):
     self.cena_n = Cena(img = cretaceo_n)
     self.cena_o = Cena(cretaceo_o, direita=self.cena_n)
@@ -30,7 +30,7 @@ class CenaCretaceo():
     CenaAnhanguera().vai()
 
 def Game():
-  cena1 = CenaCretaceo()
+  cena1 = CenaFrutosDaTerra()
   cena1.vai()
 
 if __name__ == "__main__":
