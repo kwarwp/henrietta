@@ -3,9 +3,9 @@ from _spy.vitollino.main import Cena, STYLE
 
 STYLE['width'] = 700
 
-parede1 = "https://i.imgur.com/Yn75ZF2.jpg
-parede2 = "https://i.imgur.com/4Xx7uox.jpg
-parede3 = "https://i.imgur.com/icYyd5H.jpg
+parede1 = "https://i.imgur.com/Yn75ZF2.jpg"
+parede2 = "https://i.imgur.com/4Xx7uox.jpg"
+parede3 = "https://i.imgur.com/icYyd5H.jpg"
 
 class Cenatectonica():
  def __init__(self):
