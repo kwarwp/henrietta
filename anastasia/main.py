@@ -23,10 +23,10 @@ class CenaAnhanguera():
     
 def go_anhanguera():
   cena_Anhanguera = CenaAnhanguera()
-  cena_Anhaguera.vai()
+  cena_Anhanguera.vai()
 
 if __name__ == "__main__":
-	go_anhaguera()
+	go_anhanguera()
 
 
     
