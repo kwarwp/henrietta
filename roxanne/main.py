@@ -1,4 +1,4 @@
-from _spy.vitollino.main import Cena, Labirinto, STYLE
+from _spy.vitollino.main import Cena, STYLE
 
 STYLE['width'] = 700
 
@@ -14,28 +14,34 @@ class Entrada():
    def __init__ (self):
       
       self.cena_na = Cena(img = entra_nabre)
-      self.cena_nz = Cena(entra_nzoom, centro = self.cena_na)
-      self.cena_n = (entra_n, esquerda = self.cena_nz) #centro=self.cena_nz 
+      self.cena_nz = Cena(entra_nzoom, meio = self.cena_na)
+      self.cena_n = Cena(entra_n, esquerda = self.cena_nz) 
       
-      self.cena_l = Cena(img = entra_l, esquerda = self.cena_n)
+      self.cena_l = Cena(entra_l, esquerda = self.cena_n)
       
-      self.cena_oz = Cena(img = entra_oz)
-      self. cena_o = Cena(img = entra_o, esquerda = self.cena_oz, 
-      direira = self.cena_n)
+      self.cena_oz = Cena(entra_ozoom, direita = self.cena_n)
+      self. cena_o = Cena(entra_o, esquerda = self.cena_oz, 
+      direita = self.cena_n)
      
       self.cena_n.esquerda = self.cena_o
-      self.cena_o.esquerda = self.cena_oz
+      self.cena_o.direita = self.cena_n
+      self.cena_n.meio = self.cena_nz
+      self.cena_nz.meio = self.cena_na
       
-        
-
       self.cena_n.vai()
-  def vai(self, *_):
+      
+   def vai(self, *_):
     self.cena_n.vai()
+    
+   def vai_sul(self, *_):
+    from xxxxxx.main import xxxxxxx
+    xxxxxxx()
+
                
         
-def Game():
+def Go_entrada():
   cena1 = Entrada()
   cena1.vai()
 
 if __name__ == "__main__":
-	Game()
+	Go_entrada()
