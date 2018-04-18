@@ -25,9 +25,9 @@ class CenaFrutosDaTerra():
     self.cena_n.vai()
   def vai(self, *_):
     self.cena_n.vai()
-  def vai_sul(self, *_):
-    from anastasia.main import CenaAnhanguera
-    CenaAnhanguera().vai()
+#  def vai_sul(self, *_):
+    #from anastasia.main import CenaAnhanguera
+    #CenaAnhanguera().vai()
 
 def Game():
   cena1 = CenaFrutosDaTerra()
