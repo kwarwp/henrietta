@@ -19,8 +19,8 @@ class CenaAnhanguera():
     self.cenavoa.vai()
     
 
-  def GAME():
-GAME()
+  def CenaAnhanguera():
+CenaAnhanguera()
     
 
 
