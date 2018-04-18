@@ -19,8 +19,13 @@ class CenaAnhanguera():
     self.cenavoa.vai()
     
 
-  def CenaAnhanguera():
-CenaAnhanguera()
+def go_anhanguera():
+  Cena_Anhanguera = CenaAnhanguera()
+  Cena_Anhanguera.vai()
+
+if __name__ == "__main__":
+    go_anhanguera()
+
     
 
 
