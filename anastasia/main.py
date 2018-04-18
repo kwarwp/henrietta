@@ -17,7 +17,7 @@ class CenaAnhanguera():
     self.cenavoa.esquerda = self.cenacabeca
     self.cenavoa.direita = self.cenalibelula
     
-     self.cenavoa.vai()
+    self.cenavoa.vai()
   def vai(self, *_):
     self.cenavoa.vai()
     
