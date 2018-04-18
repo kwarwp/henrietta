@@ -29,9 +29,9 @@ class CenaFrutosDaTerra():
     #from anastasia.main import CenaAnhanguera
     #CenaAnhanguera().vai()
 
-def Game():
+def vai_CenaFrutosDaTerra():
   cena1 = CenaFrutosDaTerra()
   cena1.vai()
 
 if __name__ == "__main__":
-	Game()
+	vai_CenaFrutosDaTerra()
