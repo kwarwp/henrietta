@@ -15,7 +15,7 @@ class CenaFrutosDaTerra():
     #self.cena_s  = Cena(cretaceo_s, direita=self.cena_o)
     #self.cena_l  = Cena(cretaceo_l, direita=self.cena_s,
     #esquerda = self.cena_n)
-    self.cena_f.esquerda = self.cena_c
+    self.cena_f = self.cena_c
     #self.cena_n.direita = self.cena_l
     #self.cena_o.esquerda = self.cena_s
     #self.cena_s.esquerda = self.cena_l
