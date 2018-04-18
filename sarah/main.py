@@ -17,14 +17,14 @@ class Cenasalapedras():
     
     
     
+        self.cena1.vai()
+    def vai(self,*_):
     self.cena1.vai()
-   def vai(self,*_):
-    self.cena1.vai()
-   def vai_sul(self, *_):
-     from CenaDino.main import CenaDino
-     CenaDino().vai()
+    def vai_sul(self, *_):
+        from CenaDino.main import CenaDino
+        CenaDino().vai()
      
-def Game():
+     def Game():
 cena
   
     
