@@ -3,8 +3,8 @@ from _spy.vitollino.main import Cena, STYLE
 
 STYLE['width'] = 700
 
-cretaceo_s = "https://imgur.com/FV4goWj"
-cretaceo_o = "https://i.imgur.com/c9lK8Vm.jpg"
+cretaceo_s = "https://i.imgur.com/EwPWbms.jpg"
+cretaceo_o = "https://imgur.com/FV4goWj"
 cretaceo_n = "https://i.imgur.com/QFLlccY.jpg"
 cretaceo_l = "https://i.imgur.com/K1LChZw.jpg"
 
