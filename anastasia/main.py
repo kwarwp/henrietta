@@ -3,14 +3,14 @@ from_spy.vitollino.main import Cena, STYLE
 
 STYLE['width'] = 700
 
-anhangueravoa = https://i.imgur.com/EbrxU7f.jpg
+gueravoa = https://i.imgur.com/EbrxU7f.jpg
 amazonsaurocabeca =  https://i.imgur.com/2veboeq.jpg
 dinossaurope = https://i.imgur.com/nPjxpDC.jpg
 libelula = https://i.imgur.com/lDnfrx8.jpg
 
 class CenaAnhanguera():
   def __init__(self):
-    self.cenavoa = Cena(img = anhangueravoa)
+    self.cenavoa = Cena(img = gueravoa)
     self.cenacabeca = Cena(amazonsaurocabeca, direita=self.cenavoa)
     self.cenasaurope = Cena(dinossaurope, direita=self.cenacabeca)
     self.cenalibelula = Cena(libelula, direita=self.cenasaurope, esquerda = self.cenavoa)
