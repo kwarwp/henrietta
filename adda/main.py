@@ -10,7 +10,7 @@ FrutosDaTerra = "https://i.imgur.com/FV4goWj.jpg"
 
 class CenaFrutosDaTerra():
   def __init__(self):
-    self.cena_n = Cena(img = FrutosDaTerra)
+    self.cena_f = Cena(img = FrutosDaTerra)
     #self.cena_o = Cena(cretaceo_o, direita=self.cena_n)
     #self.cena_s  = Cena(cretaceo_s, direita=self.cena_o)
     #self.cena_l  = Cena(cretaceo_l, direita=self.cena_s,
@@ -22,9 +22,9 @@ class CenaFrutosDaTerra():
     #cena2 = Cena2()
     #self.cena1.direita = cena2
 
-    self.cena_n.vai()
+    self.cena_f.vai()
   def vai(self, *_):
-    self.cena_n.vai()
+    self.cena_f.vai()
 #  def vai_sul(self, *_):
     #from anastasia.main import CenaAnhanguera
     #CenaAnhanguera().vai()
