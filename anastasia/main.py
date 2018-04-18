@@ -16,11 +16,14 @@ class CenaAnhanguera():
     self.cenalibelula = Cena(libelula, direita=self.cenasaurope, esquerda = self.cenavoa)
     self.cenavoa.esquerda = self.cenacabeca
     self.cenavoa.direita = self.cenalibelula
+    
+     self.cenavoa.vai()
+  def vai(self, *_):
     self.cenavoa.vai()
     
 
 def go_anhanguera():
-  Cena_Anhanguera = CenaAnhanguera()
+  CenaAnhanguera = Cena_Anhanguera()
   Cena_Anhanguera.vai()
 
 if __name__ == "__main__":
