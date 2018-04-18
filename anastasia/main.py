@@ -1,5 +1,5 @@
 # henrietta.anastasia.main.py
-from_spy.vitollino.main import Cena, STYLE
+from _spy.vitollino.main import Cena, STYLE
 
 STYLE['width'] = 700
 
@@ -21,13 +21,13 @@ class CenaAnhanguera():
   def vai(self, *_):
     self.cenavoa.vai()
     
-
 def go_anhanguera():
-  CenaAnhanguera = Cena_Anhanguera()
-  Cena_Anhanguera.vai()
+  cena_Anhanguera = CenaAnhanguera()
+  cena_Anhaguera.vai()
 
 if __name__ == "__main__":
-    go_anhanguera()
+	go_anhaguera()
+
 
     
 
