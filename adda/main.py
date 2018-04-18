@@ -1,7 +1,7 @@
 # henrietta.adda.main.py
 from _spy.vitollino.main import Cena, STYLE
 
-#STYLE['width'] = 700
+STYLE['width'] = 700
 
 cretaceo_s = "https://i.imgur.com/FV4goWj.jpg"
 #cretaceo_o = "https://i.imgur.com/FV4goWj.jpg"
@@ -27,8 +27,8 @@ class CenaFrutosDaTerra():
   def vai(self, *_):
     self.cena_f.vai()
   def vai_sul(self, *_):
-    from anastasia.main import CenaAnhanguera
-    CenaAnhanguera().vai()
+    from kristen.main import go_cretaceo
+    go_cretaceo()
 
 def vai_CenaFrutosDaTerra():
   cena1 = CenaFrutosDaTerra()
