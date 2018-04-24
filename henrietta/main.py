@@ -1,3 +1,3 @@
 # henrietta.libby.main.py
 
-GSDGDFGDFGDF
+A = 40
