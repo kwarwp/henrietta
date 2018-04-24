@@ -27,21 +27,22 @@ class Entrada():
       self.cena_o.direita = self.cena_n
       self.cena_n.meio = self.cena_nz
       self.cena_nz.meio = self.cena_na
+      self.cenanz.direita = Cena(vai =self.vai_cret)
       
       self.cena_n.vai()
       
    def vai(self, *_):
     self.cena_n.vai()
     
-   def vai_sul(self, *_):
-    from xxxxxx.main import xxxxxxx
-    xxxxxxx()
+   def vai_cret(self, *_ ):
+    #pode receber tantos argumentos além desse
+    from Kristen.main import go_cretaceo
+    go_cretaceo()
 
-               
-        
+                       
 def Go_entrada():
-  cena1 = Entrada()
-  cena1.vai()
+  Entrada = Entrada()
+  Entrada.vai()
 
 if __name__ == "__main__":
 	Go_entrada()
