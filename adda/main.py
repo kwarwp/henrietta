@@ -20,8 +20,10 @@ class CenaTutorialInterativo():
     self.cena_d = Cena(Cena_direita, direita=self.cena_t)
     
     
-    self.cena_t = Cena(img = TutorialInterativo) 
-if self.cena_t.esquerda = self.cena_e else self.direita = self.cena_d
+    self.cena_t = Cena(img = TutorialInterativo)
+    self.cena_t = self.cena_e
+    self.cena_t = self.cena_d
+
     
     
   def vai(self, *_):
