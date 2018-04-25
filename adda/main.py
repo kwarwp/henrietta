@@ -4,8 +4,8 @@ from _spy.vitollino.main import Cena, STYLE
 STYLE['width'] = 699
 
 TutorialInterativo = "https://i.imgur.com/tfatd8y.png"
-Cena_direita = "https://i.imgur.com/D8KXmJs.png"
-Cena_esquerda = "https://i.imgur.com/4hYhuEQ.png"
+Cena_direita = "https://i.imgur.com/2YX3bLb.png"
+Cena_esquerda = "https://i.imgur.com/NC0Sj4z.png"
 
 class CenaTutorialInterativo():
   def __init__(self):
