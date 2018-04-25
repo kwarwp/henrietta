@@ -11,23 +11,18 @@ class CenaTutorialInterativo():
   def __init__(self):
     self.cena_t = Cena(img = TutorialInterativo)
     
-    self.cena_e.esquerda = Cena(vai=self.vai_esquerda)
-    self.cena_t.vai()
+    self.cena_e = Cena(Cena_esquerda, esquerda=self.cena_t)
+    self.cena_t = self.cena_e
     
     self.cena_t.meio = Cena(vai=self.vai_importar)
     self.cena_t.vai()
     
-    self.cena_d.direita = Cena(vai=self.vai_direita)
-    self.cena_d.vai()
+    self.cena_d = Cena(Cena_direita, direita=self.cena_t)
+    self.cena_t = self.cena_d
     
   def vai(self, *_):
     self.cena_t.vai()
     
-    self.cena_e = Cena(Cena_esquerda, esquerda=self.cena_t)
-    self.cena_t = self.cena_e
-    
-    self.cena_d = Cena(Cena_direita, direita=self.cena_t)
-    self.cena_t = self.cena_d
     
   def vai_esquerda(self, *_):
     vai()
