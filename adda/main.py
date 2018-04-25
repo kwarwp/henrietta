@@ -3,7 +3,7 @@ from _spy.vitollino.main import Cena, STYLE
 
 STYLE['width'] = 699
 
-TutorialInterativo = "https://i.imgur.com/hVov95h.png"
+TutorialInterativo = "https://i.imgur.com/tfatd8y.png"
 Cena_direita = "https://i.imgur.com/D8KXmJs.png"
 Cena_esquerda = "https://i.imgur.com/4hYhuEQ.png"
 
