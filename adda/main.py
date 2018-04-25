@@ -1,28 +1,31 @@
 # henrietta.adda.main.py
 from _spy.vitollino.main import Cena, STYLE
 
-STYLE['width'] = 700
+STYLE['width'] = 699
 
-FrutosDaTerra = "https://i.imgur.com/FV4goWj.jpg"
-Calcita = "https://i.imgur.com/biw6bwh.jpg"
+TutorialInterativo = "https://i.imgur.com/hVov95h.png"
+Cena_direita = "https://i.imgur.com/D8KXmJs.png"
+Cena_esquerda = "https://i.imgur.com/4hYhuEQ.png"
 
 class CenaFrutosDaTerra():
   def __init__(self):
-    self.cena_f = Cena(img = FrutosDaTerra)
-    self.cena_c = Cena(Calcita, direita=self.cena_f)
-    self.cena_f = self.cena_c
-    self.cena_c.meio = Cena(vai=self.vai_sul)
+    self.cena_t = Cena(img = TutorialInterativo)
+    self.cena_d = Cena(Cena_direita, direita=self.cena_t)
+    self.cena_t = self.cena_d
+    self.cena_e = Cena(Cena_esquerda, esquerda=self.cena_t)
+    self.cena_t = self.cena_e
+    self.cena_t.meio = Cena(vai=self.vai_importar)
 
-    self.cena_f.vai()
+    self.cena_t.vai()
   def vai(self, *_):
-    self.cena_f.vai()
-  def vai_sul(self, *_):
+    self.cena_t.vai()
+  def vai_importar(self, *_):
     from kristen.main import go_cretaceo
     go_cretaceo()
 
-def vai_CenaFrutosDaTerra():
-  cena1 = CenaFrutosDaTerra()
-  cena1.vai()
+def vai_CenaTutorialInterativo():
+  cenaImporta = CenaTutorialInterativo()
+  cenaImporta.vai()
 
 if __name__ == "__main__":
-	vai_CenaFrutosDaTerra()
+	vai_CenaTutorialInterativo()
