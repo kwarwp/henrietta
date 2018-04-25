@@ -7,7 +7,7 @@ TutorialInterativo = "https://i.imgur.com/hVov95h.png"
 Cena_direita = "https://i.imgur.com/D8KXmJs.png"
 Cena_esquerda = "https://i.imgur.com/4hYhuEQ.png"
 
-class CenaFrutosDaTerra():
+class CenaTutorialInterativo():
   def __init__(self):
     self.cena_t = Cena(img = TutorialInterativo)
     self.cena_d = Cena(Cena_direita, direita=self.cena_t)
