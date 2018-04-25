@@ -10,6 +10,7 @@ Cena_esquerda = "https://i.imgur.com/4hYhuEQ.png"
 class CenaTutorialInterativo():
   def __init__(self):
     self.cena_t = Cena(img = TutorialInterativo)
+    self.cena_t = self.cena_t 
     
     self.cena_e = Cena(Cena_esquerda, esquerda=self.cena_t)
     self.cena_t = self.cena_e
