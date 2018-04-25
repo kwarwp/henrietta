@@ -22,8 +22,10 @@ class CenaTutorialInterativo():
     esquerda = self.cena_e)
     self.cena_d.direita = self.cena_t
     self.cena_e.esquerda = self.cena_t
+    self.cena_t.vai()
     
     self.cena_t = Cena(img = TutorialInterativo)
+    self.cena_t.vai()
     
     self.cena_t.meio = Cena(vai=self.vai_importar)
     self.cena_t.vai()
