@@ -38,11 +38,9 @@ class CenaDireita():
     go_cretaceo()
     
   def vai_esquerda(self, *_):
-    from Adda.main import CenaEsquerda
     CenaEsquerda()
     
   def vai_direita(self, *_):
-    from Adda.main import CenaDireita
     CenaDireita()
     
     
