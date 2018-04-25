@@ -11,8 +11,7 @@ class CenaTutorialInterativo():
   def __init__(self):
     self.cena_t = Cena(img = TutorialInterativo)
     
-    self.cena_t.esquerda = Cena(vai=self.vai_esquerda)
-    self.cena_t.vai()
+    
     
     self.cena_t.meio = Cena(vai=self.vai_importar)
     self.cena_t.vai()
