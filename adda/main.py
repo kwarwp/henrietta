@@ -17,7 +17,7 @@ class CenaTutorialInterativo():
     self.cena_e  = Cena(Cena_esquerda, esquerda=self.cena_t)
 
     
-    self.cena_t = Cena(img = TutorialInterativo)
+    #self.cena_t = Cena(img = TutorialInterativo)
     
     self.cena_t.direita = self.cena_d
     self.cena_t.esquerda = self.cena_e
