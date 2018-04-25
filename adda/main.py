@@ -22,18 +22,10 @@ class CenaTutorialInterativo():
     
   def vai(self, *_):
     self.cena_t.vai()
-    self.cena_t = self.cena_e
-    self.cena_t = self.cena_d
-    
-  def vai_esquerda(self.cena_e):
-    vai()
     
   def vai_importar(self, *_):
     from kristen.main import go_cretaceo
     go_cretaceo()
-
-  def vai_direita(self.cena_d):
-    vai()
     
 def vai_CenaTutorialInterativo():
   cenaImporta = CenaTutorialInterativo()
