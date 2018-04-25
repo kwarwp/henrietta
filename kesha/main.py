@@ -22,12 +22,12 @@ class Agua():
       self.coqueiro= Elemento(img=coqueiro, style=dict (left=100, top= 300, height=200 ,width=200,bottom=100))
       self.aguadecoco= Elemento (img=aguadecoco, style=dict (left=90, top=100 , height=100, width=100, bottom=10))
       self.orvalho= Elemento (img=orvalho, style=dict (left=95, top= 100, height=100, width=100, bottom=15))
-      self.seivadearvore= Elemento (img=seivadearvore, style=dict (left=100, top= 100, height=100, width=100, bottom=15))
+      #self.seivadearvore= Elemento (img=seivadearvore, style=dict (left=100, top= 100, height=100, width=100, bottom=15))
       self.cacto= Elemento (img=cacto, style=dict (left=85, top= 100, height=100, width=15, bottom=15))
       
       self.floresta.direita= self.floresta1
       self.coqueiro.entra(self.floresta1)
-      #criar a função de abrir elemento ao clicar em elemento
+      #criar a funÃ§Ã£o de abrir elemento ao clicar em elemento
       self.floresta.esquerda= self.floresta2
       self.orvalho.entra(self.floresta2)
       self.floresta.meio= self.floresta0
