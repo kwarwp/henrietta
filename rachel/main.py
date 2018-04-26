@@ -2,7 +2,6 @@
 from _spy.vitollino.main import Cena, Texto, Elemento
 from _spy.vitollino.main import INVENTARIO as inv
 
-ILHA = "https://www.fatosdesconhecidos.com.br/wp-content/uploads/2017/08/new-girl-morar-sozinha-1-211.jpg"
 TEMPLO = "http://3.bp.blogspot.com/-UsnGAupu3XM/VHvU2M5BHUI/AAAAAAAAdCE/UKbq_5dTM7k/s1600/IMG_6098.JPG"
 CORREDOR = "http://i.muyinteresante.com.mx/dam/sociedad/historia/17/03/8/rabbit-hole-700-year-old-secret-knights-templar-cave-network-8-58c006f4a30df__880.jpg.imgo.jpg"
 OCEANO = "https://freeclipartspot.com//storage/upload/ocean-clip-art/ocean-clip-art-51.jpg"
@@ -20,7 +19,7 @@ HEADPHONES = "https://images.vexels.com/media/users/3/144117/isolated/preview/b3
 VIOLAO = "http://cdn5.colorir.com/desenhos/color/201101/024b7852c59f132874fea13c36d4887f_163.png"
 CHOCALHO = "https://i.pinimg.com/originals/92/fc/c2/92fcc2e8c29c17242612acef1e457bea.png"
 TAMBOR = "https://images.emojiterra.com/emojione/v2/512px/1f941.png"
-MUSEU = "https://i.pinimg.com/originals/85/91/e8/8591e8f5722d45c18ea8067e5cbb64e4.jpg"
+MUSEU = "https://cdna.artstation.com/p/assets/images/images/004/585/984/large/kamila-redkiewicz-museum.jpg?1484770586"
 COROA = "https://medologia.com/assets/images/huol9FtnOB5KjNVjjM04keqhmLYKwIeyd3uEUluBXoPMxBp9J0Wex3CFqBrZt0SL4NPSV9qrNIblOg7pOwjUI6YDqr0SqT4M4Y2n1eU0KWz9saMKCGDYYf8I.png"
 VASO = "http://www.fundaj.gov.br/images/stories/museu/museu3.png"
 RELOGIO = "http://presidenteprudente.sp.gov.br/museu/images/2028927.png"
@@ -36,13 +35,12 @@ RAQUETE = "http://padelcristalia.com/public/uploads/padelcristalia/logopala.png"
 LUVAS = "https://static.vecteezy.com/system/resources/previews/000/143/644/non_2x/boxing-gloves-vector.png"
 
 
+class Cenatemplo():
+     def __init__(self):
+        self.templo = Cena(img=TEMPLO)
+        self.corredor = Cena(img=CORREDOR,centro=self.templo)
+    
+    
 
 
 
-
-def criarcenas():
-    ilha = Cena(img=ILHA)
-    templo = Cena(img=TEMPLO, esquerda=ilha)
-
-
-criarcenas()
