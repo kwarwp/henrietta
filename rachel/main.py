@@ -33,12 +33,20 @@ ESPORTE = "https://img3.stockfresh.com/files/d/ddraw/m/72/2405156_stock-photo-sp
 BOLA = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Soccer_ball.svg/800px-Soccer_ball.svg.png"
 RAQUETE = "http://padelcristalia.com/public/uploads/padelcristalia/logopala.png"
 LUVAS = "https://static.vecteezy.com/system/resources/previews/000/143/644/non_2x/boxing-gloves-vector.png"
+SALATEMPLO = "https://i.imgur.com/kmLevtL.jpg"
+CINZA = "https://cdn.simplo7.net/static/7106/sku/tricoline-lisa-100-algodao-tricoline-lisa-100-algodao-cinza-1921-50cm-x-1-50mt--p-1502305300683.jpg"
 
 
 class Cenatemplo():
      def __init__(self):
         self.templo = Cena(img=TEMPLO)
-        self.corredor = Cena(img=CORREDOR,centro=self.templo)
+        self.corredor = Cena(img=CORREDOR)
+        templo.centro = corredor
+        
+        oceano = Elemento(img=OCEANO,tit="oceano",style=dict(left=100, top=160, width=60, height=200))
+        oceano.entra(corredor)
+        
+        
     
     
 
