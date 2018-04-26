@@ -44,7 +44,8 @@ BALDE = "https://i.pinimg.com/originals/27/0a/fd/270afd56dac1bbf56e985374905c0ab
 
 
 def criarcenas():
-   ilha = Cena(img=ILHA)
-   templo = Cena(img=TEMPLO, esquerda=ilha)
+    ilha = Cena(img=ILHA)
+    templo = Cena(img=TEMPLO, esquerda=ilha)
+
 
 criarcenas()
