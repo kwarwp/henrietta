@@ -2,6 +2,8 @@
 from _spy.vitollino.main import Cena, Texto, Elemento
 from _spy.vitollino.main import INVENTARIO as inv
 
+ILHA = "https://www.fatosdesconhecidos.com.br/wp-content/uploads/2017/08/new-girl-morar-sozinha-1-211.jpg"
+TEMPLO = "http://3.bp.blogspot.com/-UsnGAupu3XM/VHvU2M5BHUI/AAAAAAAAdCE/UKbq_5dTM7k/s1600/IMG_6098.JPG"
 CORREDOR = "http://i.muyinteresante.com.mx/dam/sociedad/historia/17/03/8/rabbit-hole-700-year-old-secret-knights-templar-cave-network-8-58c006f4a30df__880.jpg.imgo.jpg"
 PORTA = "https://www.lojamadersilva.com.br/imagens/produtos/grandes/porta-baia-premium-peroba.jpg"
 OCEANO = "https://www.exactsales.com.br/uploads/imagens/800x600_oceano-azul-83-1012.png"
@@ -41,3 +43,8 @@ GUARDA_SOL = "https://cdn.pixabay.com/photo/2013/07/13/12/18/bathing-159587_960_
 BALDE = "https://i.pinimg.com/originals/27/0a/fd/270afd56dac1bbf56e985374905c0abf.png"
 
 
+def criarcenas():
+   ilha = Cena(img=ILHA)
+   templo = Cena(img=TEMPLO, esquerda=ilha)
+
+criarcenas()
