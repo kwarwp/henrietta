@@ -35,16 +35,66 @@ RAQUETE = "http://padelcristalia.com/public/uploads/padelcristalia/logopala.png"
 LUVAS = "https://static.vecteezy.com/system/resources/previews/000/143/644/non_2x/boxing-gloves-vector.png"
 SALATEMPLO = "https://i.imgur.com/kmLevtL.jpg"
 CINZA = "https://cdn.simplo7.net/static/7106/sku/tricoline-lisa-100-algodao-tricoline-lisa-100-algodao-cinza-1921-50cm-x-1-50mt--p-1502305300683.jpg"
+OCE0 = "https://imgur.com/YA5Gaa3"
+OCE1 = "https://imgur.com/a4RpoKz"
+OCE2 = "https://imgur.com/jvJig5M"
+OCE3 = "https://imgur.com/5dtIs9t"
+OCE4 = "https://imgur.com/quI5Pi0"
+OCE5 = "https://imgur.com/awqQCEh"
+OCE6 = "https://imgur.com/SiU4uge"
+OCE7 = "https://imgur.com/AHpuMyT"
+OCE8 = "https://imgur.com/HUFShPV"
+OCE9 = "https://imgur.com/hylc9so"
+OCE10 = "https://imgur.com/CqWVaX4"
+OCE11 = "https://imgur.com/uETLCuk"
 
 
 class Cenatemplo():
      def __init__(self):
         self.templo = Cena(img=TEMPLO)
         self.corredor = Cena(img=CORREDOR)
-        templo.centro = corredor
+        self.templo.centro = self.corredor
+        self.cinza1 = Cena(img=CINZA)
+        self.salatemplo1 = Cena(img=SALATEMPLO)
+        self.cinza1.esquerda = self.salatemplo1
+        self.quebra_cabeca_oceano = Cena(img=OCE0,img=OCE1,img=OCE2,img=OCE3,img=OCE4,img=OCE5,img=OCE6,img=OCE7,img=OCE8,img=OCE9,img=OCE10,img=OCE11)
         
         oceano = Elemento(img=OCEANO,tit="oceano",style=dict(left=100, top=160, width=60, height=200))
-        oceano.entra(corredor)
+        oceano.entra(self.corredor)
+        self.oceano.meio = self.cinza1
+        oceano.vai
+        
+        quebra_cabeca_oceano = Elemento(img=,tit="quebra_cabeça_oceano",style=dict(left=100, top=160, width=60, height=200))
+        quebra_cabeca_oceano.entra(self.cinza1)
+        Toceano = Texto(self.cinza1,”Monte o quebra cabeca e entre na sala.”)
+        quebra_cabeca_oceano.vai = Toceano.vai
+            
+        alga = Elemento(img=ALGA,tit="alga",style=dict(left=100, top=160, width=60, height=200))
+        alga.entra(self.salatemplo1)
+        alga.vai
+
+        concha = Elemento(img=CONCHA,tit="concha",style=dict(left=100, top=160, width=60, height=200))
+        concha.entra(self.salatemplo1)
+        concha.vai
+            
+        aquario = Elemento(img=AQUARIO,tit="alga",style=dict(left=100, top=160, width=60, height=200))
+        aquario.entra(self.salatemplo1)
+        aquario.vai
+           
+        Hoceano = Texto(self.salatemplo1,”Conte uma história que utilize a imagem do quebra cabeça com as imagens da sala e ganhe um prêmio.”)
+        Hoceano.vai
+     
+        floresta = 
+
+
+           
+
+            
+            
+
+   
+   
+
         
         
     
