@@ -47,7 +47,7 @@ class Agua():
       self.miniseiva.entra (self.florestaSeiva)
       self.miniorvalho.entra (self.florestaOrvalho)
       
-      #criar a funÃ§Ã£o de abrir elemento ao clicar em elemento
+      #criar a funÃÂ§ÃÂ£o de abrir elemento ao clicar em elemento
       self.cenaCoqueiro = Cena (img=coqueiro)
       self.minicoqueiro.vai = self.cenaCoqueiro.vai
       self.cenaCoqueiro.esquerda = self.florestaCoqueiro
