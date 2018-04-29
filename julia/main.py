@@ -13,13 +13,6 @@ def _main():
     a_norte.vai()
     
 # main()
-m6n="https://i.imgur.com/oThg1nq.jpg"
-m6n="https://i.imgur.com/oThg1nq.jpg"
-g6e="https://i.imgur.com/4vjrEEG.jpg"
-g6n="https://i.imgur.com/DcyUIgN.jpg"
-g6s="https://i.imgur.com/TbdLoXs.jpg"
-wpt="https://i.imgur.com/vc9RMEN.png"
-oce = "https://i.imgur.com/oDqeaBp.jpg"
 OCEANO = "https://freeclipartspot.com//storage/upload/ocean-clip-art/ocean-clip-art-51.jpg"
 from _spy.vitollino.main import Cena, Elemento, Droppable, Dragger
 
