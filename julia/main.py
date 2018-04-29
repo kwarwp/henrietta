@@ -24,38 +24,6 @@ OCEANO = "https://freeclipartspot.com//storage/upload/ocean-clip-art/ocean-clip-
 from _spy.vitollino.main import Cena, Elemento, Droppable, Dragger
 
 
-class Planta(Cena, Droppable):
-
-    def __init__(self, *a, **k):
-        Cena.__init__(self, *a, **k)
-        Droppable.__init__(self, self.divesq, "regador", self.regou)
-
-    def regou(self, *_):
-        alert("VocÃƒÂª regou a planta")
-        
-class Regador(Elemento, Dragger):
-
-    def __init__(self, *a, **k):
-        Elemento.__init__(self, *a, **k)
-        Dragger.__init__(self, self.img)
-
-
-def main():
-    cenae = Cena(g6e)
-    cenas = Cena(g6s)
-    cenan = Planta(g6n, direita=cenae)
-    cenae.direita = cenas
-    cenas.esquerda = cenae
-    cenae.esquerda = cenan
-    cenan.esquerda = cenas
-    cenas.direita = cenan
-    #print(dir(cenas))
-    cenan.vai()
-    rega = Regador(wpt, style=dict(width=60, height=60, left=200, top=200), tit="regador")
-    rega.entra(cenan)
-
-
-
 class Folha:
     def __init__(self, bloco, left=0, top=0, ileft=0, itop=0,
                  size=dict(width="100px", height="100px")):
