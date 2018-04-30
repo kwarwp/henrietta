@@ -4,12 +4,12 @@ from _spy.vitollino.main import Cena, STYLE
 STYLE['width'] = 740
 #STYLE['height'] = "100%"
 
-A_NORTE = "https://cdn.simplo7.net/static/7106/sku/tricoline-lisa-100-algodao-tricoline-lisa-100-algodao-cinza-1921-50cm-x-1-50mt--p-1502305300683.jpg"
+PLANO_FUNDO = "https://cdn.simplo7.net/static/7106/sku/tricoline-lisa-100-algodao-tricoline-lisa-100-algodao-cinza-1921-50cm-x-1-50mt--p-1502305300683.jpg"
 
 def _main():
     document['pydiv'].html = ""
-    a_norte = Cena(img=A_NORTE)
-    a_norte.vai()
+    plano_fundo = Cena(img=plano_fundo)
+    plano_fundo.vai()
     
 # main()
 FLORESTA = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW0BY3YH52d4HOogtzl4XDXyawkVJeAi-5pNTHvhQZBrB-OF2i"
@@ -154,3 +154,5 @@ class Bloco:
 if __name__ == "__main__":
     #main()
     Bloco(FLORESTA)
+    
+    
