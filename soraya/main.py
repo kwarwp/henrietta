@@ -10,6 +10,7 @@ class Folha:
                  size=dict(width=100, height=100)):
         self.suporte = None
         w, h = size.values()
+        fid = "folha_{}_{}".format(ileft, itop)
         ileft, itop = "%dpx" % (ileft*w), "%dpx" % (itop*h)
         style = {'position': 'absolute', 'overflow': 'hidden',
                 'background-image': 'url({})'.format(bloco.img),
@@ -18,7 +19,6 @@ class Folha:
         }
         style.update({k:'{}px'.format(v) for k, v in size.items() })
         style.update(left="%dpx" % (left*(w+10)), top="%dpx" % (top*(h+10)))
-        fid = "folha%d" % (10*top+left)
         self.folha = html.DIV(Id=fid, style=style, draggable=True)        
         bloco.folha <= self.folha
         self.folha.ondragstart = self.drag_start
@@ -47,7 +47,6 @@ class Folha:
         self.suporte = suporte
         self.folha.style.cursor = "auto"
 
-
 class Suporte:
     def __init__(self, bloco, certa, left=0, top=0,
                  size=dict(width="25%", height="25%")):
@@ -57,7 +56,7 @@ class Suporte:
         w, h = float(size['width'][:-1]), float(size['height'][:-1])
         style.update(size)
         style.update(left="%d%%" % (left*w), top="%d%%" % (top*h))
-        self.certa = certa
+        self.certa = (left, top)
         self.folha = html.DIV(style=style)
         bloco.suporte <= self.folha
         self.folha.ondragover = self.drag_over
@@ -84,39 +83,45 @@ class Suporte:
         ev.stopPropagation()
         src_id = ev.data['text']
         self.bloco.folhas[src_id].troca(self) 
-        """
-        certa = True
-        if src_id != self.certa:
-            elt.style.background = "red"
-            certa = False
-            self.bloco.conta_pecas(certa)
-        """
-        #return False
-
+        lugar = [int(coord) for coord in src_id.split("_")[1:]]
+        certa = sum(abs(100//((a-b) or 1)) for a, b in zip(self.certa, lugar))
+        self.bloco.conta_pecas(certa)
 
 class Bloco:
     def __init__(self, img, nx=4, ny=4, w=400, h=400):
         self.img = img
         *self.size = w, h
+        self.dim = nx, ny,w, h
+        self.ordem = list(range(nx*ny))
+        self.tela = document["pydiv"]
+        self.suporte = html.DIV(
+            style=dict(position="absolute",
+            left=10, top=20, width=w, height='%dpx'%h))
+        self.folha = html.DIV(
+            style=dict(position="absolute",
+            left=w+20, top=20, width=w+nx*10, height='%dpx'%(h+ny*10)))
+        self.contagem = html.DIV(style=dict(position="absolute",
+                                 left=20, top=h+80))
+        self.inicia_de_novo()
+
+    def inicia_de_novo(self):
+        nx, ny,w, h = self.dim
+        self.tela.html = ""
+        self.suporte.html = ""
+        self.folha.html = ""
+        self.contagem.html = ""
+        self.tela <= self.suporte
+        self.tela <= self.folha
+        self.tela <= self.contagem
         self.folhas = {}
         self.monta = lambda *_: None
         # ordem = ["%02d"%x for x in range(nx*ny)]
-        ordem = list(range(nx*ny))
-        desordem = ordem[:]
+        desordem = self.ordem[:]
         from random import shuffle
         shuffle(desordem)
-        self.tela = document["pydiv"]
-        self.suporte = html.DIV(style=dict(position="absolute",
-        left=10, top=20, width=w, height='%dpx'%h, border=1,
-        borderColor="slategrey"))
-        self.folha = html.DIV(style=dict(position="absolute",
-        left=w+20, top=20, width=w+nx*10, height='%dpx'%(h+ny*10)))
-        self.tela.html = ""
-        self.tela <= self.suporte
-        self.tela <= self.folha
         self.pecas_colocadas = []
         #print(list(enumerate(ordem)))
-        for pos, fl in enumerate(ordem):
+        for pos, fl in enumerate(self.ordem):
             Suporte(self, "folha%02d" % fl, pos//nx, pos%nx,
                     size=dict(width='{}%'.format(100/nx),
                     height='{}%'.format(100/ny)))
@@ -124,13 +129,11 @@ class Bloco:
             Folha(self, pos//nx, pos%nx, int(tx)//nx, int(tx)%nx,
                     size=dict(width=w//nx, height=h/ny))
 
-    def inicia_de_novo(self):
-        pass
-
     def conta_pecas(self, valor_peca):
-        self.pecas_colocadas += valor_peca
-        if len(self.pecas_colocadas) == 4:
-            if all(self.pecas_colocadas):
+        self.pecas_colocadas += [valor_peca//10]
+        self.contagem.html = str(self.pecas_colocadas)
+        if len(self.pecas_colocadas) >= len(self.folhas):
+            if sum(self.pecas_colocadas)>= 20*len(self.folhas):
                 input("O texto esta certo.")
             else:
                 vai = input("Tentar de novo?")
@@ -143,9 +146,8 @@ class Bloco:
     def vai(self):
         self.monta()
         self.monta = self.nao_monta
-        # self.centro.norte.vai()
 
 
 if __name__ == "__main__":
     #main()
-    Bloco(oce, 6, 6)
+    Bloco(oce, 3, 3)
