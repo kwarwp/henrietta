@@ -11,7 +11,7 @@ class Folha:
         self.suporte = None
         w, h = size.values()
         fid = "folha_{}_{}".format(ileft, itop)
-        ileft, itop = "%dpx" % (ileft*w), "%dpx" % (itop*h)
+        ileft, itop = "%dpx" % (-ileft*w), "%dpx" % (-itop*h)
         style = {'position': 'absolute', 'overflow': 'hidden',
                 'background-image': 'url({})'.format(bloco.img),
                 'background-position': '{} {}'.format(ileft, itop),
@@ -57,7 +57,7 @@ class Suporte:
         style.update(size)
         style.update(left="%d%%" % (left*w), top="%d%%" % (top*h))
         self.certa = (left, top)
-        self.folha = html.DIV(style=style)
+        self.folha = html.DIV(Id=certa.format(left, top), style=style)
         bloco.suporte <= self.folha
         self.folha.ondragover = self.drag_over
         self.folha.ondrop = self.drop
@@ -84,14 +84,14 @@ class Suporte:
         src_id = ev.data['text']
         self.bloco.folhas[src_id].troca(self) 
         lugar = [int(coord) for coord in src_id.split("_")[1:]]
-        certa = sum(abs(100//((a-b) or 1)) for a, b in zip(self.certa, lugar))
+        certa = sum(abs(100//(2*(a-b) or 1)) for a, b in zip(self.certa, lugar))
         self.bloco.conta_pecas(certa)
 
 class Bloco:
     def __init__(self, img, nx=4, ny=4, w=400, h=400):
         self.img = img
         *self.size = w, h
-        self.dim = nx, ny,w, h
+        self.dim = nx, ny, w, h
         self.ordem = list(range(nx*ny))
         self.tela = document["pydiv"]
         self.suporte = html.DIV(
@@ -106,27 +106,23 @@ class Bloco:
 
     def inicia_de_novo(self):
         nx, ny,w, h = self.dim
-        self.tela.html = ""
-        self.suporte.html = ""
-        self.folha.html = ""
-        self.contagem.html = ""
+        self.tela.html = self.suporte.html = self.folha.html = self.contagem.html = ""
         self.tela <= self.suporte
         self.tela <= self.folha
         self.tela <= self.contagem
         self.folhas = {}
         self.monta = lambda *_: None
-        # ordem = ["%02d"%x for x in range(nx*ny)]
         desordem = self.ordem[:]
         from random import shuffle
         shuffle(desordem)
         self.pecas_colocadas = []
         #print(list(enumerate(ordem)))
-        for pos, fl in enumerate(self.ordem):
-            Suporte(self, "folha%02d" % fl, pos//nx, pos%nx,
+        for pos in self.ordem:
+            Suporte(self, "suporte_{}_{}", pos%nx, pos//nx,
                     size=dict(width='{}%'.format(100/nx),
                     height='{}%'.format(100/ny)))
         for pos, tx in enumerate(desordem):
-            Folha(self, pos//nx, pos%nx, int(tx)//nx, int(tx)%nx,
+            Folha(self, pos%nx, pos//nx, int(tx)%nx, int(tx)//nx,
                     size=dict(width=w//nx, height=h/ny))
 
     def conta_pecas(self, valor_peca):
