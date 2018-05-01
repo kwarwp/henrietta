@@ -1,5 +1,5 @@
 # henrietta.soraya.main.py
-from _spy.vitollino.main import Cena, Elemento, Droppable, Dragger
+from _spy.vitollino.main import Cena, Elemento
 from browser import document, alert, html
 
 oce = "https://i.imgur.com/oDqeaBp.jpg"
@@ -87,13 +87,16 @@ class Suporte:
         certa = sum(abs(100//(2*(a-b) or 1)) for a, b in zip(self.certa, lugar))
         self.bloco.conta_pecas(certa)
 
-class Bloco:
-    def __init__(self, img, nx=4, ny=4, w=400, h=400):
+class Bloco(Elemento):
+    def __init__(self, img, nx=4, ny=4, w=400, h=400, **kwargs):
+        style = dict(position="absolute", left=10, top=20,
+            width=2*w+nx*10, height='%dpx'%(h+ny*10+100))
+        Elemento.__init__(self, img="",style=style, **kwargs)
         self.img = img
         *self.size = w, h
         self.dim = nx, ny, w, h
         self.ordem = list(range(nx*ny))
-        self.tela = document["pydiv"]
+        self.tela = self.elt  # document["pydiv"]
         self.suporte = html.DIV(
             style=dict(position="absolute",
             left=10, top=20, width=w, height='%dpx'%h))
@@ -130,7 +133,7 @@ class Bloco:
         self.contagem.html = str(self.pecas_colocadas)
         if len(self.pecas_colocadas) >= len(self.folhas):
             if sum(self.pecas_colocadas)>= 20*len(self.folhas):
-                input("O texto esta certo.")
+                alert("A resposta esta certa.")
             else:
                 vai = input("Tentar de novo?")
                 if vai == "s":
@@ -144,6 +147,14 @@ class Bloco:
         self.monta = self.nao_monta
 
 
+class Puzzle:
+    def __init__(self):
+        self.cena = Cena()
+        self.puzzle = Bloco(oce, 4, 4)
+        self.puzzle.entra(self.cena)
+        self.cena.vai()
+
 if __name__ == "__main__":
     #main()
-    Bloco(oce, 3, 3)
+    #Bloco(oce, 3, 3)
+    Puzzle()
