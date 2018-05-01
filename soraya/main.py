@@ -1,8 +1,9 @@
 # henrietta.soraya.main.py
-from _spy.vitollino.main import Cena, Elemento
+from _spy.vitollino.main import Cena, Elemento,STYLE
 from browser import document, alert, html
-
+STYLE["width"]=900
 oce = "https://i.imgur.com/oDqeaBp.jpg"
+wod = "https://i.imgur.com/6DB1eCQ.jpg"
 
 
 class Folha:
@@ -88,10 +89,11 @@ class Suporte:
         self.bloco.conta_pecas(certa)
 
 class Bloco(Elemento):
-    def __init__(self, img, nx=4, ny=4, w=400, h=400, **kwargs):
-        style = dict(position="absolute", left=10, top=20,
+    def __init__(self, img, nx=4, ny=4, w=400, h=400, style=None, **kwargs):
+        _style = dict(position="absolute", left=10, top=20,
             width=2*w+nx*10, height='%dpx'%(h+ny*10+100))
-        Elemento.__init__(self, img="",style=style, **kwargs)
+        _style.update(style) if style else None
+        Elemento.__init__(self, img="",style=_style, **kwargs)
         self.img = img
         *self.size = w, h
         self.dim = nx, ny, w, h
@@ -149,8 +151,8 @@ class Bloco(Elemento):
 
 class Puzzle:
     def __init__(self):
-        self.cena = Cena()
-        self.puzzle = Bloco(oce, 4, 4)
+        self.cena = Cena(wod)
+        self.puzzle = Bloco(oce, 4, 4, style=dict(left=10, top=100))
         self.puzzle.entra(self.cena)
         self.cena.vai()
 
