@@ -4,6 +4,7 @@ from browser import document, alert, html
 STYLE["width"]=900
 oce = "https://i.imgur.com/oDqeaBp.jpg"
 wod = "https://i.imgur.com/6DB1eCQ.jpg"
+sai = "https://i.imgur.com/oJphBx6.jpg"
 
 
 class Folha:
@@ -136,24 +137,20 @@ class Bloco(Elemento):
         if len(self.pecas_colocadas) >= len(self.folhas):
             if sum(self.pecas_colocadas)>= 20*len(self.folhas):
                 alert("A resposta esta certa.")
+                self.vai()
             else:
                 vai = input("Tentar de novo?")
                 if vai == "s":
                     self.inicia_de_novo()
 
-    def nao_monta(self):
-        pass
-
-    def vai(self):
-        self.monta()
-        self.monta = self.nao_monta
-
 
 class Puzzle:
     def __init__(self):
         self.cena = Cena(wod)
-        self.puzzle = Bloco(oce, 4, 4, style=dict(left=10, top=100))
+        self.sai = Cena(sai)
+        self.puzzle = Bloco(oce, 2, 2, style=dict(left=10, top=100))
         self.puzzle.entra(self.cena)
+        self.puzzle.vai = self.sai.vai
         self.cena.vai()
 
 if __name__ == "__main__":
