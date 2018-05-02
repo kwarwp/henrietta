@@ -1,35 +1,20 @@
-# henrietta.kellee.main.pyfrom _spy.vittolino.main import Cena, Elemento, Texto
+# henrietta.kellee.main.py
 from _spy.vitollino.main import Cena, Elemento, Texto
-NEWTON = "https://netnature.files.wordpress.com/2017/11/sem-tc3adtulo37.png?w=524&h=324"
-MACA = "https://amdpc.files.wordpress.com/2008/03/apple_computer_logo_svg.png"
+
+NEWTON = "http://4.bp.blogspot.com/-5gZeG2PCX-0/ViRIc3iUP_I/AAAAAAAACn4/IWvXueCewjU/s1600/fg_3456011-1024x576.jpg"
 GALILEU = "https://pbs.twimg.com/profile_images/666413287639269377/-Yw4RtjG_400x400.png"
-ORBITA = "https://upload.wikimedia.org/wikipedia/commons/a/a9/Illuminati_triangle_eye.png"
-
-
-
+MACA = "https://macmagazine.com.br/wp-content/uploads/2011/02/24-rainbows.png"
+ILUMINATTI = "https://vignette.wikia.nocookie.net/clubpenguin/images/2/2d/Illuminati.png/revision/latest?cb=20150117022611"
 
 def teorias():
-
-    inicio = Cena(img= NEWTON)
-    inicio_mud = Elemento(img = MACA, tit="Eis que a gravidade atua", style = dict(right= 100,
-                                                                                   top=40,
-                                                                                   width=110,bottom=20))
-    lado1 = Cena(img = GALILEU, direita = inicio)
-    lado1_mud = Elemento(img = ORBITA, tit = "O mundo não gira em torno de você não,@", style = dict(left = 100,
-                                                                                                     top = 200,
-                                                                                                     width = 125, bottom = 20))
+    inicio = Cena(img=NEWTON)
+    inicioe = Elemento(img=MACA, tit"Eis que a gravidade aparece", style = dict(left= 150,top=100, width=60, height=200,bottom=100))    
+    lado1 = Cena(img=GALILEU, direita =inicio)
+    lado1_e = Elemento(img=ILUMINATTI, tit'O universo não gira em torno de você não,bb', style = dict(left= 150, top=100, width=60, height=200, bottom=100))
     
-    inicio_mud.entra(inicio)
-    inicio.esquerda = lado1
-    lado1_mud.entra(lado1)
+    inicio_e.entra(inicio)
+    lado1_e.entra(lado1)
+    
     lado1.vai()
     
 teorias()
-    
-                         
-    
-     
-  
-
-
-
