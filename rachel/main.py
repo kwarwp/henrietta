@@ -59,6 +59,8 @@ class Cenatemplo():
         self.cinza1 = Cena(img=wood)
         self.salatemplo1 = Cena(img=SALATEMPLO)
         self.cinza1.esquerda = self.salatemplo1
+        self.salatemplo2 = Cena(img=SALATEMPLO)
+        self.salatemplo1.direita = self.corredor
         #self.quebra_cabeca_oceano = Cena(img=OCE0,img=OCE1,img=OCE2,img=OCE3,img=OCE4,img=OCE5,img=OCE6,img=OCE7,img=OCE8,img=OCE9,img=OCE10,img=OCE11)
         
         oceano = Elemento(img=OCEANO,tit="oceano",style=dict(left=100, top=160, width=60, height=200))
@@ -89,7 +91,42 @@ class Cenatemplo():
 
         #floresta = 
         self.templo.vai()
+    
+        floresta = Elemento(img=FLORESTA, tit="floresta", style=dict(left=180, top=160, width=60, height=200))
+        floresta.entra(self.corredor)
+        floresta.vai = self.cinza1.vai
+        #oceano.vai
+        
+        #quebra_cabeca_oceano = Elemento(img=,tit="quebra_cabeÃÂÃÂ§a_oceano",style=dict(left=100, top=160, width=60, height=200))
+        quebra_cabeca_floresta = Bloco(FLORESTA, 4, 4, vai=self.salatemplo2.vai)
+        quebra_cabeca_oceano.entra(self.cinza1)
+        Tfloresta = Texto(self.cinza1,"Monte o quebra cabeca e entre na sala.")
+        #quebra_cabeca_oceano.vai = Toceano.vai
+            
+        coruja = Elemento(img=CORUJA,tit="coruja",style=dict(left=200, top=160, width=60, height=200))
+        coruja.entra(self.salatemplo2)
+        
+        pato = Elemento(img=PATOS,tit="pato",style=dict(left=300, top=160, width=60, height=200))
+        pato.entra(self.salatemplo2)
+        
+        flores = Elemento(img=FLORES,tit="pato",style=dict(left=300, top=160, width=60, height=200))
+        flores.entra(self.salatemplo2)
+        
+        passaros = Elemento(img=PASSAROS,tit="passaros",style=dict(left=300, top=160, width=60, height=200))
+        passaros.entra(self.salatemplo2)
+            
+        macaco = Elemento(img=MACACO,tit="alga",style=dict(left=100, top=160, width=60, height=200))
+        macaco.entra(self.salatemplo2)
+        texto = "Conte uma historia que utilize a imagem do quebra cabeca"
+        texto += " com as imagens da sala e ganhe um premio"
+        
 
+        Hoceano = Texto(self.salatemplo1,'',texto)
+        Hoceano.vai()
+
+        #floresta = 
+        self.templo.vai()
+        
 if __name__ == "__main__":
     teste = Cenatemplo()
     
