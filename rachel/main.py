@@ -34,7 +34,8 @@ ESPORTE = "https://img3.stockfresh.com/files/d/ddraw/m/72/2405156_stock-photo-sp
 BOLA = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Soccer_ball.svg/800px-Soccer_ball.svg.png"
 RAQUETE = "http://padelcristalia.com/public/uploads/padelcristalia/logopala.png"
 LUVAS = "https://static.vecteezy.com/system/resources/previews/000/143/644/non_2x/boxing-gloves-vector.png"
-SALATEMPLO = "https://i.imgur.com/kmLevtL.jpg"
+SALATEMPLO1 = "https://i.imgur.com/kmLevtL.jpg"
+SALATEMPLO2 = "https://i.imgur.com/kmLevtL.jpg"
 CINZA = "https://cdn.simplo7.net/static/7106/sku/tricoline-lisa-100-algodao-tricoline-lisa-100-algodao-cinza-1921-50cm-x-1-50mt--p-1502305300683.jpg"
 OCE0 = "https://imgur.com/YA5Gaa3"
 OCE1 = "https://imgur.com/a4RpoKz"
@@ -57,10 +58,12 @@ class Cenatemplo():
         self.corredor = Cena(img=CORREDOR)
         self.templo.meio = self.corredor
         self.cinza1 = Cena(img=wood)
-        self.salatemplo1 = Cena(img=SALATEMPLO)
+        self.salatemplo1 = Cena(img=SALATEMPLO1)
         self.cinza1.esquerda = self.salatemplo1
-        self.salatemplo2 = Cena(img=SALATEMPLO)
+        self.salatemplo2 = Cena(img=SALATEMPLO2)
         self.salatemplo1.direita = self.corredor
+        self.salatemplo2.direita = self.corredor
+        
         #self.quebra_cabeca_oceano = Cena(img=OCE0,img=OCE1,img=OCE2,img=OCE3,img=OCE4,img=OCE5,img=OCE6,img=OCE7,img=OCE8,img=OCE9,img=OCE10,img=OCE11)
         
         oceano = Elemento(img=OCEANO,tit="oceano",style=dict(left=100, top=160, width=60, height=200))
@@ -68,7 +71,7 @@ class Cenatemplo():
         oceano.vai = self.cinza1.vai
         #oceano.vai
         
-        #quebra_cabeca_oceano = Elemento(img=,tit="quebra_cabeÃÂÃÂ§a_oceano",style=dict(left=100, top=160, width=60, height=200))
+        #quebra_cabeca_oceano = Elemento(img=,tit="quebra_cabeÃÂÃÂÃÂÃÂ§a_oceano",style=dict(left=100, top=160, width=60, height=200))
         quebra_cabeca_oceano = Bloco(OCEANO, 4, 4, vai=self.salatemplo1.vai)
         quebra_cabeca_oceano.entra(self.cinza1)
         Toceano = Texto(self.cinza1,"Monte o quebra cabeca e entre na sala.")
@@ -97,9 +100,9 @@ class Cenatemplo():
         floresta.vai = self.cinza1.vai
         #oceano.vai
         
-        #quebra_cabeca_oceano = Elemento(img=,tit="quebra_cabeÃÂÃÂ§a_oceano",style=dict(left=100, top=160, width=60, height=200))
+        #quebra_cabeca_oceano = Elemento(img=,tit="quebra_cabeÃÂÃÂÃÂÃÂ§a_oceano",style=dict(left=100, top=160, width=60, height=200))
         quebra_cabeca_floresta = Bloco(FLORESTA, 4, 4, vai=self.salatemplo2.vai)
-        quebra_cabeca_oceano.entra(self.cinza1)
+        quebra_cabeca_floresta.entra(self.cinza1)
         Tfloresta = Texto(self.cinza1,"Monte o quebra cabeca e entre na sala.")
         #quebra_cabeca_oceano.vai = Toceano.vai
             
@@ -129,4 +132,5 @@ class Cenatemplo():
         
 if __name__ == "__main__":
     teste = Cenatemplo()
+    
     
