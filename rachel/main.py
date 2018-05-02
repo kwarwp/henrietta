@@ -74,24 +74,22 @@ class Cenatemplo():
             
         alga = Elemento(img=ALGA,tit="alga",style=dict(left=200, top=160, width=60, height=200))
         alga.entra(self.salatemplo1)
-        alga.vai
-
+        
         concha = Elemento(img=CONCHA,tit="concha",style=dict(left=300, top=160, width=60, height=200))
         concha.entra(self.salatemplo1)
-        concha.vai
             
         aquario = Elemento(img=AQUARIO,tit="alga",style=dict(left=100, top=160, width=60, height=200))
         aquario.entra(self.salatemplo1)
-        aquario.vai
         texto = "Conte uma historia que utilize a imagem do quebra cabeca"
         texto += "com as imagens da sala e ganhe um premio"
         
 
         Hoceano = Texto(self.salatemplo1,'',texto)
-        Hoceano.vai
+        Hoceano.vai()
 
         #floresta = 
         self.templo.vai()
 
 if __name__ == "__main__":
-    Cenatemplo()
+    teste = Cenatemplo()
+    teste.salatemplo1.vai()
