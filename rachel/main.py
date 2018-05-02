@@ -66,7 +66,7 @@ class Cenatemplo():
         oceano.vai = self.cinza1.vai
         #oceano.vai
         
-        #quebra_cabeca_oceano = Elemento(img=,tit="quebra_cabeÃ§a_oceano",style=dict(left=100, top=160, width=60, height=200))
+        #quebra_cabeca_oceano = Elemento(img=,tit="quebra_cabeÃÂ§a_oceano",style=dict(left=100, top=160, width=60, height=200))
         quebra_cabeca_oceano = Bloco(OCEANO, 4, 4, vai=self.salatemplo1.vai)
         quebra_cabeca_oceano.entra(self.cinza1)
         Toceano = Texto(self.cinza1,"Monte o quebra cabeca e entre na sala.")
@@ -81,7 +81,7 @@ class Cenatemplo():
         aquario = Elemento(img=AQUARIO,tit="alga",style=dict(left=100, top=160, width=60, height=200))
         aquario.entra(self.salatemplo1)
         texto = "Conte uma historia que utilize a imagem do quebra cabeca"
-        texto += "com as imagens da sala e ganhe um premio"
+        texto += " com as imagens da sala e ganhe um premio"
         
 
         Hoceano = Texto(self.salatemplo1,'',texto)
