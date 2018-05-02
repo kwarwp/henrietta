@@ -92,4 +92,4 @@ class Cenatemplo():
 
 if __name__ == "__main__":
     teste = Cenatemplo()
-    teste.salatemplo1.vai()
+    
