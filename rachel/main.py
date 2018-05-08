@@ -71,7 +71,7 @@ class Cenatemplo():
         oceano.vai = self.cinza1.vai
         #oceano.vai
         
-        #quebra_cabeca_oceano = Elemento(img=,tit="quebra_cabeÃÂÃÂÃÂÃÂ§a_oceano",style=dict(left=100, top=160, width=60, height=200))
+        #quebra_cabeca_oceano = Elemento(img=,tit="quebra_cabeÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ§a_oceano",style=dict(left=100, top=160, width=60, height=200))
         quebra_cabeca_oceano = Bloco(OCEANO, 4, 4, vai=self.salatemplo1.vai)
         quebra_cabeca_oceano.entra(self.cinza1)
         Toceano = Texto(self.cinza1,"Monte o quebra cabeca e entre na sala.")
@@ -100,7 +100,7 @@ class Cenatemplo():
         floresta.vai = self.cinza1.vai
         #oceano.vai
         
-        #quebra_cabeca_oceano = Elemento(img=,tit="quebra_cabeÃÂÃÂÃÂÃÂ§a_oceano",style=dict(left=100, top=160, width=60, height=200))
+        #quebra_cabeca_oceano = Elemento(img=,tit="quebra_cabeÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ§a_oceano",style=dict(left=100, top=160, width=60, height=200))
         quebra_cabeca_floresta = Bloco(FLORESTA, 4, 4, vai=self.salatemplo2.vai)
         quebra_cabeca_floresta.entra(self.cinza1)
         Tfloresta = Texto(self.cinza1,"Monte o quebra cabeca e entre na sala.")
