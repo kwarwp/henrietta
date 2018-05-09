@@ -2,6 +2,7 @@
 from _spy.vitollino.main import Cena, Texto, Elemento
 from _spy.vitollino.main import INVENTARIO as inv
 from soraya.main import Bloco
+from browser import alert
 
 TEMPLO = "http://3.bp.blogspot.com/-UsnGAupu3XM/VHvU2M5BHUI/AAAAAAAAdCE/UKbq_5dTM7k/s1600/IMG_6098.JPG"
 CORREDOR = "http://i.muyinteresante.com.mx/dam/sociedad/historia/17/03/8/rabbit-hole-700-year-old-secret-knights-templar-cave-network-8-58c006f4a30df__880.jpg.imgo.jpg"
@@ -64,8 +65,18 @@ class Cenatemplo():
         self.salatemplo2 = Cena(img=SALATEMPLO2)
         self.salatemplo1.direita = self.corredor
         self.salatemplo2.direita = self.corredor
+        peixe = Elemento(img=AQUARIO,tit="peixe",style=dict(left=100, top=160, width=60, height=200))
         
         #self.quebra_cabeca_oceano = Cena(img=OCE0,img=OCE1,img=OCE2,img=OCE3,img=OCE4,img=OCE5,img=OCE6,img=OCE7,img=OCE8,img=OCE9,img=OCE10,img=OCE11)
+        def conta_historia(*_):
+            historia = input("Conte aqui a sua história")
+            palavras = len(historia.split())
+            temas = "peix aqu conch templo".split()
+            tema = sum(1 for palavra in temas if palavra in historia)
+            pontos = palavras+ 5*tema
+            alert("pontos: {}".format(pontos))
+            if pontos > 10:
+                INVENTARIO.bota(peixe)
         
         oceano = Elemento(img=OCEANO,tit="oceano",style=dict(left=100, top=160, width=60, height=200))
         oceano.entra(self.corredor)
@@ -73,7 +84,7 @@ class Cenatemplo():
         #oceano.vai
         
         #quebra_cabeca_oceano = Elemento(img=,tit="quebra_cabeÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ§a_oceano",style=dict(left=100, top=160, width=60, height=200))
-        quebra_cabeca_oceano = Bloco(OCEANO, 4, 4, vai=self.salatemplo1.vai)
+        quebra_cabeca_oceano = Bloco(OCEANO, 2, 2, vai=self.salatemplo1.vai)
         quebra_cabeca_oceano.entra(self.cinza1)
         Toceano = Texto(self.cinza1,"Monte o quebra cabeca e entre na sala.")
         #quebra_cabeca_oceano.vai = Toceano.vai
@@ -88,6 +99,7 @@ class Cenatemplo():
         aquario.entra(self.salatemplo1)
         texto = "Conte uma historia que utilize a imagem do quebra cabeca"
         texto += " com as imagens da sala e ganhe um premio"
+        aquario.vai = conta_historia
         
 
         Hoceano = Texto(self.salatemplo1,'',texto)
@@ -98,7 +110,7 @@ class Cenatemplo():
     
         floresta = Elemento(img=FLORESTA, tit="floresta", style=dict(left=180, top=160, width=60, height=200))
         floresta.entra(self.corredor)
-        floresta.vai = self.cinza1.vai
+        floresta.vai = self.cinza2.vai
         #oceano.vai
         
         #quebra_cabeca_oceano = Elemento(img=,tit="quebra_cabeÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ§a_oceano",style=dict(left=100, top=160, width=60, height=200))
@@ -106,9 +118,9 @@ class Cenatemplo():
         quebra_cabeca_floresta.entra(self.cinza2)
         Tfloresta = Texto(self.cinza2,"Monte o quebra cabeca e entre na sala.")
         #quebra_cabeca_oceano.vai = Toceano.vai
-            
         coruja = Elemento(img=CORUJA,tit="coruja",style=dict(left=200, top=160, width=60, height=200))
         coruja.entra(self.salatemplo2)
+        coruja.vai = conta_historia
         
         pato = Elemento(img=PATOS,tit="pato",style=dict(left=300, top=160, width=60, height=200))
         pato.entra(self.salatemplo2)
