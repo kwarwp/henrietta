@@ -11,7 +11,7 @@ verbos_fracos = ["rod", "bot", "sub", "pux", "form", "tent", "clic", "abaix", "m
 verbos = [123, verbos_altos,verbos_medios,verbos_fracos]
 
 def avaliar(list):
-    for x in verbos:
+    for x in list:
         if isinstance(verbos,list):
                 print("da uma elevada:")
         else:
