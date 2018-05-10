@@ -11,3 +11,4 @@
 {'doc_id': '00000000000000000000', 'carta': 'folha_1_0', 'casa': (1, 0), 'move': 'DROP', 'ponto': 200, 'valor': 0, 'tempo': 1525976119672},
 {'doc_id': '00000000000000000000', 'carta': 'folha_0_3', 'casa': (0, 3), 'move': 'DROP', 'ponto': 200, 'valor': 0, 'tempo': 1525976147762},
 {'doc_id': '00000000000000000000', 'carta': 'folha_1_3', 'casa': (1, 3), 'move': 'DROP', 'ponto': 200, 'valor': 0, 'tempo': 1525976152242},
+{'doc_id': '00000000000000000000', 'carta': 'folha_0_2', 'casa': (0, 2), 'move': 'DROP', 'ponto': 200, 'valor': 0, 'tempo': 1525976158404},
