@@ -69,3 +69,4 @@ XXXX - executa_acao if error else lambda self.error - XXXXTraceback (most recent
   module _spy.vitollino.main line 369
     SUPERPYTHON.scorer(data) if SUPYGIRLS else None
 NameError: name 'SUPYGIRLS' is not defined
+XXXX - executa_acao if error else lambda self.error - XXXX
