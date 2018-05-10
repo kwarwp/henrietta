@@ -1,5 +1,5 @@
 # henrietta.natalia.main.py
-verbos_altos = ["ger", "atrit", "roÃ§", "direcion", "friccion", "elev", "decid", "faz", "concl", "us",
+verbos_altos = ["ger", "atrit", "roÃÂ§", "direcion", "friccion", "elev", "decid", "faz", "concl", "us",
                 "remanej" ,"erg", "suspend", "ate", "esfreg", "trisc"] 
 #verbos_altos ==  3
 verbos_medios = ["bat", "gir", "coloc", "manipul", "mov", "surg", "peg", "levant", "bat"]
@@ -13,12 +13,11 @@ verbos = [123, verbos_altos,verbos_medios,verbos_fracos]
 def avaliar(list):
     for x in verbos:
         if isinstance(verbos,list):
-            for z in verbos : 
-                print("da uma elevada:", verbos.index(verbos))
+                print("da uma elevada:")
         else:
-            print (False)
+            print ()
     
-avaliar(verbos)
+avaliar(verbos_altos)
     
     
     
