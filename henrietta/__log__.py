@@ -45,3 +45,4 @@ XXXX - executa_acao if error else lambda self.error - XXXX
   move="BLOCO", ponto=self.repete, valor=0)
                                           ^
 SyntaxError: invalid syntax
+XXXX - executa_acao if error else lambda self.error - XXXX
