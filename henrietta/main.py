@@ -27,7 +27,7 @@ class Folha:
         self.folha.ondragstart = self.drag_start
         self.folha.onmouseover = self.mouse_over
         bloco.folhas[fid]=self
-        INVENTARIO.score(casa=self.casa, carta=self.fid, move="INIT", ponto=0, valor=0)
+        #INVENTARIO.score(casa=self.casa, carta=self.fid, move="INIT", ponto=0, valor=0)
 
     def mouse_over(self, ev):
         ev.target.style.cursor = "pointer"
@@ -116,8 +116,8 @@ class Bloco(Elemento):
         self.inicia_de_novo()
 
     def inicia_de_novo(self):
-        INVENTARIO.score(casa=self.img, carta=self.dim[0]*100+self.dim[1],
-        move="BLOCO", ponto=self.repete, valor=0)
+        #INVENTARIO.score(casa=self.img, carta=self.dim[0]*100+self.dim[1],
+        #move="BLOCO", ponto=self.repete, valor=0)
         nx, ny,w, h = self.dim
         self.tela.html = self.suporte.html = self.folha.html = self.contagem.html = ""
         self.tela <= self.suporte
