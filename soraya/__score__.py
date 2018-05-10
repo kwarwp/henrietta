@@ -2,3 +2,4 @@
 {'doc_id': '00000000000000000000', 'carta': 'folha_2_2', 'casa': (2, 2), 'move': 'DROP', 'ponto': 200, 'valor': 0, 'tempo': 1525976015464},
 {'doc_id': '00000000000000000000', 'carta': 'folha_3_3', 'casa': (3, 3), 'move': 'DROP', 'ponto': 200, 'valor': 0, 'tempo': 1525976022226},
 {'doc_id': '00000000000000000000', 'carta': 'folha_2_3', 'casa': (2, 3), 'move': 'DROP', 'ponto': 200, 'valor': 0, 'tempo': 1525976032158},
+{'doc_id': '00000000000000000000', 'carta': 'folha_3_1', 'casa': (3, 1), 'move': 'DROP', 'ponto': 200, 'valor': 0, 'tempo': 1525976041346},
