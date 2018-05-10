@@ -18,3 +18,4 @@ XXXX - executa_acao if error else lambda self.error - XXXXXXXX - executa_acao if
   module <module> line 119
     INVENTARIO.score(casa=self.img, carta=self.dim[0]*100+self.dim[1],
 NameError: name 'INVENTARIO' is not defined
+XXXX - executa_acao if error else lambda self.error - XXXX
