@@ -91,7 +91,8 @@ class Suporte:
         lugar = [int(coord) for coord in src_id.split("_")[1:]]
         certa = sum(abs(100//(2*(a-b) or 1)) for a, b in zip(self.certa, lugar))
         self.bloco.conta_pecas(certa)
-        INVENTARIO.score(casa=self.certa, carta=src_id, move="DROP", ponto=certa, valor=0)
+        INVENTARIO.score(casa=self.certa, carta=src_id, move="DROP",
+                         ponto=certa, valor=self.bloco.folhas[src_id].casa)
 
 class Bloco(Elemento):
     def __init__(self, img, nx=4, ny=4, w=400, h=400, style=None, **kwargs):
@@ -116,8 +117,9 @@ class Bloco(Elemento):
         self.inicia_de_novo()
 
     def inicia_de_novo(self):
-        #INVENTARIO.score(casa=self.img, carta=self.dim[0]*100+self.dim[1],
-        #move="BLOCO", ponto=self.repete, valor=0)
+        INVENTARIO.score(
+            casa=self.img, carta=self.dim[0]*100+self.dim[1],
+            move="BLOCO", ponto=self.repete, valor=0)
         nx, ny,w, h = self.dim
         self.tela.html = self.suporte.html = self.folha.html = self.contagem.html = ""
         self.tela <= self.suporte
@@ -146,6 +148,10 @@ class Bloco(Elemento):
             if sum(self.pecas_colocadas)>= 20*len(self.folhas):
                 alert("A resposta esta certa.")
                 self.vai()
+                INVENTARIO.score(
+                    casa=self.img, carta=self.repete,
+                    move="CONTA", ponto=sum(self.pecas_colocadas), valor=0)
+
             else:
                 vai = input("Tentar de novo?")
                 if vai == "s":
