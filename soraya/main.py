@@ -1,5 +1,5 @@
 # henrietta.soraya.main.py
-from _spy.vitollino.main import Cena, Elemento,STYLE
+from _spy.vitollino.main import Cena, Elemento,STYLE, INVENTARIO
 from browser import document, alert, html
 STYLE["width"]=900
 oce = "https://i.imgur.com/oDqeaBp.jpg"
@@ -12,7 +12,8 @@ class Folha:
                  size=dict(width=100, height=100)):
         self.suporte = None
         w, h = size.values()
-        fid = "folha_{}_{}".format(ileft, itop)
+        self.fid = fid = "folha_{}_{}".format(ileft, itop)
+        self.casa = "casa_{}_{}".format(left, top)
         ileft, itop = "%dpx" % (-ileft*w), "%dpx" % (-itop*h)
         style = {'position': 'absolute', 'overflow': 'hidden',
                 'background-image': 'url({})'.format(bloco.img),
@@ -26,6 +27,7 @@ class Folha:
         self.folha.ondragstart = self.drag_start
         self.folha.onmouseover = self.mouse_over
         bloco.folhas[fid]=self
+        #INVENTARIO.score(casa=self.casa, carta=self.fid, move="INIT", ponto=0, valor=0)
 
     def mouse_over(self, ev):
         ev.target.style.cursor = "pointer"
@@ -34,6 +36,7 @@ class Folha:
     def img_drag_start(self, ev):
         ev.preventDefault()
         ev.stopPropagation()
+        INVENTARIO.score(casa=self.casa, carta=self.fid, move="START", ponto=0, valor=0)
         return False
 
     def drag_start(self, ev):
@@ -88,6 +91,7 @@ class Suporte:
         lugar = [int(coord) for coord in src_id.split("_")[1:]]
         certa = sum(abs(100//(2*(a-b) or 1)) for a, b in zip(self.certa, lugar))
         self.bloco.conta_pecas(certa)
+        INVENTARIO.score(casa=self.certa, carta=src_id, move="DROP", ponto=certa, valor=0)
 
 class Bloco(Elemento):
     def __init__(self, img, nx=4, ny=4, w=400, h=400, style=None, **kwargs):
@@ -95,6 +99,7 @@ class Bloco(Elemento):
             width=2*w+nx*10, height='%dpx'%(h+ny*10+100))
         _style.update(style) if style else None
         Elemento.__init__(self, img="",style=_style, **kwargs)
+        self.repete = 0
         self.img = img
         *self.size = w, h
         self.dim = nx, ny, w, h
@@ -111,6 +116,8 @@ class Bloco(Elemento):
         self.inicia_de_novo()
 
     def inicia_de_novo(self):
+        #INVENTARIO.score(casa=self.img, carta=self.dim[0]*100+self.dim[1],
+        #move="BLOCO", ponto=self.repete, valor=0)
         nx, ny,w, h = self.dim
         self.tela.html = self.suporte.html = self.folha.html = self.contagem.html = ""
         self.tela <= self.suporte
@@ -130,6 +137,7 @@ class Bloco(Elemento):
         for pos, tx in enumerate(desordem):
             Folha(self, pos%nx, pos//nx, int(tx)%nx, int(tx)//nx,
                     size=dict(width=w//nx, height=h/ny))
+        self.repete += 1
 
     def conta_pecas(self, valor_peca):
         self.pecas_colocadas += [valor_peca//10]
