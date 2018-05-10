@@ -16,9 +16,10 @@ def avaliar(you):
         for prefixo in verbo:
             pontuacao += peso if prefixo in you else 0 
     return pontuacao
+    
             
     
-avaliar(historia)
+print(avaliar(historia))
     
     
     
