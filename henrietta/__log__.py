@@ -41,3 +41,7 @@ XXXX - executa_acao if error else lambda self.error - XXXXTraceback (most recent
     SUPERPYTHON.scorer(data) if SUPYGIRLS else None
 NameError: name 'SUPYGIRLS' is not defined
 XXXX - executa_acao if error else lambda self.error - XXXX
+ module <string> line 120
+  move="BLOCO", ponto=self.repete, valor=0)
+                                          ^
+SyntaxError: invalid syntax
