@@ -147,7 +147,7 @@ class Bloco(Elemento):
         self.contagem.html = str(self.pecas_colocadas)
         if len(self.pecas_colocadas) >= len(self.folhas):
             if sum(self.pecas_colocadas)>= 20*len(self.folhas):
-                alert("A resposta esta certa.")
+                alert("A resposta está certa.")
                 self.vai()
                 INVENTARIO.score(
                     casa=self.img, carta=self.repete, _level=1,
@@ -163,7 +163,7 @@ class Puzzle:
     def __init__(self):
         self.cena = Cena(wod)
         self.sai = Cena(sai)
-        self.puzzle = Bloco(oce, 2, 2, style=dict(left=10, top=100))
+        self.puzzle = Bloco(oce, 4, 4, style=dict(left=10, top=100))
         self.puzzle.entra(self.cena)
         self.puzzle.vai = self.sai.vai
         self.cena.vai()
