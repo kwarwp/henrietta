@@ -147,7 +147,7 @@ class Bloco(Elemento):
         self.contagem.html = str(self.pecas_colocadas)
         if len(self.pecas_colocadas) >= len(self.folhas):
             if sum(self.pecas_colocadas)>= 20*len(self.folhas):
-                alert("A resposta esta certa.")
+                alert("A resposta está certa.")
                 self.vai()
                 INVENTARIO.score(
                     casa=self.img, carta=self.repete, _level=1,
