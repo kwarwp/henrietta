@@ -1,6 +1,6 @@
 # henrietta.natalia.main.py
 historia = "eu friccionei a pedra e gerou fogo"
-verbos_altos = ["ger", "atrit", "roÃÂÃÂ§", "direcion", "friccion", "elev", "decid", "faz", "concl", "us",
+verbos_altos = ["ger", "atrit", "roÃÂÃÂÃÂÃÂ§", "direcion", "friccion", "elev", "decid", "faz", "concl", "us",
                 "remanej" ,"erg", "suspend", "ate", "esfreg", "trisc"] 
 verbos_altos ==  3
 verbos_medios = ["bat", "gir", "coloc", "manipul", "mov", "surg", "peg", "levant", "bat"]
