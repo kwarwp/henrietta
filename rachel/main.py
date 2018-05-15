@@ -37,6 +37,10 @@ RAQUETE = "http://padelcristalia.com/public/uploads/padelcristalia/logopala.png"
 LUVAS = "https://static.vecteezy.com/system/resources/previews/000/143/644/non_2x/boxing-gloves-vector.png"
 SALATEMPLO1 = "https://i.imgur.com/kmLevtL.jpg"
 SALATEMPLO2 = "https://i.imgur.com/kmLevtL.jpg"
+SALATEMPLO3 = "https://i.imgur.com/kmLevtL.jpg"
+SALATEMPLO4 = "https://i.imgur.com/kmLevtL.jpg"
+SALATEMPLO5 = "https://i.imgur.com/kmLevtL.jpg"
+SALATEMPLO6 = "https://i.imgur.com/kmLevtL.jpg"
 CINZA = "https://cdn.simplo7.net/static/7106/sku/tricoline-lisa-100-algodao-tricoline-lisa-100-algodao-cinza-1921-50cm-x-1-50mt--p-1502305300683.jpg"
 OCE0 = "https://imgur.com/YA5Gaa3"
 OCE1 = "https://imgur.com/a4RpoKz"
@@ -60,16 +64,22 @@ class Cenatemplo():
         self.templo.meio = self.corredor
         self.cinza1 = Cena(img=wood)
         self.cinza2 = Cena(img=wood)
+        self.cinza3 = Cena(img=wood)
+        self.cinza4 = Cena(img=wood)
+        self.cinza5 = Cena(img=wood)
+        self.cinza6 = Cena(img=wood)
         self.salatemplo1 = Cena(img=SALATEMPLO1)
         self.cinza1.esquerda = self.salatemplo1
         self.salatemplo2 = Cena(img=SALATEMPLO2)
+        self.salatemplo3 = Cena(img=SALATEMPLO3)
+        self.salatemplo4 = Cena(img=SALATEMPLO4)
         self.salatemplo1.direita = self.corredor
         self.salatemplo2.direita = self.corredor
         peixe = Elemento(img=AQUARIO,tit="peixe",style=dict(left=100, top=160, width=60, height=200))
         
         #self.quebra_cabeca_oceano = Cena(img=OCE0,img=OCE1,img=OCE2,img=OCE3,img=OCE4,img=OCE5,img=OCE6,img=OCE7,img=OCE8,img=OCE9,img=OCE10,img=OCE11)
         def conta_historia(*_):
-            historia = input("Conte aqui a sua história")
+            historia = input("Conte aqui a sua histÃ³ria")
             palavras = len(historia.split())
             temas = "peix aqu conch templo".split()
             tema = sum(1 for palavra in temas if palavra in historia)
@@ -83,7 +93,7 @@ class Cenatemplo():
         oceano.vai = self.cinza1.vai
         #oceano.vai
         
-        #quebra_cabeca_oceano = Elemento(img=,tit="quebra_cabeÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ§a_oceano",style=dict(left=100, top=160, width=60, height=200))
+        #quebra_cabeca_oceano = Elemento(img=,tit="quebra_cabeÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ§a_oceano",style=dict(left=100, top=160, width=60, height=200))
         quebra_cabeca_oceano = Bloco(OCEANO, 2, 2, vai=self.salatemplo1.vai)
         quebra_cabeca_oceano.entra(self.cinza1)
         Toceano = Texto(self.cinza1,"Monte o quebra cabeca e entre na sala.")
@@ -113,8 +123,8 @@ class Cenatemplo():
         floresta.vai = self.cinza2.vai
         #oceano.vai
         
-        #quebra_cabeca_oceano = Elemento(img=,tit="quebra_cabeÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ§a_oceano",style=dict(left=100, top=160, width=60, height=200))
-        quebra_cabeca_floresta = Bloco(FLORESTA, 4, 4, vai=self.salatemplo2.vai)
+        #quebra_cabeca_oceano = Elemento(img=,tit="quebra_cabeÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ§a_oceano",style=dict(left=100, top=160, width=60, height=200))
+        quebra_cabeca_floresta = Bloco(FLORESTA, 3, 3, vai=self.salatemplo2.vai)
         quebra_cabeca_floresta.entra(self.cinza2)
         Tfloresta = Texto(self.cinza2,"Monte o quebra cabeca e entre na sala.")
         #quebra_cabeca_oceano.vai = Toceano.vai
@@ -131,7 +141,7 @@ class Cenatemplo():
         passaros = Elemento(img=PASSAROS,tit="passaros",style=dict(left=300, top=160, width=60, height=200))
         passaros.entra(self.salatemplo2)
             
-        macaco = Elemento(img=MACACO,tit="alga",style=dict(left=100, top=160, width=60, height=200))
+        macaco = Elemento(img=MACACO,tit="macaco",style=dict(left=100, top=160, width=60, height=200))
         macaco.entra(self.salatemplo2)
         texto = "Conte uma historia que utilize a imagem do quebra cabeca"
         texto += " com as imagens da sala e ganhe um premio"
@@ -142,8 +152,113 @@ class Cenatemplo():
 
         #floresta = 
         self.templo.vai()
+    
+        musica = Elemento(img=MUSICA, tit="musica", style=dict(left=260, top=160, width=60, height=200))
+        musica.entra(self.corredor)
+        musica.vai = self.cinza3.vai
+        #oceano.vai
+        
+        #quebra_cabeca_oceano = Elemento(img=,tit="quebra_cabeÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ§a_oceano",style=dict(left=100, top=160, width=60, height=200))
+        quebra_cabeca_musica = Bloco(MUSICA, 4, 4, vai=self.salatemplo3.vai)
+        quebra_cabeca_musica.entra(self.cinza3)
+        Tmusica = Texto(self.cinza3,"Monte o quebra cabeca e entre na sala.")
+        #quebra_cabeca_oceano.vai = Toceano.vai
+        headphones = Elemento(img=HEADPHONES,tit="Headphones",style=dict(left=50, top=160, width=60, height=200))
+        headphones.entra(self.salatemplo3)
+        headphones.vai = conta_historia
+        
+        violao = Elemento(img=VIOLAO,tit="violao",style=dict(left=200, top=160, width=60, height=200))
+        violao.entra(self.salatemplo3)
+        
+        chocalho = Elemento(img=CHOCALHO,tit="chocalho",style=dict(left=100, top=160, width=60, height=200))
+        chocalho.entra(self.salatemplo3)
+        
+        tambor = Elemento(img=TAMBOR,tit="tambor",style=dict(left=300, top=130, width=30, height=200))
+        tambor.entra(self.salatemplo3)
+        texto = "Conte uma historia que utilize a imagem do quebra cabeca"
+        texto += " com as imagens da sala e ganhe um premio"
+        
+            
+
+        Hoceano = Texto(self.salatemplo3,'',texto)
+        Hoceano.vai()
+
+        #floresta = 
+        self.templo.vai()
+    
+       
+        museu = Elemento(img=MUSEU, tit="museu", style=dict(left=530, top=160, width=60, height=200))
+        museu.entra(self.corredor)
+        museu.vai = self.cinza4.vai
+        #oceano.vai
+        
+        #quebra_cabeca_oceano = Elemento(img=,tit="quebra_cabeÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ§a_oceano",style=dict(left=100, top=160, width=60, height=200))
+        quebra_cabeca_museu = Bloco(MUSEU, 5, 5, vai=self.salatemplo4.vai)
+        quebra_cabeca_museu.entra(self.cinza4)
+        Tmuseu = Texto(self.cinza4,"Monte o quebra cabeca e entre na sala.")
+        #quebra_cabeca_oceano.vai = Toceano.vai
+        coroa = Elemento(img=COROA,tit="coroa",style=dict(left=50, top=160, width=60, height=200))
+        coroa.entra(self.salatemplo4)
+        coroa.vai = conta_historia
+        
+        vaso = Elemento(img=VASO,tit="vaso",style=dict(left=200, top=160, width=60, height=200))
+        vaso.entra(self.salatemplo4)
+        
+        relogio = Elemento(img=RELOGIO,tit="relogio",style=dict(left=100, top=160, width=60, height=200))
+        relogio.entra(self.salatemplo4)
+        
+        luneta = Elemento(img=LUNETA,tit="luneta",style=dict(left=300, top=130, width=60, height=200))
+        luneta.entra(self.salatemplo4)
+        texto = "Conte uma historia que utilize a imagem do quebra cabeca"
+        texto += " com as imagens da sala e ganhe um premio"
+        
+            
+
+        Hoceano = Texto(self.salatemplo4,'',texto)
+        Hoceano.vai()
+
+        #floresta = 
+        self.templo.vai()
+        
+        cozinha = Elemento(img=COZINHA, tit="cozinha", style=dict(left=530, top=160, width=60, height=200))
+        cozinha.entra(self.corredor)
+        cozinha.vai = self.cinza5.vai
+        #oceano.vai
+        
+        #quebra_cabeca_oceano = Elemento(img=,tit="quebra_cabeÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ§a_oceano",style=dict(left=100, top=160, width=60, height=200))
+        quebra_cabeca_cozinha = Bloco(COZINHA, 5, 5, vai=self.salatemplo5.vai)
+        quebra_cabeca_cozinha.entra(self.cinza5)
+        Tcozinha = Texto(self.cinza5,"Monte o quebra cabeca e entre na sala.")
+        #quebra_cabeca_oceano.vai = Toceano.vai
+        cozinheira = Elemento(img=COZINHEIRA,tit="cozinheira",style=dict(left=50, top=160, width=60, height=200))
+        cozinheira.entra(self.salatemplo5)
+        cozinheira.vai = conta_historia
+        
+        cadeira = Elemento(img=CADEIRA,tit="cadeira",style=dict(left=200, top=160, width=60, height=200))
+        cadeira.entra(self.salatemplo5)
+        
+        panela = Elemento(img=PANELA,tit="panela",style=dict(left=100, top=160, width=60, height=200))
+        panela.entra(self.salatemplo5)
+        
+        fogao = Elemento(img=FOGAO,tit="fogao",style=dict(left=300, top=130, width=60, height=200))
+        fogao.entra(self.salatemplo5)
+        texto = "Conte uma historia que utilize a imagem do quebra cabeca"
+        texto += " com as imagens da sala e ganhe um premio"
+        
+            
+
+        Hoceano = Texto(self.salatemplo5,'',texto)
+        Hoceano.vai()
+
+        #floresta = 
+        self.templo.vai()
+
+    
+        
         
 if __name__ == "__main__":
     teste = Cenatemplo()
     
     
+     
+        
