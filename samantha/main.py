@@ -1,4 +1,5 @@
 Historia = "Eu peguei o oculos"
+d = historia.split()
 
 sujeito = ["eu"]
 verbo = ["pegu","cort","bat"]
@@ -22,10 +23,13 @@ estruturax = [(3,estrutura1), (2,estrutura2), (2,estrutura3), (1,estrutura4)]
 def valora(arq):
     for estrutura in estruturax:
         for sentenca in estrutura:
-            if sujeito[0], verbo[1], objeto[2]
+            if 
                 print(3)
-            elif sujeito[0], objeto[1], verbo[2]
+            elif 
                 print(2)
+                
+            else
+                print(1)
                 
 valora(historia)
     
