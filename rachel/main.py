@@ -73,6 +73,8 @@ class Cenatemplo():
         self.salatemplo2 = Cena(img=SALATEMPLO2)
         self.salatemplo3 = Cena(img=SALATEMPLO3)
         self.salatemplo4 = Cena(img=SALATEMPLO4)
+        self.salatemplo5 = Cena(img=SALATEMPLO5)
+        self.salatemplo6 = Cena(img=SALATEMPLO6)
         self.salatemplo1.direita = self.corredor
         self.salatemplo2.direita = self.corredor
         peixe = Elemento(img=AQUARIO,tit="peixe",style=dict(left=100, top=160, width=60, height=200))
@@ -220,7 +222,7 @@ class Cenatemplo():
         #floresta = 
         self.templo.vai()
         
-        cozinha = Elemento(img=COZINHA, tit="cozinha", style=dict(left=630, top=160, width=60, height=200))
+        cozinha = Elemento(img=COZINHA, tit="cozinha", style=dict(left=680, top=160, width=60, height=200))
         cozinha.entra(self.corredor)
         cozinha.vai = self.cinza5.vai
         #oceano.vai
