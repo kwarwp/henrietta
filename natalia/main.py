@@ -22,7 +22,7 @@ verbos_altos ==  3
 verbos_medios = ["bat", "gir", "colo", "manipul", "mov", "surg", "peg", "levant", "bat"]
 verbos_medios ==  2
 
-verbos_fracos = ["rod", "bot", "sub", "pux", "form", "tent", "clic", "abaix", "mex", "encost", "rel"] 
+verbos_fracos = ["rod", "bot", "sub", "pux", "form", "tent", "cli", "abaix", "mex", "encost", "rel"] 
 verbos_fracos ==  1
 verbos = [ (3,verbos_altos),(2,verbos_medios),(1,verbos_fracos)]
 
@@ -49,11 +49,13 @@ class Estados:
         self.pedra.entra(self.fantasma)
         alert(avaliar(resposta))
     def fogo_galhos(self, *_):
-        input("voce fez fogo usando galhos! como vc fez?")
+        resposta=input("voce fez fogo usando galhos! como vc fez?")
         self.galhos.entra(self.fantasma)
+        alert(avaliar(respostas))
     def fogo_oculos(self, *_):
-        input("voce fez fogo usando oculos! como vc fez?")
+        respostas=input("voce fez fogo usando oculos! como vc fez?")
         self.oculos.entra(self.fantasma)
+        alert(avaliar(respostas))
 
 def avaliar(you):
     pontuacao = 0
