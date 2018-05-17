@@ -2,6 +2,7 @@
 from _spy.vitollino.main import Cena, Texto, Elemento, STYLE
 from _spy.vitollino.main import INVENTARIO as inv
 from soraya.main import Bloco
+from browser import alert
 STYLE["width"] = 600
 STYLE["height"] = "600px"
 
@@ -18,7 +19,7 @@ historia = "eu friccionei a pedra e gerou fogo"
 verbos_altos = ["ger", "atrit", "roç", "direcion", "friccion", "elev", "decid", "faz", "concl", "us",
                 "remanej" ,"erg", "suspend", "ate", "esfreg", "trisc"] 
 verbos_altos ==  3
-verbos_medios = ["bat", "gir", "coloc", "manipul", "mov", "surg", "peg", "levant", "bat"]
+verbos_medios = ["bat", "gir", "colo", "manipul", "mov", "surg", "peg", "levant", "bat"]
 verbos_medios ==  2
 
 verbos_fracos = ["rod", "bot", "sub", "pux", "form", "tent", "clic", "abaix", "mex", "encost", "rel"] 
@@ -44,8 +45,9 @@ class Estados:
         ocu.vai = self.fogo_oculos
         
     def fogo_pedra(self, *_):
-        input("Voce fez fogo usando pedras! Como vc fez?")
+        resposta=input("Voce fez fogo usando pedras! Como vc fez?")
         self.pedra.entra(self.fantasma)
+        alert(avaliar(resposta))
     def fogo_galhos(self, *_):
         input("voce fez fogo usando galhos! como vc fez?")
         self.galhos.entra(self.fantasma)
@@ -53,16 +55,14 @@ class Estados:
         input("voce fez fogo usando oculos! como vc fez?")
         self.oculos.entra(self.fantasma)
 
-
-
-
-
 def avaliar(you):
     pontuacao = 0
     for peso,verbo in verbos:
         for prefixo in verbo:
             pontuacao += peso if prefixo in you else 0 
     return pontuacao
+    
+
     
             
     
