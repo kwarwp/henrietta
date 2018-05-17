@@ -67,6 +67,7 @@ class Suporte:
         bloco.suporte <= self.folha
         self.folha.ondragover = self.drag_over
         self.folha.ondrop = self.drop
+        self.folha.onclick =lambda *_: False
         self.bloco = bloco
 
     def recebe(self, folha, suporte):
@@ -97,16 +98,17 @@ class Suporte:
 
 class Bloco(Elemento):
     def __init__(self, img, nx=4, ny=4, w=400, h=400, style=None, **kwargs):
-        _style = dict(position="absolute", left=10, top=20,
+        self.style = _style = dict(position="absolute", left=10, top=20,
             width=2*w+nx*10, height='%dpx'%(h+ny*10+100))
         _style.update(style) if style else None
-        Elemento.__init__(self, img="",style=_style, **kwargs)
-        self.repete = 0
+        #Elemento.__init__(self, img="",style=_style, **kwargs)
+        self.repete = self.xy = 0
+        self.scorer = {}
         self.img = img
         *self.size = w, h
         self.dim = nx, ny, w, h
         self.ordem = list(range(nx*ny))
-        self.tela = self.elt  # document["pydiv"]
+        self.tela = self.elt = html.DIV(style=style)
         self.suporte = html.DIV(
             style=dict(position="absolute",
             left=10, top=20, width=w, height='%dpx'%h))
@@ -116,6 +118,9 @@ class Bloco(Elemento):
         self.contagem = html.DIV(style=dict(position="absolute",
                                  left=20, top=h+80))
         self.inicia_de_novo()
+        
+    def entrar(self,_cena):
+        _cena <= self.tela
 
     def inicia_de_novo(self):
         INVENTARIO.score(
@@ -147,8 +152,8 @@ class Bloco(Elemento):
         self.contagem.html = str(self.pecas_colocadas)
         if len(self.pecas_colocadas) >= len(self.folhas):
             if sum(self.pecas_colocadas)>= 20*len(self.folhas):
-                alert("A resposta está certa.")
-                self.vai()
+                alert("A resposta esta certa.")
+                self.sair()
                 INVENTARIO.score(
                     casa=self.img, carta=self.repete, _level=1,
                     move="CONTA", ponto=sum(self.pecas_colocadas), valor=0)
