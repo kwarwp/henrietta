@@ -153,7 +153,7 @@ class Bloco(Elemento):
         if len(self.pecas_colocadas) >= len(self.folhas):
             if sum(self.pecas_colocadas)>= 20*len(self.folhas):
                 alert("A resposta esta certa.")
-                self.sair()
+                self.vai()
                 INVENTARIO.score(
                     casa=self.img, carta=self.repete, _level=1,
                     move="CONTA", ponto=sum(self.pecas_colocadas), valor=0)
