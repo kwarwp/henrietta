@@ -97,11 +97,12 @@ class Suporte:
                          ponto=certa, valor=self.bloco.folhas[src_id].casa)
 
 class Bloco(Elemento):
-    def __init__(self, img, nx=4, ny=4, w=400, h=400, style={}, **kwargs):
+    def __init__(self, img, nx=4, ny=4, w=400, h=400, style={}, vai=lambda *_: None **kwargs):
         self.style = _style = dict(position="absolute", left=10, top=20,
             width=2*w+nx*10, height='%dpx'%(h+ny*10+100))
         _style.update(style) if style else None
         #Elemento.__init__(self, img="",style=_style, **kwargs)
+        self.vai = vai
         self.repete = self.xy = 0
         self.scorer = {}
         self.img = img
