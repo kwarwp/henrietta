@@ -80,6 +80,8 @@ SUJEITO = {"eu", "jornal", "elefante"}
 VERBO = {"fui", "pesquei", "colhi", "fiz", "peguei", "pegar"}
 OBJETO = {"oculos", "galho", "lupa"}
 TAGGER = {tag: clazz for tag, clazz in zip(list("SVO"), (SUJEITO, VERBO, OBJETO))}
+print("TAGGER", TAGGER)
+
 PONTUA = "!,.?:"
 
 historia = "eu  fui  ao  barco ontem! pesquei dois peixes e depois de pegar um galho fiz fogo."
