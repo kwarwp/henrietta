@@ -23,7 +23,7 @@ ES5 = "OSV"
 ES6 = "OVS"
 IMP = "VO"
 
-SYNTAX = [ES1, ES2, ES3, ES4, ES5, ES6]
+SYNTAX = [ES6, ES5, ES4, ES3, ES2, ES1]
 
 """ As variÃ¡veis: ESTRUTURAX referem-se Ã s sentenÃ§as alvo, ou seja, as que deseja coletar.
      ESTRUTURA1 = Eu peguei o oculos. 3pts
@@ -77,14 +77,15 @@ responde(SUJEITO, historia)
 """
 
 SUJEITO = {"eu", "jornal", "elefante"}
-VERBO = {"fui", "pesquei", "colhi", "fiz", "peguei", "pegar"}
-OBJETO = {"oculos", "galho", "lupa"}
+VERBO = {"fui", "pesquei", "colhi", "fiz", "peguei", "pegar", "nada"}
+OBJETO = {"oculos", "galho", "lupa", "lama"}
 TAGGER = {tag: clazz for tag, clazz in zip(list("SVO"), (SUJEITO, VERBO, OBJETO))}
 print("TAGGER", TAGGER)
 
 PONTUA = "!,.?:"
 
-historia = "eu  fui  ao  barco ontem! pesquei dois peixes e depois de pegar um galho fiz fogo."
+historia = "eu  fui  ao  barco ontem! pesquei dois peixes e depois de pegar um galho fiz fogo."+\
+"No rio, um elefante nadava na lama"
 
 
 def responde(item, item2, item3, tree):
@@ -102,15 +103,19 @@ def responde(item, item2, item3, tree):
     anytag = set(SUJEITO) | set(VERBO) | set(OBJETO)
     # vamos colocar as tags nas classes gramaticais
     tree_with_branches_and_tagged_berries = twbatb =[
-        [(tag, amora) for amora in branch for tag, samples in TAGGER.items() if amora in samples]
+        [(tag, amora) for amora in branch for tag, samples in TAGGER.items()
+        if any(sample in amora for sample in samples)]
         for branch in tree_with_branches_and_berries]
     print("responde marcador:", tree_with_branches_and_tagged_berries)
     # vamos passar a janela de 2, dar dois pontos se encontrar IMP
     count =sum([2 for branch in twbatb for  (a, _), (b, _) in zip(branch, branch[1:]) if a+b in IMP])
     print("implicit:", count)
-    count +=sum([pt for branch in twbatb for  (a, _), (b, _), (c, _) in zip(branch, branch[1:], branch[2:])
+    # vamos passar a janela de 3, dar  pontos correspondendo à posição que o synt. estiver no SYNTAX
+    count +=sum([pt+1 for branch in twbatb for  (a, _), (b, _), (c, _) in zip(branch, branch[1:], branch[2:])
                 for pt, syntagma in enumerate(SYNTAX) if a+b+c in syntagma])
     print("plus syntax:", count)
+    print("syntax", [a+b+c for branch in twbatb for  (a, _), (b, _), (c, _) in zip(branch, branch[1:], branch[2:])
+                for pt, syntagma in enumerate(SYNTAX) if a+b+c in syntagma])
 
     """    for amora in branch:
          if amora   in branch:
