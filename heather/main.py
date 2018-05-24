@@ -1,12 +1,12 @@
 
-""" Este algoritmo tem por intuito valorar as sentenças usuários da FonoComp Game"""
+""" Este algoritmo tem por intuito valorar as sentenÃ§as usuÃ¡rios da FonoComp Game"""
 
 SUJEITO = ["eu"]
 VERBO   = ["peg", "Tris","colh","rel","bat"]
 OBJETO  = ["o oculos", "a pedr", "cascalhos", "galho", "arvore", "lupa", "raios solares"]
 
-""" As variáveis: SUJEITO, VERBOS e OBJETOS remetem aos elementos que se esperam na construção das 
-  sentenças no game. De início tomamos por relevante frases simples (sujeito + verbo + objeto)."""
+""" As variÃ¡veis: SUJEITO, VERBOS e OBJETOS remetem aos elementos que se esperam na construÃ§Ã£o das 
+  sentenÃ§as no game. De inÃ­cio tomamos por relevante frases simples (sujeito + verbo + objeto)."""
   
 ESTRUTURA1 = [SUJEITO + VERBO + OBJETO]
 ESTRUTURA2 = [VERBO +SUJEITO + OBJETOS]
@@ -16,7 +16,7 @@ ESTRUTURA5 = [OBJETO + SUJEITO + VERBO]
 ESTRUTURA6 = [OBJETO + VERBO + SUJEITO]
 IMPLICITO  = [VERBO + OBJETO]
 
-    """ As variáveis: ESTRUTURAX referem-se às sentenças alvo, ou seja, as que deseja coletar.
+    """ As variÃ¡veis: ESTRUTURAX referem-se Ã s sentenÃ§as alvo, ou seja, as que deseja coletar.
          ESTRUTURA1 = Eu peguei o oculos. 3pts
          ESTRUTURA2 = Peguei eu o oculos. 2pts
          ESTRUTURA3 = Peguei o oculos eu. 1pts
@@ -47,8 +47,8 @@ historia = "eu  fui  ao  barco ontem"
 
 
 def responde(item, tree):
-     """#Função responsável por encontrar a estrutura, parear com a estrutura alvo, apontar o elemento não 
-     #encontrado e valorar a sentença.
+     """#FunÃ§Ã£o responsÃ¡vel por encontrar a estrutura, parear com a estrutura alvo, apontar o elemento nÃ£o 
+     #encontrado e valorar a sentenÃ§a.
        
        #Type: param: object(item: list; tree: string)
        """
