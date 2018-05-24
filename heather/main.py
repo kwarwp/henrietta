@@ -21,7 +21,9 @@ ES3 = "VOS"
 ES4 = "SOV"
 ES5 = "OSV"
 ES6 = "OVS"
-IMPLICITO = [VERBO + OBJETO]
+IMP = "VO"
+
+SYNTAX = [ES1, ES2, ES3, ES4, ES5, ES6]
 
 """ As variÃ¡veis: ESTRUTURAX referem-se Ã s sentenÃ§as alvo, ou seja, as que deseja coletar.
      ESTRUTURA1 = Eu peguei o oculos. 3pts
@@ -97,10 +99,16 @@ def responde(item, item2, item3, tree):
     tegged = []
     anytag = set(SUJEITO) | set(VERBO) | set(OBJETO)
     # vamos colocar as tags nas classes gramaticais
-    tree_with_branches_and_tagged_berries = [
+    tree_with_branches_and_tagged_berries = twbatb =[
         [(tag, amora) for amora in branch for tag, samples in TAGGER.items() if amora in samples]
         for branch in tree_with_branches_and_berries]
     print("responde marcador:", tree_with_branches_and_tagged_berries)
+    # vamos passar a janela de 2, dar dois pontos se encontrar IMP
+    count =sum([2 for branch in twbatb for  (a, _), (b, _) in zip(branch, branch[1:]) if a+b in IMP])
+    print("implicit:", count)
+    count +=sum([pt for branch in twbatb for  (a, _), (b, _), (c, _) in zip(branch, branch[1:], branch[2:])
+                for pt, syntagma in enumerate(SYNTAX) if a+b+c in syntagma])
+    print("plus syntax:", count)
 
     """    for amora in branch:
          if amora   in branch:
