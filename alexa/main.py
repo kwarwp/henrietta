@@ -1,6 +1,6 @@
 #O algoritimo a seguir tem por intuito valorar as sentencas geradas pelos usuarios da FonoComp Game
 
-
+DEBUG = False
 # As variaveis a seguir remetem a ao arranjo de cada frase
 
 ES1 = "SVO"
@@ -18,7 +18,6 @@ SUJEITO = {"eu", "jornal", "elefante"}
 VERBO = {"fui", "pesquei", "colhi", "fiz", "peguei", "pegar", "nada"}
 OBJETO = {"oculos", "galho", "lupa", "lama"}
 TAGGER = {tag: clazz for tag, clazz in zip(list("SVO"), (SUJEITO, VERBO, OBJETO))}
-print("TAGGER", TAGGER)
 
 PONTUA = "!,.?:"
 
@@ -33,7 +32,7 @@ def responde(item, item1, item2, tree):
         return remarcador_recursivo(_tree, pontua) if pontua else _tree
 
     tree = remarcador_recursivo(tree, list(PONTUA))
-    print("remarcador_recursivo:", tree)
+    print("remarcador_recursivo:", tree) if DEBUG else _
     # agora que todos os pontos viraram quebra de pagina (\n), podemos quebrar em frases
     # aproveitamos para quebrar cada frase em palavras
     tree_with_branches_and_berries = twbb = [branch.split() for branch in tree.split('\n')]
@@ -47,24 +46,26 @@ def responde(item, item1, item2, tree):
            [(tag, amora) for amora in branch for tag, samples in TAGGER.items()
            if any(sample in amora for sample in samples)]
            for branch in tree_with_branches_and_berries]
-    print("responde marcador:", tree_with_branches_and_tagged_berries)
+    print("responde marcador:", tree_with_branches_and_tagged_berries) if DEBUG else _
     # vamos passar a janela de 2, dar dois pontos se encontrar IMP
     
     
     count =sum([2 for branch in twbatb for  (a, _), (b, _) in zip(branch, branch[1:]) if a+b in IMP])
-    print("implicit:", count)
+    print("implicit:", count) if DEBUG else _
     # vamos passar a janela de 3, dar  pontos correspondendo ÃÂÃÂÃÂÃÂ  posiÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂÃÂ£o que o synt. estiver no SYNTAX
     count +=sum([pt+1 for branch in twbatb for  (a, _), (b, _), (c, _) in zip(branch, branch[1:], branch[2:])
               for pt, syntagma in enumerate(SYNTAX) if a+b+c in syntagma])
-    print("plus syntax:", count)
+    print("plus syntax:", count) if DEBUG else _
     
     def def_sintax():
                print("syntax", [a+b+c for branch in twbatb for  (a, _), (b, _), (c, _) in zip(branch, branch[1:], branch[2:])
-                        for pt, syntagma in enumerate(SYNTAX) if a+b+c in syntagma])
+                        for pt, syntagma in enumerate(SYNTAX) if a+b+c in syntagma])  if DEBUG else _
 
 if __name__ == "__main__":
     #main()
     #Bloco(oce, 3, 3)
+    DEBUG = True
+    print("TAGGER", TAGGER)
     responde(SUJEITO, VERBO, OBJETO,historia)
    
 
