@@ -32,3 +32,4 @@
 "c08aaf08": {"author_nick": "carlo", "author_name": "carlo emmanoel", "author_email": "carlo@ufrj.br", "author_org": "LABASE", "author_site": "labase.selfip.org", "author_public": "on"},[
   {'doc_id': '45c7817e', 'carta': 202, 'casa': 'https://i.imgur.com/oDqeaBp.jpg', 'move': 'BLOCO', 'ponto': 0, 'valor': 0, '_level': 1, 'tempo': 1527274750120},
     {'doc_id': '45c7817e', 'carta': 'folha_1_1', 'casa': (1, 1), 'move': 'DROP', 'ponto': 200, 'valor': 'casa_1_1', '_level': 2, 'tempo': 1527274847392},
+    {'doc_id': '45c7817e', 'carta': 'folha_1_1', 'casa': (1, 1), 'move': 'DROP', 'ponto': 200, 'valor': 'casa_1_1', '_level': 2, 'tempo': 1527274853034},
