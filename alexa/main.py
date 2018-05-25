@@ -26,7 +26,7 @@ historia = "eu  fui  ao  barco ontem! pesquei dois peixes e depois de pegar um g
 "No rio, um elefante nadava na lama"
 
 
-def responde(tree):
+def responde(item, item1, item2, tree):
     # quebra em frases, toda a pontucao vira quebr de linha
     def remarcador_recursivo(_tree, pontua):
         _tree = _tree.replace(pontua.pop(), '\n')
@@ -40,26 +40,33 @@ def responde(tree):
     tegged = []
     anytag = set(SUJEITO) | set(VERBO) | set(OBJETO)
     # vamos colocar as tags nas classes gramaticais
+    
+    
+    
     tree_with_branches_and_tagged_berries = twbatb =[
-        [(tag, amora) for amora in branch for tag, samples in TAGGER.items()
-        if any(sample in amora for sample in samples)]
-        for branch in tree_with_branches_and_berries]
+           [(tag, amora) for amora in branch for tag, samples in TAGGER.items()
+           if any(sample in amora for sample in samples)]
+           for branch in tree_with_branches_and_berries]
     print("responde marcador:", tree_with_branches_and_tagged_berries)
     # vamos passar a janela de 2, dar dois pontos se encontrar IMP
+    
+    
     count =sum([2 for branch in twbatb for  (a, _), (b, _) in zip(branch, branch[1:]) if a+b in IMP])
-    print("implicit:", count)
+              print("implicit:", count)
     # vamos passar a janela de 3, dar  pontos correspondendo ÃÂÃÂ  posiÃÂÃÂ§ÃÂÃÂ£o que o synt. estiver no SYNTAX
     count +=sum([pt+1 for branch in twbatb for  (a, _), (b, _), (c, _) in zip(branch, branch[1:], branch[2:])
-                for pt, syntagma in enumerate(SYNTAX) if a+b+c in syntagma])
-    print("plus syntax:", count)
-    print("syntax", [a+b+c for branch in twbatb for  (a, _), (b, _), (c, _) in zip(branch, branch[1:], branch[2:])
-                for pt, syntagma in enumerate(SYNTAX) if a+b+c in syntagma])
+              for pt, syntagma in enumerate(SYNTAX) if a+b+c in syntagma])
+              print("plus syntax:", count)
+    
+    def def_sintax():
+               print("syntax", [a+b+c for branch in twbatb for  (a, _), (b, _), (c, _) in zip(branch, branch[1:], branch[2:])
+                        for pt, syntagma in enumerate(SYNTAX) if a+b+c in syntagma])
 
 if __name__ == "__main__":
     #main()
     #Bloco(oce, 3, 3)
-    responde(historia)
-
+    responde(SUJEITO, VERBO, OBJETO,historia)
+   
 
 
 """
