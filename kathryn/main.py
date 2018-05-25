@@ -22,13 +22,19 @@ class Texto(Text):
         ev.stopPropagation()
         return False
         ...
-
+    @staticmethod
+    def put_area():
+        Popup.POP.area = html.DIV()
+        Popup.POP.div <= Popup.POP.area
+        Texto.put_area = lambda *_: None
 
     def vai(self, ev=NoEv()):
         # self.elt = Popup.POP.popup
         ev.stopPropagation()
         self.cena.elt <= Popup.POP.popup
-        Popup.POP.tit = self.area
+        Texto.put_area()
+        Popup.POP.area.html = ''
+        Popup.POP.area <= self.area
         Popup.POP.mostra(lambda *_: None, self.tit, self.txt)
         Popup.POP.esconde = self.esconde
         return False
