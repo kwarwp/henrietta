@@ -48,7 +48,7 @@ def responde(item, item2, item3, tree):
     # vamos passar a janela de 2, dar dois pontos se encontrar IMP
     count =sum([2 for branch in twbatb for  (a, _), (b, _) in zip(branch, branch[1:]) if a+b in IMP])
     print("implicit:", count)
-    # vamos passar a janela de 3, dar  pontos correspondendo ÃÂ  posiÃÂ§ÃÂ£o que o synt. estiver no SYNTAX
+    # vamos passar a janela de 3, dar  pontos correspondendo ÃÂÃÂ  posiÃÂÃÂ§ÃÂÃÂ£o que o synt. estiver no SYNTAX
     count +=sum([pt+1 for branch in twbatb for  (a, _), (b, _), (c, _) in zip(branch, branch[1:], branch[2:])
                 for pt, syntagma in enumerate(SYNTAX) if a+b+c in syntagma])
     print("plus syntax:", count)
@@ -56,7 +56,7 @@ def responde(item, item2, item3, tree):
                 for pt, syntagma in enumerate(SYNTAX) if a+b+c in syntagma])
 
 
-responde(SUJEITO, VERBO, OBJETO, historia)
+responde()
 
 """
 SUJEITO = ["eu"]
