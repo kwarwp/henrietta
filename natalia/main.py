@@ -5,7 +5,7 @@ from _spy.vitollino.main import INVENTARIO as inv
 from soraya.main import Bloco
 from browser import alert
 
-from heather.main import responde
+
 STYLE["width"] = 600
 STYLE["height"] = "600px"
 
