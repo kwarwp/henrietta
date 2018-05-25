@@ -1,81 +1,79 @@
-#O algoritimo a seguir tem por intuito valorar as sentencas geradas pelos usuarios da FonoComp Game
+from _spy.vitollino.main import Cena, Texto, Elemento, STYLE
+from _spy.vitollino.main import INVENTARIO as inv
+from soraya.main import Bloco
+from alexa.main import responde
+from browser import alert
+STYLE["width"] = 600
+STYLE["height"] = "600px"
 
+TEMPLO = "http://3.bp.blogspot.com/-UsnGAupu3XM/VHvU2M5BHUI/AAAAAAAAdCE/UKbq_5dTM7k/s1600/IMG_6098.JPG"
+CORREDOR = "http://i.muyinteresante.com.mx/dam/sociedad/historia/17/03/8/rabbit-hole-700-year-old-secret-knights-templar-cave-network-8-58c006f4a30df__880.jpg.imgo.jpg"
+OCEANO = "https://freeclipartspot.com//storage/upload/ocean-clip-art/ocean-clip-art-51.jpg"
+ALGA = "https://i.pinimg.com/originals/70/68/5f/70685fa634c3bb82a8eb5771a0a869ed.png"
+CONCHA = "http://www.mat.uc.pt/~picado/conchas/imagens/p10.png"
+AQUARIO = "https://www.tenstickers.pt/autocolantes-decorativos/img/preview/autocolante-decorativo-infantil-peixe-aquario-3634.png"
+TRANSPARENTE = "http://1.bp.blogspot.com/-eK24sreQNsg/Uvy1AT5iVSI/AAAAAAAAAGo/TRHh_nkqhVY/s1600/fundo-blog.png"
+FLORESTA = "https://st.depositphotos.com/1718692/2958/i/950/depositphotos_29580473-stock-photo-stones-and-tree-roots-in.jpg"
+OCULOS = "https://www.dvosky.com/media/catalog/product/cache/1/image/1200x1200/9df78eab33525d08d6e5fb8d27136e95/d/v/dvsk1003-preto-prata.png"
+historia = "eu friccionei a pedra e gerou fogo"
+verbos_altos = ["ger", "atrit", "roÃÂ§", "direcion", "friccion", "elev", "decid", "faz", "concl", "us",
+                "remanej" ,"erg", "suspend", "ate", "esfreg", "trisc"] 
+verbos_altos ==  3
+verbos_medios = ["bat", "gir", "colo", "manipul", "mov", "surg", "peg", "levant", "bat"]
+verbos_medios ==  2
 
-# As variaveis a seguir remetem a ao arranjo de cada frase
+verbos_fracos = ["rod", "bot", "sub", "pux", "form", "tent", "cli", "abaix", "mex", "encost", "rel"] 
+verbos_fracos ==  1
+verbos = [ (3,verbos_altos),(2,verbos_medios),(1,verbos_fracos)]
 
-ES1 = "SVO"
-ES2 = "VSO"
-ES3 = "VOS"
-ES4 = "SOV"
-ES5 = "OSV"
-ES6 = "OVS"
-IMP = "VO"
+class Estados:
+    def __init__(self):
+        floresta = Cena(FLORESTA)
+        self.fantasma = Cena()
+        floresta.vai()
+        self.galhos = gag = Elemento(img=TRANSPARENTE,tit="galhos", style=dict(
+            left=28, top=130, width=60, height="60px"))
+        gag.entra(floresta)
+        gag.vai = self.fogo_galhos
+        self.pedra = aqua = Elemento(img=TRANSPARENTE,tit="pedras", style=dict(
+            left=500, top=300, width=60, height="60px")) 
+        aqua.entra(floresta)
+        aqua.vai = self.fogo_pedra
+        self.oculos = ocu = Elemento(img=OCULOS, tit="OCULOS", style=dict(
+            left=28, top=130, width=60, height="60px"))
+        inv.bota(self.oculos)
+        ocu.vai = self.fogo_oculos
+        
+    def fogo_pedra(self, *_):
+        resposta=input("Voce fez fogo usando pedras! Como vc fez?")
+        self.pedra.entra(self.fantasma)
+        alert(avaliar(resposta)) 
+        alert(responde(remarcador_recursivo(resposta)))
+    def fogo_galhos(self, *_):
+        resposta=input("voce fez fogo usando galhos! como vc fez?")
+        
+        
+        self.galhos.entra(self.fantasma)
+        alert(avaliar(respostas))
+    def fogo_oculos(self, *_):
+        respostas=input("voce fez fogo usando oculos! como vc fez?")
+        
+        
+        self.oculos.entra(self.fantasma)
+        alert(avaliar(respostas))
 
-SYNTAX = [ES6, ES5, ES4, ES3, ES2, ES1]
+def avaliar(you):
+    pontuacao = 0
+    for peso,verbo in verbos:
+        for prefixo in verbo:
+            pontuacao += peso if prefixo in you else 0 
+    return pontuacao
+    
 
+    
+            
+    
 
-SUJEITO = {"eu", "jornal", "elefante"}
-VERBO = {"fui", "pesquei", "colhi", "fiz", "peguei", "pegar", "nada"}
-OBJETO = {"oculos", "galho", "lupa", "lama"}
-TAGGER = {tag: clazz for tag, clazz in zip(list("SVO"), (SUJEITO, VERBO, OBJETO))}
-print("TAGGER", TAGGER)
-
-PONTUA = "!,.?:"
-
-historia = "eu  fui  ao  barco ontem! pesquei dois peixes e depois de pegar um galho fiz fogo."+\
-"No rio, um elefante nadava na lama"
-
-
-def responde(item, item2, item3, tree):
-    # quebra em frases, toda a pontucao vira quebr de linha
-    def remarcador_recursivo(_tree, pontua):
-        _tree = _tree.replace(pontua.pop(), '\n')
-        return remarcador_recursivo(_tree, pontua) if pontua else _tree
-
-    tree = remarcador_recursivo(tree, list(PONTUA))
-    print("remarcador_recursivo:", tree)
-    # agora que todos os pontos viraram quebra de pagina (\n), podemos quebrar em frases
-    # aproveitamos para quebrar cada frase em palavras
-    tree_with_branches_and_berries = twbb = [branch.split() for branch in tree.split('\n')]
-    tegged = []
-    anytag = set(SUJEITO) | set(VERBO) | set(OBJETO)
-    # vamos colocar as tags nas classes gramaticais
-    tree_with_branches_and_tagged_berries = twbatb =[
-        [(tag, amora) for amora in branch for tag, samples in TAGGER.items()
-        if any(sample in amora for sample in samples)]
-        for branch in tree_with_branches_and_berries]
-    print("responde marcador:", tree_with_branches_and_tagged_berries)
-    # vamos passar a janela de 2, dar dois pontos se encontrar IMP
-    count =sum([2 for branch in twbatb for  (a, _), (b, _) in zip(branch, branch[1:]) if a+b in IMP])
-    print("implicit:", count)
-    # vamos passar a janela de 3, dar  pontos correspondendo ÃÂÃÂ  posiÃÂÃÂ§ÃÂÃÂ£o que o synt. estiver no SYNTAX
-    count +=sum([pt+1 for branch in twbatb for  (a, _), (b, _), (c, _) in zip(branch, branch[1:], branch[2:])
-                for pt, syntagma in enumerate(SYNTAX) if a+b+c in syntagma])
-    print("plus syntax:", count)
-    print("syntax", [a+b+c for branch in twbatb for  (a, _), (b, _), (c, _) in zip(branch, branch[1:], branch[2:])
-                for pt, syntagma in enumerate(SYNTAX) if a+b+c in syntagma])
 
 if __name__ == "__main__":
-    #main()
-    #Bloco(oce, 3, 3)
-    responde(OBJETO, VERBO, OBJETO, historia)
-
-
-
-"""
-SUJEITO = ["eu"]
-VERBO = ["peg", "Tris", "colh", "rel", "bat"]
-OBJETO = ["o oculos", "a pedr", "cascalhos", "galho", "arvore", "lupa", "raios solares"]
-
-ESTRUTURA1 = [SUJEITO + VERBO + OBJETO]
-ESTRUTURA2 = [VERBO + SUJEITO + OBJETO]
-ESTRUTURA3 = [VERBO + OBJETO + SUJEITO]
-ESTRUTURA4 = [SUJEITO + OBJETO + VERBO]
-ESTRUTURA5 = [OBJETO + SUJEITO + VERBO]
-ESTRUTURA6 = [OBJETO + VERBO + SUJEITO]
-IMPLICITO = [VERBO + OBJETO]"""
-
-    
-    
-    
-
+    Estados()
