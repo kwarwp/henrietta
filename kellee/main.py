@@ -10,7 +10,7 @@ def teorias():
     inicio = Cena(img=NEWTON)
     inicioe = Elemento(img=MACA, tit"Eis que a gravidade aparece", style = dict(left= 150,top=100, width=60, height=200,bottom=100))    
     lado1 = Cena(img=GALILEU, direita =inicio)
-    lado1_e = Elemento(img=ILUMINATTI, tit'O universo nÃ£o gira em torno de vocÃª nÃ£o,bb', style = dict(left= 150, top=100, width=60, height=200, bottom=100))
+    lado1_e = Elemento(img=ILUMINATTI, tit'O universo nÃÂ£o gira em torno de vocÃÂª nÃÂ£o,bb', style = dict(left= 150, top=100, width=60, height=200, bottom=100))
     
     inicio_e.entra(inicio)
     lado1_e.entra(lado1)
