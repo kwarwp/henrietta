@@ -55,8 +55,12 @@ def responde(item, item2, item3, tree):
     print("syntax", [a+b+c for branch in twbatb for  (a, _), (b, _), (c, _) in zip(branch, branch[1:], branch[2:])
                 for pt, syntagma in enumerate(SYNTAX) if a+b+c in syntagma])
 
+if __name__ == "__main__":
+    #main()
+    #Bloco(oce, 3, 3)
+    responde(OBJETO, VERBO, OBJETO, historia)
 
-responde()
+
 
 """
 SUJEITO = ["eu"]
