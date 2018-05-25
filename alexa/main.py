@@ -52,11 +52,11 @@ def responde(item, item1, item2, tree):
     
     
     count =sum([2 for branch in twbatb for  (a, _), (b, _) in zip(branch, branch[1:]) if a+b in IMP])
-              print("implicit:", count)
-    # vamos passar a janela de 3, dar  pontos correspondendo ÃÂÃÂ  posiÃÂÃÂ§ÃÂÃÂ£o que o synt. estiver no SYNTAX
+    print("implicit:", count)
+    # vamos passar a janela de 3, dar  pontos correspondendo ÃÂÃÂÃÂÃÂ  posiÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂÃÂ£o que o synt. estiver no SYNTAX
     count +=sum([pt+1 for branch in twbatb for  (a, _), (b, _), (c, _) in zip(branch, branch[1:], branch[2:])
               for pt, syntagma in enumerate(SYNTAX) if a+b+c in syntagma])
-              print("plus syntax:", count)
+    print("plus syntax:", count)
     
     def def_sintax():
                print("syntax", [a+b+c for branch in twbatb for  (a, _), (b, _), (c, _) in zip(branch, branch[1:], branch[2:])
