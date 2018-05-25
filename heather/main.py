@@ -1,20 +1,8 @@
-""" Este algoritmo tem por intuito valorar as sentenÃ§as usuÃ¡rios da FonoComp Game"""
+#O algoritimo a seguir tem por intuito valorar as sentencas geradas pelos usuarios da FonoComp Game
 
-SUJEITO = ["eu"]
-VERBO = ["peg", "Tris", "colh", "rel", "bat"]
-OBJETO = ["o oculos", "a pedr", "cascalhos", "galho", "arvore", "lupa", "raios solares"]
 
-""" As variÃ¡veis: SUJEITO, VERBOS e OBJETOS remetem aos elementos que se esperam na construÃ§Ã£o das 
-  sentenÃ§as no game. De inÃ­cio tomamos por relevante frases simples (sujeito + verbo + objeto)."""
+# As variaveis a seguir remetem a ao arranjo de cada frase
 
-ESTRUTURA1 = [SUJEITO + VERBO + OBJETO]
-ESTRUTURA2 = [VERBO + SUJEITO + OBJETO]
-ESTRUTURA3 = [VERBO + OBJETO + SUJEITO]
-ESTRUTURA4 = [SUJEITO + OBJETO + VERBO]
-ESTRUTURA5 = [OBJETO + SUJEITO + VERBO]
-ESTRUTURA6 = [OBJETO + VERBO + SUJEITO]
-IMPLICITO = [VERBO + OBJETO]
-# estes aqui ajudam
 ES1 = "SVO"
 ES2 = "VSO"
 ES3 = "VOS"
@@ -25,56 +13,6 @@ IMP = "VO"
 
 SYNTAX = [ES6, ES5, ES4, ES3, ES2, ES1]
 
-""" As variÃ¡veis: ESTRUTURAX referem-se Ã s sentenÃ§as alvo, ou seja, as que deseja coletar.
-     ESTRUTURA1 = Eu peguei o oculos. 3pts
-     ESTRUTURA2 = Peguei eu o oculos. 2pts
-     ESTRUTURA3 = Peguei o oculos eu. 1pts
-     ESTRUTURA4 = Eu o oculos peguei. 1pts
-     ESTRUTURA5 = O oculos eu peguei. 2pts
-     ESTRUTURA6 = O oculos peguei eu. 1pts
-     IMPLICITO  = Peguei o oculos.    3pt
-"""
-
-ESTRUTURAX = dict(E1="\u0053" + "\u0056" + "\u004F",
-                  E2="\u0056" + "\u0053" + "\u004F",
-                  E3="\u0056" + "\u004F" + "\u0053",
-                  E4="\u0053" + "\u004F" + "\u0056",
-                  E5="\u004F" + "\u0053" + "\u0056",
-                  E6="\u004F" + "\u0056" + "\u0053",
-                  IM = "\u0056" + "\u004F")
-
-# S = U + 0053
-# V = U+0056
-# O = U+
-
-
-"""
-SUJEITO = ["eu", "fui", "jornal"]
-
-historia = "eu  fui  ao  barco ontem"
-
-
-
-def responde(item, tree):
-     """  # FunÃ§Ã£o responsÃ¡vel por encontrar a estrutura, parear com a estrutura alvo, apontar o elemento nÃ£o 
-# encontrado e valorar a sentenÃ§a.
-
-# Type: param: object(item: list; tree: string)
-"""
-
-
-
-branch = tree.split()
-for amora in item:
- if amora in branch:
-     print("eba")
-
- else:
-     print("not found:" + amora)
-responde(SUJEITO, historia)
-
-
-"""
 
 SUJEITO = {"eu", "jornal", "elefante"}
 VERBO = {"fui", "pesquei", "colhi", "fiz", "peguei", "pegar", "nada"}
@@ -110,43 +48,28 @@ def responde(item, item2, item3, tree):
     # vamos passar a janela de 2, dar dois pontos se encontrar IMP
     count =sum([2 for branch in twbatb for  (a, _), (b, _) in zip(branch, branch[1:]) if a+b in IMP])
     print("implicit:", count)
-    # vamos passar a janela de 3, dar  pontos correspondendo à posição que o synt. estiver no SYNTAX
+    # vamos passar a janela de 3, dar  pontos correspondendo Ã  posiÃ§Ã£o que o synt. estiver no SYNTAX
     count +=sum([pt+1 for branch in twbatb for  (a, _), (b, _), (c, _) in zip(branch, branch[1:], branch[2:])
                 for pt, syntagma in enumerate(SYNTAX) if a+b+c in syntagma])
     print("plus syntax:", count)
     print("syntax", [a+b+c for branch in twbatb for  (a, _), (b, _), (c, _) in zip(branch, branch[1:], branch[2:])
                 for pt, syntagma in enumerate(SYNTAX) if a+b+c in syntagma])
 
-    """    for amora in branch:
-         if amora   in branch:
-             print("yuha")
-         else:
-             print("putz")
-
-for amora in item:
-        if amora in branch:
-            print("eba:" + amora )
-
-        else:
-            print("not found:" + amora)
-
-    for amora in item2:
-        if amora in branch:
-            print("eba:" + amora)
-            #print("eba:" and amora)
-
-        else:
-            print("not found:" + amora)
-
-    for amora in item3:
-        if amora in branch:
-            print("eba:" + amora )
-
-        else:
-            print("not found:" + amora)"""
-
 
 responde(SUJEITO, VERBO, OBJETO, historia)
+
+"""
+SUJEITO = ["eu"]
+VERBO = ["peg", "Tris", "colh", "rel", "bat"]
+OBJETO = ["o oculos", "a pedr", "cascalhos", "galho", "arvore", "lupa", "raios solares"]
+
+ESTRUTURA1 = [SUJEITO + VERBO + OBJETO]
+ESTRUTURA2 = [VERBO + SUJEITO + OBJETO]
+ESTRUTURA3 = [VERBO + OBJETO + SUJEITO]
+ESTRUTURA4 = [SUJEITO + OBJETO + VERBO]
+ESTRUTURA5 = [OBJETO + SUJEITO + VERBO]
+ESTRUTURA6 = [OBJETO + VERBO + SUJEITO]
+IMPLICITO = [VERBO + OBJETO]"""
 
     
     
