@@ -13,7 +13,7 @@ class Texto(Text):
         super().__init__(cena=cena, tit=tit, txt=txt, foi=foi, **kwargs)
         #self.elt = Popup.POP.popup
         self.cena = cena
-        self.area = html.TEXTAREA("xxxxxxxxxx", style=dict(width='100%', resize=None))
+        self.area = html.TEXTAREA("<ponha seu texto aqui>", rows=4, style=dict(width='100%', resize=None))
         self.esconde = foi if foi else self.esconde
         #cena <= self
 
@@ -22,8 +22,8 @@ class Texto(Text):
         ev.stopPropagation()
         return False
         ...
-    @staticmethod
-    def put_area():
+    @classmethod
+    def put_area(cls):
         Popup.POP.area = html.DIV()
         Popup.POP.div <= Popup.POP.area
         Texto.put_area = lambda *_: None
