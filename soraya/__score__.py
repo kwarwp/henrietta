@@ -38,3 +38,5 @@
     {'doc_id': '45c7817e', 'carta': 'folha_1_0', 'casa': (1, 0), 'move': 'DROP', 'ponto': 200, 'valor': 'casa_1_0', '_level': 2, 'tempo': 1527274865430},
 ],
 "d891d617": {"author_nick": "carlo", "author_name": "carlo emmanoel", "author_email": "carlo@ufrj.br", "author_org": "LABASE", "author_site": "labase.selfip.org", "author_public": "on"},[
+],
+"0631881b": {"author_nick": "carlo", "author_name": "carlo emmanoel", "author_email": "carlo@ufrj.br", "author_org": "LABASE", "author_site": "labase.selfip.org", "author_public": "on"},[
