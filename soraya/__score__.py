@@ -50,3 +50,4 @@
 "90c37bf0": {"author_nick": "carlo", "author_name": "carlo emmanoel", "author_email": "carlo@ufrj.br", "author_org": "LABASE", "author_site": "labase.selfip.org", "author_public": "on"},[
 ],
 "5ab376b3": {"author_nick": "carlo", "author_name": "carlo emmanoel", "author_email": "carlo@ufrj.br", "author_org": "LABASE", "author_site": "labase.selfip.org", "author_public": "on"},[
+  {'doc_id': 'e5e40f68', 'carta': 202, 'casa': 'https://i.imgur.com/oDqeaBp.jpg', 'move': 'BLOCO', 'ponto': 0, 'valor': 0, '_level': 1, 'tempo': 1527284068494},
