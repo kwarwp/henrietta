@@ -72,7 +72,7 @@ class Plotter:
             x1, y1 = self.change_ref_system(*prev)
             x2, y2 = self.change_ref_system(*cur)
             self.draw_line(x1, y1, x2, y2, linethick=3, color="blue")
-            self.prt <= '{}\n'.format((x1, y1, x2, y2))
+            # self.prt <= '{}\n'.format((x1, y1, x2, y2))
 
     def plot(self, x, y):
         [self.graph(_x, _y) for _x, _y in zip(x, y)]
