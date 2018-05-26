@@ -9,15 +9,17 @@ STYLE["height"] = "400px"
 
 
 class Texto(Text):
-    def __init__(self, cena=NADA, tit="", txt="", texto="..", foi=None, indo=None, **kwargs):
+    def __init__(self, cena=NADA, tit="", txt="", texto=None, foi=None, indo=None, **kwargs):
         super().__init__(cena=cena, tit=tit, txt=txt, foi=foi, **kwargs)
         #self.elt = Popup.POP.popup
         self.t = []
-        self.cena = cena
-        self.area = html.TEXTAREA(texto, Id="_TEXT_POPUP_", rows=4, style=dict(width='100%', resize=None))
+        self.cena, self.area = cena, html.DIV()
+        if texto is not None:
+            self.area = html.TEXTAREA(texto, Id="_TEXT_POPUP_", rows=4,
+                style=dict(width='100%', resize=None))
+            self.area.bind('keypress', self.indo)
         self._esconde = foi if foi else lambda:None
         self.indo = indo if indo else self.indo
-        self.area.bind('keypress', self.indo)
         #cena <= self
 
     def _esconde(self, ev=NoEv()):
@@ -47,7 +49,8 @@ class Texto(Text):
         
     def sai(self, ev=NoEv()):
         j = '{}'.format(chr(172))
-        return self.area.value, j.join(self.t)
+        t = self.area.value if self.area else ''
+        return t, j.join(self.t)
         
     def indo(self, ev=NoEv()):
         char = ev.keyCode if ev.keyCode else ev.which
@@ -58,9 +61,9 @@ class Game:
         #self.elt = Popup.POP.popup
         self.cena = Cena(OCEANO)
         self.t = []
-        #foi=lambda *_:Texto(cena=self.cena, tit="score,", txt="\n".join(self.texto.sai()).vai())
-        foi=lambda *_: alert(self.texto.sai())
-        self.texto = Texto(cena=self.cena, tit="diga, com q paus a canoa?",
+        foi=lambda *_:Texto(cena=self.cena, tit="score", txt="\n".join(self.texto.sai())).vai()
+        #foi=lambda *_: alert("\n".join(self.texto.sai()))
+        self.texto = Texto(cena=self.cena, tit="diga, com q paus a canoa?", texto="",
         foi=foi) #lambda *_:alert(self.texto.sai()[0])) #"\n".join(self.texto.sai())))
         self.cena.meio.vai = self.texto.vai
         #self.cena.vai = self.texto.vai
