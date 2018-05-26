@@ -16,7 +16,6 @@ SYNTAX = [ES6, ES5, ES4, ES3, ES2, ES1]
 SUJEITO = {"eu", "jornal", "elefante"}
 VERBO = {"fui", "pesquei", "colhi", "fiz", "peguei", "pegar", "nada"}
 OBJETO = {"oculos", "galho", "lupa", "lama"}
-TAGGER = {tag: clazz for tag, clazz in zip(list("SVO"), (SUJEITO, VERBO, OBJETO))}
 
 PONTUA = "!,.?:"
 
@@ -27,6 +26,7 @@ historia = "eu  fui  ao  barco ontem! pesquei dois peixes e depois de pegar um g
 def responde(tree, item=SUJEITO, item1=VERBO, item2=OBJETO):
     # quebra em frases, toda a pontucao vira quebr de linha
     _ = False
+    TAGGER = {tag: clazz for tag, clazz in zip(list("SVO"), (item, item1, item2))}
 
     def remarcador_recursivo(_tree, pontua):
         _tree = _tree.replace(pontua.pop(), '\n')
@@ -38,7 +38,7 @@ def responde(tree, item=SUJEITO, item1=VERBO, item2=OBJETO):
     # aproveitamos para quebrar cada frase em palavras
     tree_with_branches_and_berries = twbb = [branch.split() for branch in tree.split('\n')]
     tegged = []
-    anytag = set(SUJEITO) | set(VERBO) | set(OBJETO)
+    anytag = set(item) | set(item1) | set(item2)
     # vamos colocar as tags nas classes gramaticais
     
     
