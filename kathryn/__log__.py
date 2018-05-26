@@ -179,3 +179,10 @@ NameError: name 'Popup' is not defined
                                                                                           ^
 SyntaxError: invalid syntax
 '''},
+{'date': 'Sat May 26 2018 14:39:30.436 GMt-0300 (-03) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 52
+  return self.area.value if self.area else '', j.join(self.t)
+                                              ^
+SyntaxError: invalid syntax
+'''},
