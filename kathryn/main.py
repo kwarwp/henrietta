@@ -20,6 +20,7 @@ class Plotter:
         self.tit = tit
 
         self.dataset = []
+        self.figure_title()
         self.axis()
 
         ## After doing this I saw that this could be achieved using
@@ -47,10 +48,13 @@ class Plotter:
         
     
     def figure_title(self):
+        self.ctx.fillStyle="gray";
+        self.ctx.fillRect(0,0,300,300);
+
         self.ctx.clearRect(410, 0, 400, 30)
-        self.ctx.fillStyle = "gray"
+        self.ctx.fillStyle = "white"
         self.ctx.font = "bold 16px Arial"
-        self.ctx.fillText(self.tit, 410, 20)
+        self.ctx.fillText(self.tit, 15, 15)
     
     
     def title_update(self, ev):
@@ -143,4 +147,4 @@ class Game:
 #Game()
 x , y = [2,4,6,8, 10, 12], [50, 100, 40 , -80, 140 , -10]
 
-Plotter(doc["pydiv"]).plot(x , y)
+Plotter(doc["pydiv"], "imaginário").plot(x , y)
