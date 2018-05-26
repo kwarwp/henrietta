@@ -172,3 +172,10 @@ NameError: name 'Popup' is not defined
     self.cena.elt <= Popup.POP.popup
 NameError: name 'Popup' is not defined
 '''},
+{'date': 'Sat May 26 2018 14:35:25.744 GMt-0300 (-03) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 61
+  foi=lambda *_:Texto(cena=self.cena, tit="score,", txt="\n".join(self.texto.sai())).vai())
+                                                                                          ^
+SyntaxError: invalid syntax
+'''},
