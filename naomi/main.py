@@ -58,6 +58,8 @@ class Estados:
         self.grafico = Elemento(img=TRANSPARENTE, tit="GRÁFICO", style=dict(
             left=600, top=200, width=300, height="200px"))
         self.grafico.entra(floresta)    
+        inv.score(casa=FLORESTA, carta='' , _level=1,
+                         move="FLORESTA", ponto=0, valor=0)
         
     def pontua(self, pontos):
         resposta, grafo = pontos
@@ -71,7 +73,7 @@ class Estados:
         plt = Plotter(self.grafico.elt, self.titulo)
         plt.plot(x,y) 
         paradigma = avaliar(resposta)
-        alert("paradigma: {}, sintagma: {}".format(paradigma, sintagma) )
+        plt.display("paradigma: {}, sintagma: {}".format(paradigma, sintagma) )
         inv.score(casa=self.titulo, carta=grafo , _level=2,
                          move="FOGO", ponto=paradigma, valor=sintagma)
 
