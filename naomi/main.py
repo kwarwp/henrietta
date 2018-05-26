@@ -30,6 +30,7 @@ verbos_fracos ==  1
 verbos = [ (3,verbos_altos),(2,verbos_medios),(1,verbos_fracos)]
 VERBOS = verbos_altos +verbos_medios + verbos_fracos
 OBJETOS = """galho graveto óculos oculos lente foco vara pedra pedregulho
+ faisca faísca fagulha fumaça labareda fogaréu fogareu fogueira 
     cascalho sol luz brilho fogo palha folha cavaco""".split()
 SUJEITOS = "eu nós nos gente".split()
 
@@ -67,7 +68,7 @@ class Estados:
         x, y = zip(*_grafo)
         # x , y = [2,4,6,8, 10, 12], [50, 100, 40 , -80, 140 , -10]
         Plotter(self.grafico.elt).plot(x,y) 
-        alert("para: {}, sintag: {} \ng:{}".format(avaliar(resposta), sintagma, grafo) )
+        alert("paradigma: {}, sintagma: {}".format(avaliar(resposta), sintagma) )
         
         
     def entrada(self, tit, cena=None, vai=None):
