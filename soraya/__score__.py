@@ -58,3 +58,4 @@
     {'doc_id': '7e8ae2e8', 'carta': 'folha_1_0', 'casa': (0, 1), 'move': 'DROP', 'ponto': 100, 'valor': 'casa_1_1', '_level': 2, 'tempo': 1527309819221},
 ],
 "6a4995ba": {"author_nick": "daniel", "author_name": "Daniel", "author_email": "daniel@ufrj.br", "author_org": "Daniel", "author_site": "Daniel", "author_public": "on"},[
+  {'doc_id': 'c8e3e66f', 'carta': 202, 'casa': 'https://i.imgur.com/oDqeaBp.jpg', 'move': 'BLOCO', 'ponto': 0, 'valor': 0, '_level': 1, 'tempo': 1527309903508},
