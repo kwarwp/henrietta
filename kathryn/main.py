@@ -10,9 +10,12 @@ STYLE["height"] = "400px"
 class Plotter:
     def __init__(self, cena, tit=""):
 
-        canvas = html.CANVAS()
+        canvas = html.CANVAS(width=300, height=200)
         cena.html=""
         cena  <= canvas
+        self.prt = html.DIV()
+        self.prt.html=""
+        cena <= self.prt
         self.ctx = canvas.getContext("2d")
         self.tit = tit
 
@@ -24,7 +27,7 @@ class Plotter:
         ## https://developer.mozilla.org/en-US/docs/HTML/Canvas/Tutorial/Transformations
 
     def change_ref_system(self, x, y):
-        return (20 + x * 8, 240 - y * 20)
+        return (20 + x * 8, 140 - y * 1)
     
     
     def draw_line(self, x1, y1, x2, y2, linethick=3, color="black"):
@@ -65,6 +68,7 @@ class Plotter:
             x1, y1 = self.change_ref_system(*prev)
             x2, y2 = self.change_ref_system(*cur)
             self.draw_line(x1, y1, x2, y2, linethick=3, color="blue")
+            self.prt <= '{}\n'.format((x1, y1, x2, y2))
 
     def plot(self, x, y):
         [self.graph(_x, _y) for _x, _y in zip(x, y)]
