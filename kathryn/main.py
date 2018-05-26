@@ -37,9 +37,9 @@ class Plotter:
     
     def axis(self, color="black", linethick=3):
         # Draw of x axis
-        self.draw_line(20, 420, 820, 420, linethick=linethick, color=color)
+        self.draw_line(20, 120, 240, 120, linethick=linethick, color=color)
         # Draw of y axis
-        self.draw_line(20, 20, 20, 420, linethick=linethick, color=color)
+        self.draw_line(20, 20, 20, 120, linethick=linethick, color=color)
         
     
     def figure_title(self):
