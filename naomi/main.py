@@ -4,7 +4,7 @@ from _spy.vitollino.main import INVENTARIO as inv
 from soraya.main import Bloco
 from alexa.main import responde
 from browser import alert
-from kathryn.main import Texto as Entrada
+from kathryn.main import Plotter, Texto as Entrada
 STYLE["width"] = 600
 STYLE["height"] = "600px"
 
@@ -37,6 +37,7 @@ SUJEITOS = "eu nós nos gente".split()
     
 class Estados:
     def __init__(self):
+        inv.inicia()
         self.floresta = floresta = Cena(FLORESTA)
         self.fantasma = Cena()
         floresta.vai()
@@ -52,11 +53,21 @@ class Estados:
             left=28, top=130, width=60, height="60px"))
         inv.bota(self.oculos)
         ocu.vai = self.fogo_oculos
+        self.grafico = Elemento(img=OCULOS, tit="GRÁFICO", style=dict(
+            left=600, top=500, width=300, height="200px"))
+        self.grafico.entra(floresta)    
         
     def pontua(self, pontos):
         resposta, grafo = pontos
         sintagma = responde(resposta, SUJEITOS, VERBOS, OBJETOS)
-        alert("para: {}, sintag: {}".format(avaliar(resposta), sintagma) )
+        #grafo = [t for data in grafo.split(chr(172)) for _, t in data.split(chr(181))]
+        grafo = [int(t[2:6]) for x,t in enumerate(grafo.split(chr(172)))]
+        _grafo = [(x, b-a) for x, (b, a) in enumerate(zip(grafo[1:], grafo))]
+        grafo = "_".join([str((x,y)) for x,y in _grafo])
+        #x, y = zip(*grafo)
+        x , y = [1,2,3,4], [5, 3, 4 , 8]
+        Plotter(self.grafico.elt).plot(x,y) 
+        alert("para: {}, sintag: {} \ng:{}".format(avaliar(resposta), sintagma, grafo) )
         
         
     def entrada(self, tit, cena=None, vai=None):
