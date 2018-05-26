@@ -60,8 +60,9 @@ class Plotter:
             x, y = self.change_ref_system(absiss, data)
             self.draw_line(x, y, x, y, linethick=3, color="blue")
         else:
-            x1, y1 = self.change_ref_system(*self.dataset[-2])
-            x2, y2 = self.change_ref_system(*self.dataset[-1])
+            cur, prev = self.dataset[-1:-2]
+            x1, y1 = self.change_ref_system(*prev)
+            x2, y2 = self.change_ref_system(*cur)
             self.draw_line(x1, y1, x2, y2, linethick=3, color="blue")
 
     def plot(self, x, y):
