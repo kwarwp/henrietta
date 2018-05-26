@@ -28,8 +28,8 @@ verbos_fracos = ["rod", "bot", "sub", "pux", "form", "tent", "cli", "abaix", "me
 verbos_fracos ==  1
 verbos = [ (3,verbos_altos),(2,verbos_medios),(1,verbos_fracos)]
 VERBOS = verbos_altos +verbos_medios + verbos_fracos
-OBJETOS = "galho graveto óculos oculos lente foco vara pedra pedregulho" + \
-    "cascalho sol luz brilho fogo palha folha cavaco".split()
+OBJETOS = """galho graveto óculos oculos lente foco vara pedra pedregulho
+    cascalho sol luz brilho fogo palha folha cavaco""".split()
 SUJEITOS = "eu nós gente".split()
 
 
