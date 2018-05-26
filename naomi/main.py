@@ -54,7 +54,7 @@ class Estados:
         inv.bota(self.oculos)
         ocu.vai = self.fogo_oculos
         self.grafico = Elemento(img=OCULOS, tit="GRÁFICO", style=dict(
-            left=600, top=500, width=300, height="200px"))
+            left=600, top=200, width=300, height="200px"))
         self.grafico.entra(floresta)    
         
     def pontua(self, pontos):
@@ -65,7 +65,7 @@ class Estados:
         _grafo = [(x, b-a) for x, (b, a) in enumerate(zip(grafo[1:], grafo))]
         grafo = "_".join([str((x,y)) for x,y in _grafo])
         #x, y = zip(*grafo)
-        x , y = [1,2,3,4], [5, 3, 4 , 8]
+        x , y = [10,20,30,40], [50, 300, 40 , -80]
         Plotter(self.grafico.elt).plot(x,y) 
         alert("para: {}, sintag: {} \ng:{}".format(avaliar(resposta), sintagma, grafo) )
         
