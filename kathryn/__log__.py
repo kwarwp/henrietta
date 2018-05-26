@@ -13,3 +13,10 @@ IndentationError: expected an indented block
                                                                    ^
 SyntaxError: invalid syntax
 '''},
+{'date': 'Sat May 26 2018 13:08:10.91 GMt-0300 (-03) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 52
+  self.t.append('{}µ{}'.format(char,str(window.Date().now())[-5:])
+                                                                     ^
+SyntaxError: invalid syntax
+'''},
