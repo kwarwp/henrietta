@@ -42,6 +42,7 @@ class Estados:
         self.floresta = floresta = Cena(FLORESTA)
         self.fantasma = Cena()
         floresta.vai()
+        self.titulo = 'floresta'
         self.galhos = gag = Elemento(img=TRANSPARENTE,tit="galhos", style=dict(
             left=28, top=130, width=60, height="60px"))
         gag.entra(floresta)
@@ -67,7 +68,7 @@ class Estados:
         grafo = "_".join([str((x,y)) for x,y in _grafo])
         x, y = zip(*_grafo)
         # x , y = [2,4,6,8, 10, 12], [50, 100, 40 , -80, 140 , -10]
-        Plotter(self.grafico.elt).plot(x,y) 
+        Plotter(self.grafico.elt, self.titulo).plot(x,y) 
         alert("paradigma: {}, sintagma: {}".format(avaliar(resposta), sintagma) )
         
         
@@ -79,9 +80,11 @@ class Estados:
         
     def fogo_pedra(self, *_):
         # resposta=input("Voce fez fogo usando pedras! Como vc fez?")
+        self.titulo = 'Imaginário: pedras'
         self.entrada(tit="Voce fez fogo usando pedras! Como vc fez?")
         self.pedra.entra(self.fantasma)
     def fogo_galhos(self, *_):
+        self.titulo = 'Imaginário: galhos'
         # resposta=input("voce fez fogo usando galhos! como vc fez?")
         self.entrada(tit="voce fez fogo usando galhos! como vc fez?")
         
@@ -90,6 +93,7 @@ class Estados:
         #alert(avaliar(respostas))
     def fogo_oculos(self, *_):
         # respostas=input("voce fez fogo usando oculos! como vc fez?")
+        self.titulo = 'Imaginário: óculos'
         self.entrada(tit="voce fez fogo usando oculos! como vc fez?")
         
         
