@@ -18,7 +18,7 @@ TRANSPARENTE = "http://1.bp.blogspot.com/-eK24sreQNsg/Uvy1AT5iVSI/AAAAAAAAAGo/TR
 FLORESTA = "https://st.depositphotos.com/1718692/2958/i/950/depositphotos_29580473-stock-photo-stones-and-tree-roots-in.jpg"
 OCULOS = "https://www.dvosky.com/media/catalog/product/cache/1/image/1200x1200/9df78eab33525d08d6e5fb8d27136e95/d/v/dvsk1003-preto-prata.png"
 historia = "eu friccionei a pedra e gerou fogo"
-verbos_altos = ["ger", "atrit", "roÃÂÂÂ§", "direcion", "friccion", "elev", "decid", "faz", "concl", "us",
+verbos_altos = ["ger", "atrit", "roç", "direcion", "friccion", "elev", "decid", "faz", "concl", "us",
                 "remanej" ,"erg", "suspend", "ate", "esfreg", "trisc"] 
 verbos_altos ==  3
 verbos_medios = ["bat", "gir", "colo", "manipul", "mov", "surg", "peg", "levant", "bat"]
@@ -27,6 +27,10 @@ verbos_medios ==  2
 verbos_fracos = ["rod", "bot", "sub", "pux", "form", "tent", "cli", "abaix", "mex", "encost", "rel"] 
 verbos_fracos ==  1
 verbos = [ (3,verbos_altos),(2,verbos_medios),(1,verbos_fracos)]
+VERBOS = verbos_altos +verbos_medios + verbos_fracos
+OBJETOS = "galho graveto óculos oculos lente foco vara pedra pedregulho" + \
+    "cascalho sol luz brilho fogo palha folha cavaco".split()
+SUJEITOS = "eu nós gente".split()
 
 
     
@@ -50,7 +54,8 @@ class Estados:
         
     def pontua(self, pontos):
         resposta, grafo = pontos
-        alert("para: {}, sintag: {}".format(avaliar(resposta), responde(resposta)) )
+        sintagma = responde(resposta, SUJEITOS, VERBOS, OBJETOS)
+        alert("para: {}, sintag: {}".format(avaliar(resposta), ) )
         
         
     def entrada(self, tit, cena=None, vai=None):
@@ -65,17 +70,18 @@ class Estados:
         self.pedra.entra(self.fantasma)
     def fogo_galhos(self, *_):
         # resposta=input("voce fez fogo usando galhos! como vc fez?")
-        resposta=Entrada(cena=self.floresta, tit="voce fez fogo usando galhos! como vc fez?", texto="").sai()
+        self.entrada(tit="voce fez fogo usando galhos! como vc fez?")
         
         
         self.galhos.entra(self.fantasma)
-        alert(avaliar(respostas))
+        #alert(avaliar(respostas))
     def fogo_oculos(self, *_):
-        respostas=input("voce fez fogo usando oculos! como vc fez?")
+        # respostas=input("voce fez fogo usando oculos! como vc fez?")
+        self.entrada(tit="voce fez fogo usando oculos! como vc fez?")
         
         
         self.oculos.entra(self.fantasma)
-        alert(avaliar(respostas))
+        # alert(avaliar(respostas))
 
 def avaliar(you):
     pontuacao = 0
