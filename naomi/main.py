@@ -53,7 +53,7 @@ class Estados:
             left=28, top=130, width=60, height="60px"))
         inv.bota(self.oculos)
         ocu.vai = self.fogo_oculos
-        self.grafico = Elemento(img=OCULOS, tit="GRÁFICO", style=dict(
+        self.grafico = Elemento(img=TRANSPARENTE, tit="GRÁFICO", style=dict(
             left=600, top=200, width=300, height="200px"))
         self.grafico.entra(floresta)    
         
@@ -64,8 +64,8 @@ class Estados:
         grafo = [int(t[2:6]) for x,t in enumerate(grafo.split(chr(172)))]
         _grafo = [(x, b-a) for x, (b, a) in enumerate(zip(grafo[1:], grafo))]
         grafo = "_".join([str((x,y)) for x,y in _grafo])
-        #x, y = zip(*grafo)
-        x , y = [2,4,6,8, 10, 12], [50, 100, 40 , -80, 140 , -10]
+        x, y = zip(*_grafo)
+        # x , y = [2,4,6,8, 10, 12], [50, 100, 40 , -80, 140 , -10]
         Plotter(self.grafico.elt).plot(x,y) 
         alert("para: {}, sintag: {} \ng:{}".format(avaliar(resposta), sintagma, grafo) )
         
