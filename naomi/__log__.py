@@ -22,3 +22,10 @@ SyntaxError: invalid syntax
     OBJETOS = "galho graveto óculos oculos lente foco vara pedra pedregulho" + \
 TypeError: Can't convert list to str implicitely
 '''},
+{'date': 'Sat May 26 2018 17:38:09.448 GMt-0300 (-03) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 62
+  grafo = [t for data in grafo.split(chr(181)) for _, t in data.split(chr(172))
+                                                                                       ^
+SyntaxError: invalid syntax
+'''},
