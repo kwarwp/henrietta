@@ -68,8 +68,13 @@ class Estados:
         grafo = "_".join([str((x,y)) for x,y in _grafo])
         x, y = zip(*_grafo)
         # x , y = [2,4,6,8, 10, 12], [50, 100, 40 , -80, 140 , -10]
-        Plotter(self.grafico.elt, self.titulo).plot(x,y) 
-        alert("paradigma: {}, sintagma: {}".format(avaliar(resposta), sintagma) )
+        plt = Plotter(self.grafico.elt, self.titulo)
+        plt.plot(x,y) 
+        paradigma = avaliar(resposta)
+        alert("paradigma: {}, sintagma: {}".format(paradigma, sintagma) )
+        inv.score(casa=self.titulo, carta=grafo , _level=2,
+                         move="FOGO", ponto=paradigma, valor=sintagma)
+
         
         
     def entrada(self, tit, cena=None, vai=None):
