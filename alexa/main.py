@@ -12,7 +12,6 @@ ES6 = "OVS"
 IMP = "VO"
 
 SYNTAX = [ES6, ES5, ES4, ES3, ES2, ES1]
-_ = False
 
 SUJEITO = {"eu", "jornal", "elefante"}
 VERBO = {"fui", "pesquei", "colhi", "fiz", "peguei", "pegar", "nada"}
@@ -27,12 +26,14 @@ historia = "eu  fui  ao  barco ontem! pesquei dois peixes e depois de pegar um g
 
 def responde(tree, item=SUJEITO, item1=VERBO, item2=OBJETO):
     # quebra em frases, toda a pontucao vira quebr de linha
+    _ = False
+
     def remarcador_recursivo(_tree, pontua):
         _tree = _tree.replace(pontua.pop(), '\n')
         return remarcador_recursivo(_tree, pontua) if pontua else _tree
 
     tree = remarcador_recursivo(tree, list(PONTUA))
-    print("remarcador_recursivo:", tree) if DEBUG else _
+    print("remarcador_recursivo:", tree) if DEBUG else False
     # agora que todos os pontos viraram quebra de pagina (\n), podemos quebrar em frases
     # aproveitamos para quebrar cada frase em palavras
     tree_with_branches_and_berries = twbb = [branch.split() for branch in tree.split('\n')]
@@ -46,7 +47,7 @@ def responde(tree, item=SUJEITO, item1=VERBO, item2=OBJETO):
            [(tag, amora) for amora in branch for tag, samples in TAGGER.items()
            if any(sample in amora for sample in samples)]
            for branch in tree_with_branches_and_berries]
-    print("responde marcador:", tree_with_branches_and_tagged_berries) if DEBUG else _
+    print("responde marcador:", tree_with_branches_and_tagged_berries) if DEBUG else False
     # vamos passar a janela de 2, dar dois pontos se encontrar IMP
     
     
@@ -55,11 +56,11 @@ def responde(tree, item=SUJEITO, item1=VERBO, item2=OBJETO):
     # vamos passar a janela de 3, dar  pontos correspondendo ÃÂÂÂÃÂÂÂÃÂÂÂÃÂÂÂ  posiÃÂÂÂÃÂÂÂÃÂÂÂÃÂÂÂ§ÃÂÂÂÃÂÂÂÃÂÂÂÃÂÂÂ£o que o synt. estiver no SYNTAX
     count +=sum([pt+1 for branch in twbatb for  (a, _), (b, _), (c, _) in zip(branch, branch[1:], branch[2:])
               for pt, syntagma in enumerate(SYNTAX) if a+b+c in syntagma])
-    print("plus syntax:", count) if DEBUG else _
+    print("plus syntax:", count) if DEBUG else False
     
     def def_sintax():
                print("syntax", [a+b+c for branch in twbatb for  (a, _), (b, _), (c, _) in zip(branch, branch[1:], branch[2:])
-                        for pt, syntagma in enumerate(SYNTAX) if a+b+c in syntagma])  if DEBUG else _
+                        for pt, syntagma in enumerate(SYNTAX) if a+b+c in syntagma])  if DEBUG else False
     return count
 
 if __name__ == "__main__":
