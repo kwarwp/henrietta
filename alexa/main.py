@@ -12,7 +12,7 @@ ES6 = "OVS"
 IMP = "VO"
 
 SYNTAX = [ES6, ES5, ES4, ES3, ES2, ES1]
-
+_ = False
 
 SUJEITO = {"eu", "jornal", "elefante"}
 VERBO = {"fui", "pesquei", "colhi", "fiz", "peguei", "pegar", "nada"}
