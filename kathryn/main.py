@@ -11,6 +11,7 @@ class Plotter:
     def __init__(self, cena, tit=""):
 
         canvas = html.CANVAS()
+        cena.html=""
         cena  <= canvas
         self.ctx = canvas.getContext("2d")
         self.tit = tit
