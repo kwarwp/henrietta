@@ -1,5 +1,5 @@
 # henrietta.kathryn.main.py
-from _spy.vitollino.main import Cena, STYLE, NADA, NoEv
+from _spy.vitollino.main import Cena, STYLE, NADA, NoEv, Popup
 from _spy.vitollino.main import Texto as Text
 from browser import html, doc, window
 OCEANO = "https://i.imgur.com/NRi5i6d.jpg"
@@ -45,11 +45,11 @@ class Texto(Text):
         return False
         
     def sai(self, ev):
-        self.area.value, '¬'.join(self.t)
+        self.area.value, 'Â¬'.join(self.t)
         
     def indo(self, ev):
         char = ev.keyCode if ev.keyCode else ev.wich
-        self.t.append('{}µ{}'.format(char,str(window.Date.now())[-5:]))
+        self.t.append('{}Âµ{}'.format(char,str(window.Date.now())[-5:]))
 
 class Game:
     def __init__(self):
