@@ -50,7 +50,7 @@ class Estados:
         
     def pontua(self, pontos):
         resposta, grafo = pontos
-        alert("para: {}, sintag: {}".format(avaliar(resposta), responde(remarcador_recursivo(resposta))) )
+        alert("para: {}, sintag: {}".format(avaliar(resposta), responde(resposta)) )
         
         
     def entrada(self, tit, cena=None, vai=None):
