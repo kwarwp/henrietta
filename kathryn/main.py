@@ -23,7 +23,7 @@ class Plotter:
         ## https://developer.mozilla.org/en-US/docs/HTML/Canvas/Tutorial/Transformations
 
     def change_ref_system(self, x, y):
-        return (20 + x * 8, 420 - y * 20)
+        return (20 + x * 8, 240 - y * 20)
     
     
     def draw_line(self, x1, y1, x2, y2, linethick=3, color="black"):
