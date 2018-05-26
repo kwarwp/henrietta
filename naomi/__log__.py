@@ -29,3 +29,10 @@ TypeError: Can't convert list to str implicitely
                                                                                        ^
 SyntaxError: invalid syntax
 '''},
+{'date': 'Sat May 26 2018 18:18:37.340 GMt-0300 (-03) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 64
+  grafo = [int(t[2:6]) for x,t in enumerate(grafo.split(chr(172)))])
+                                                                   ^
+SyntaxError: invalid syntax
+'''},
