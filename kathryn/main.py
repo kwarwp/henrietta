@@ -45,11 +45,11 @@ class Texto(Text):
         return False
         
     def sai(self, ev):
-        self.area.value, 'Â¬'.join(self.t)
+        self.area.value, '¬'.join(self.t)
         
     def indo(self, ev):
         char = ev.keyCode if ev.keyCode else ev.wich
-        self.t.append('{}Âµ{}'.format(char,str(window.Date.now())[-5:]))
+        self.t.append('{}µ{}'.format(char,str(window.Date.now())[-5:]))
 
 class Game:
     def __init__(self):
@@ -61,7 +61,7 @@ class Game:
         self.cena.meio.vai = self.texto.vai
         #self.cena.vai = self.texto.vai
         self.cena.vai()
-        self.texto.vai()
+        # self.texto.vai()
         
     def indo(self, *_):
         self.t.append(self.texto.area.value)
