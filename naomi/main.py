@@ -55,7 +55,7 @@ class Estados:
     def pontua(self, pontos):
         resposta, grafo = pontos
         sintagma = responde(resposta, SUJEITOS, VERBOS, OBJETOS)
-        alert("para: {}, sintag: {}".format(avaliar(resposta, sintagma)) )
+        alert("para: {}, sintag: {}".format(avaliar(resposta), sintagma) )
         
         
     def entrada(self, tit, cena=None, vai=None):
