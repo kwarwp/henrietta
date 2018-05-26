@@ -186,3 +186,10 @@ SyntaxError: invalid syntax
                                               ^
 SyntaxError: invalid syntax
 '''},
+{'date': 'Sat May 26 2018 14:42:50.774 GMt-0300 (-03) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 66
+  self.texto = Texto(cena=self.cena, tit="diga, com q paus a canoa?", texto= ""
+                                                                                         ^
+SyntaxError: invalid syntax
+'''},
