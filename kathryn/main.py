@@ -28,7 +28,7 @@ class Plotter:
         ## https://developer.mozilla.org/en-US/docs/HTML/Canvas/Tutorial/Transformations
 
     def change_ref_system(self, x, y):
-        return (20 + x * 8, 140 - y * 1)
+        return (20 + x * 8, 180 - y * 1)
     
     
     def draw_line(self, x1, y1, x2, y2, linethick=3, color="black"):
@@ -42,9 +42,9 @@ class Plotter:
     
     def axis(self, color="black", linethick=3):
         # Draw of x axis
-        self.draw_line(20, 120, 240, 120, linethick=linethick, color=color)
+        self.draw_line(20, 180, 280, 180, linethick=linethick, color=color)
         # Draw of y axis
-        self.draw_line(20, 20, 20, 120, linethick=linethick, color=color)
+        self.draw_line(20, 20, 20, 180, linethick=linethick, color=color)
         
     
     def figure_title(self):
