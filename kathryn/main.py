@@ -74,6 +74,9 @@ class Plotter:
             self.draw_line(x1, y1, x2, y2, linethick=3, color="blue")
             # self.prt <= '{}\n'.format((x1, y1, x2, y2))
 
+    def display(self, text):
+        self.prt <= html.P(text)
+
     def plot(self, x, y):
         [self.graph(_x, _y) for _x, _y in zip(x, y)]
 
