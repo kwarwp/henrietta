@@ -20,17 +20,17 @@ OCULOS = "https://www.dvosky.com/media/catalog/product/cache/1/image/1200x1200/9
 historia = "eu friccionei a pedra e gerou fogo"
 verbos_altos = ["ger", "atrit", "roç", "direcion", "friccion", "elev", "decid", "faz", "concl", "us", "foc",
                 "remanej" ,"erg", "suspend", "ate", "esfreg", "trisc", "fez", "fiz", "esfreg", "atrit", "foquei"
-                "incend", "aquec"] 
+                "incend", "aquec", "flamej"] 
 verbos_altos ==  3
-verbos_medios = ["bat", "gir", "colo", "manipul", "mov", "surg", "peg", "levant", "bat"]
+verbos_medios = ["bat", "gir", "colo", "manipul", "mov", "surg", "peg", "levant", "bat", "segur"]
 verbos_medios ==  2
 
 verbos_fracos = ["rod", "bot", "sub", "pux", "form", "tent", "cli", "abaix", "mex", "encost", "rel"] 
 verbos_fracos ==  1
 verbos = [ (3,verbos_altos),(2,verbos_medios),(1,verbos_fracos)]
 VERBOS = verbos_altos +verbos_medios + verbos_fracos
-OBJETOS = """galho graveto óculos oculos lente foco vara pedra pedregulho
- faisca faísca fagulha fumaça labareda fogaréu fogareu fogueira 
+OBJETOS = """galho graveto óculos oculos lente foco vara pedra pedregulho furo tábua tabua
+ faisca faísca fagulha fumaça labareda fogaréu fogareu fogueira outra outro fumacinha 
     cascalho sol luz brilho fogo palha folha cavaco""".split()
 SUJEITOS = "eu nós nos gente".split()
 
