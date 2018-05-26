@@ -60,7 +60,7 @@ class Plotter:
             x, y = self.change_ref_system(absiss, data)
             self.draw_line(x, y, x, y, linethick=3, color="blue")
         else:
-            cur, prev = self.dataset[-1:-2]
+            cur, prev = self.dataset[-1], self.dataset[-2]
             x1, y1 = self.change_ref_system(*prev)
             x2, y2 = self.change_ref_system(*cur)
             self.draw_line(x1, y1, x2, y2, linethick=3, color="blue")
@@ -135,4 +135,7 @@ class Game:
     def indo(self, *_):
         self.t.append(self.texto.area.value)
 
-Game()
+#Game()
+x , y = [2,4,6,8, 10, 12], [50, 100, 40 , -80, 140 , -10]
+
+Plotter(doc["pydiv"]).plot(x , y)
