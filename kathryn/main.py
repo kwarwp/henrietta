@@ -9,12 +9,13 @@ STYLE["height"] = "400px"
 
 
 class Texto(Text):
-    def __init__(self, cena=NADA, tit="", txt="", foi=None, **kwargs):
+    def __init__(self, cena=NADA, tit="", txt="", texto="..", foi=None, indo=None, **kwargs):
         super().__init__(cena=cena, tit=tit, txt=txt, foi=foi, **kwargs)
         #self.elt = Popup.POP.popup
         self.cena = cena
-        self.area = html.TEXTAREA("<ponha seu texto aqui>", Id="_TEXT_POPUP_", rows=4, style=dict(width='100%', resize=None))
+        self.area = html.TEXTAREA(texto, Id="_TEXT_POPUP_", rows=4, style=dict(width='100%', resize=None))
         self.esconde = foi if foi else self.esconde
+        self.area.bind('change', indo) if indo else False
         #cena <= self
 
     def esconde(self, ev=NoEv()):
@@ -45,9 +46,14 @@ class Game:
     def __init__(self):
         #self.elt = Popup.POP.popup
         self.cena = Cena(OCEANO)
-        self.texto = Texto(cena=self.cena, tit="diga,", txt='com q paus a canoa?')
+        self.t = []
+        self.texto = Texto(cena=self.cena, tit="diga,", txt='com q paus a canoa?', indo=self.indo,
+        foi=lambda *_:Texto(cena=self.cena, tit="score,", texto=str(self.t)).vai())
         self.cena.meio.vai = self.texto.vai
         #self.cena.vai = self.texto.vai
         self.cena.vai()
+        
+    def indo(self, *_):
+        self.t.append(self.texto.area.value)
         
 Game()
