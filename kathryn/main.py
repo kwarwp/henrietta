@@ -7,6 +7,66 @@ STYLE["width"] = 800
 STYLE["height"] = "400px"
 
 
+class Plotter:
+    def __init__(self, cena, tit=""):
+
+        canvas = cena
+        self.ctx = canvas.getContext("2d")
+        self.tit = tit
+
+        self.dataset = []
+        self.axis()
+
+        ## After doing this I saw that this could be achieved using
+        ## translate(0,canvas.height); scale(1,-1);
+        ## https://developer.mozilla.org/en-US/docs/HTML/Canvas/Tutorial/Transformations
+
+    def change_ref_system(self, x, y):
+        return (20 + x * 8, 420 - y * 20)
+    
+    
+    def draw_line(self, x1, y1, x2, y2, linethick=3, color="black"):
+        self.ctx.beginPath()
+        self.ctx.lineWidth = linethick
+        self.ctx.moveTo(x1, y1)
+        self.ctx.lineTo(x2, y2)
+        self.ctx.strokeStyle = color
+        self.ctx.stroke()
+    
+    
+    def axis(self, color="black", linethick=3):
+        # Draw of x axis
+        self.draw_line(20, 420, 820, 420, linethick=linethick, color=color)
+        # Draw of y axis
+        self.draw_line(20, 20, 20, 420, linethick=linethick, color=color)
+        
+    
+    def figure_title(self):
+        self.ctx.clearRect(410, 0, 400, 30)
+        self.ctx.fillStyle = "gray"
+        self.ctx.font = "bold 16px Arial"
+        self.ctx.fillText(self.tit, 410, 20)
+    
+    
+    def title_update(self, ev):
+        self.figure_title()
+    
+
+    
+    def graph(self, absiss, data):
+        self.dataset.append((absiss, data))
+        if len(self.dataset) == 1:
+            x, y = self.change_ref_system(absiss, data)
+            self.draw_line(x, y, x, y, linethick=3, color="blue")
+        else:
+            x1, y1 = self.change_ref_system(*self.dataset[-2])
+            x2, y2 = self.change_ref_system(*self.dataset[-1])
+            self.draw_line(x1, y1, x2, y2, linethick=3, color="blue")
+
+    def plot(self, x, y):
+        [self.graph(_x, _y) for _x, _y in zip(x, y)]
+
+
 
 class Texto(Text):
     def __init__(self, cena=NADA, tit="", txt="", texto=None, foi=None, indo=None, **kwargs):
