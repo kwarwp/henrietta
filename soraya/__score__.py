@@ -60,3 +60,4 @@
 "6a4995ba": {"author_nick": "daniel", "author_name": "Daniel", "author_email": "daniel@ufrj.br", "author_org": "Daniel", "author_site": "Daniel", "author_public": "on"},[
   {'doc_id': 'c8e3e66f', 'carta': 202, 'casa': 'https://i.imgur.com/oDqeaBp.jpg', 'move': 'BLOCO', 'ponto': 0, 'valor': 0, '_level': 1, 'tempo': 1527309903508},
     {'doc_id': 'c8e3e66f', 'carta': 'folha_0_0', 'casa': (0, 0), 'move': 'DROP', 'ponto': 200, 'valor': 'casa_0_0', '_level': 2, 'tempo': 1527309913370},
+    {'doc_id': 'c8e3e66f', 'carta': 'folha_1_0', 'casa': (1, 0), 'move': 'DROP', 'ponto': 200, 'valor': 'casa_1_0', '_level': 2, 'tempo': 1527309916873},
