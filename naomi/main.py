@@ -19,7 +19,7 @@ FLORESTA = "https://st.depositphotos.com/1718692/2958/i/950/depositphotos_295804
 OCULOS = "https://www.dvosky.com/media/catalog/product/cache/1/image/1200x1200/9df78eab33525d08d6e5fb8d27136e95/d/v/dvsk1003-preto-prata.png"
 historia = "eu friccionei a pedra e gerou fogo"
 verbos_altos = ["ger", "atrit", "roç", "direcion", "friccion", "elev", "decid", "faz", "concl", "us",
-                "remanej" ,"erg", "suspend", "ate", "esfreg", "trisc"] 
+                "remanej" ,"erg", "suspend", "ate", "esfreg", "trisc", "fez", "fiz", "esfreg", "atrit"] 
 verbos_altos ==  3
 verbos_medios = ["bat", "gir", "colo", "manipul", "mov", "surg", "peg", "levant", "bat"]
 verbos_medios ==  2
@@ -30,7 +30,7 @@ verbos = [ (3,verbos_altos),(2,verbos_medios),(1,verbos_fracos)]
 VERBOS = verbos_altos +verbos_medios + verbos_fracos
 OBJETOS = """galho graveto óculos oculos lente foco vara pedra pedregulho
     cascalho sol luz brilho fogo palha folha cavaco""".split()
-SUJEITOS = "eu nós gente".split()
+SUJEITOS = "eu nós nos gente".split()
 
 
     
@@ -55,7 +55,7 @@ class Estados:
     def pontua(self, pontos):
         resposta, grafo = pontos
         sintagma = responde(resposta, SUJEITOS, VERBOS, OBJETOS)
-        alert("para: {}, sintag: {}".format(avaliar(resposta), ) )
+        alert("para: {}, sintag: {}".format(avaliar(resposta, sintagma)) )
         
         
     def entrada(self, tit, cena=None, vai=None):
