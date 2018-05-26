@@ -10,7 +10,8 @@ STYLE["height"] = "400px"
 class Plotter:
     def __init__(self, cena, tit=""):
 
-        canvas = cena
+        canvas = html.CANVAS()
+        cena  <= canvas
         self.ctx = canvas.getContext("2d")
         self.tit = tit
 
