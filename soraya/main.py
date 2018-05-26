@@ -92,10 +92,10 @@ class Suporte:
         self.bloco.folhas[src_id].troca(self) 
         lugar = [int(coord) for coord in src_id.split("_")[1:]]
         certa = sum(abs(100//(2*(a-b) or 1)) for a, b in zip(self.certa, lugar))
-        self.bloco.conta_pecas(certa)
         INVENTARIO.score(casa=self.certa, carta=src_id, move="DROP", _level=2,
                          ponto=certa, valor=self.bloco.folhas[src_id].casa)
-
+        self.bloco.conta_pecas(certa)
+        
 class Bloco(Elemento):
     def __init__(self, img, nx=4, ny=4, w=400, h=400, style={}, vai=lambda *_: None **kwargs):
         self.style = _style = dict(position="absolute", left=10, top=20,
