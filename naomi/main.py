@@ -65,7 +65,7 @@ class Estados:
         _grafo = [(x, b-a) for x, (b, a) in enumerate(zip(grafo[1:], grafo))]
         grafo = "_".join([str((x,y)) for x,y in _grafo])
         #x, y = zip(*grafo)
-        x , y = [10,20,30,40], [50, 300, 40 , -80]
+        x , y = [2,4,6,8, 10, 12], [50, 100, 40 , -80, 140 , -10]
         Plotter(self.grafico.elt).plot(x,y) 
         alert("para: {}, sintag: {} \ng:{}".format(avaliar(resposta), sintagma, grafo) )
         
