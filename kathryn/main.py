@@ -1,7 +1,7 @@
 # henrietta.kathryn.main.py
 from _spy.vitollino.main import Cena, STYLE, NADA, NoEv, Popup
 from _spy.vitollino.main import Texto as Text
-from browser import html, doc, window
+from browser import html, doc, window, alert
 OCEANO = "https://i.imgur.com/NRi5i6d.jpg"
 STYLE["width"] = 800
 STYLE["height"] = "400px"
@@ -15,14 +15,15 @@ class Texto(Text):
         self.t = []
         self.cena = cena
         self.area = html.TEXTAREA(texto, Id="_TEXT_POPUP_", rows=4, style=dict(width='100%', resize=None))
-        self.esconde = foi if foi else self.esconde
+        self._esconde = foi if foi else lambda:None
         self.indo = indo if indo else self.indo
         self.area.bind('keypress', self.indo)
         #cena <= self
 
-    def esconde(self, ev=NoEv()):
+    def _esconde(self, ev=NoEv()):
         ex.preventDefault()
         ev.stopPropagation()
+        self._esconde()
         return False
         ...
     @classmethod
@@ -44,20 +45,23 @@ class Texto(Text):
         Popup.POP.esconde = self.esconde
         return False
         
-    def sai(self, ev):
-        self.area.value, '¬'.join(self.t)
+    def sai(self, ev=NoEv()):
+        j = '{}'.format(chr(172))
+        return self.area.value, j.join(self.t)
         
-    def indo(self, ev):
-        char = ev.keyCode if ev.keyCode else ev.wich
-        self.t.append('{}µ{}'.format(char,str(window.Date.now())[-5:]))
+    def indo(self, ev=NoEv()):
+        char = ev.keyCode if ev.keyCode else ev.which
+        self.t.append('{}{}{}'.format(chr(char),chr(181),str(window.Date.now())[-5:]))
 
 class Game:
     def __init__(self):
         #self.elt = Popup.POP.popup
         self.cena = Cena(OCEANO)
         self.t = []
-        self.texto = Texto(cena=self.cena, tit="diga,", txt='com q paus a canoa?',
-        foi=lambda *_:Texto(cena=self.cena, tit="score,", texto="\n".join(self.texto.sai())).vai())
+        #foi=lambda *_:Texto(cena=self.cena, tit="score,", txt="\n".join(self.texto.sai()).vai())
+        foi=lambda *_: alert(self.texto.sai())
+        self.texto = Texto(cena=self.cena, tit="diga, com q paus a canoa?",
+        foi=foi) #lambda *_:alert(self.texto.sai()[0])) #"\n".join(self.texto.sai())))
         self.cena.meio.vai = self.texto.vai
         #self.cena.vai = self.texto.vai
         self.cena.vai()
@@ -65,5 +69,5 @@ class Game:
         
     def indo(self, *_):
         self.t.append(self.texto.area.value)
-        
+
 Game()
