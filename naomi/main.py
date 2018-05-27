@@ -71,10 +71,13 @@ class Estados:
         t0 = int(grafo_[0][1])
         grafo = [(int(t)-t0) // 10 for _, t in grafo_]
         _grafo = [(x, b - a) for x, (b, a) in enumerate(zip(grafo[1:], grafo))]
+        _grafp = [(x, b - a + 80) for x, ((_,b), (_,a)) in enumerate(zip(_grafo[1:], _grafo))]
         datapack = Plotter.pack([[c, '{0:0>6}'.format((int(t)-t0)//1)] for c, t in grafo_])
-        x, y = zip(*_grafo)
         plt = Plotter(self.grafico.elt, self.titulo)
-        plt.plot(x,y) 
+        x, y = zip(*_grafo)
+        plt.plot(x, y)
+        x, y = zip(*_grafp)
+        plt.plot(x, y, "magenta")
         paradigma, parax = avaliar(resposta)
         sintax, parax = Plotter.pack(sintax), Plotter.pack(parax)
         display = "paradigma={}::{}"
