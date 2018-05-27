@@ -151,6 +151,7 @@ class Game:
         self.cena.meio.vai = self.texto.vai
         # self.cena.vai = self.texto.vai
         self.cena.vai()
+        self.pontua(self.texto.sai())
         # self.texto.vai()
         
     def pontua(self, pontos):
