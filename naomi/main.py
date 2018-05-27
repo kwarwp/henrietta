@@ -65,14 +65,12 @@ class Estados:
         
     def pontua(self, pontos):
         resposta, grafo = pontos
-        sintagma, sintax = responde(resposta, SUJEITOS, VERBOS, OBJETOS)
         #grafo = [t for data in grafo.split(chr(172)) for _, t in data.split(chr(181))]
         grafo_ = Plotter.unpack(grafo)
         t0 = int(grafo_[0][1])
         grafo = [(int(t)-t0) // 10 for _, t in grafo_]
         _grafo = [(x, b - a) for x, (b, a) in enumerate(zip(grafo[1:], grafo))]
-        _grafp = [(x, b - a + 80) for x, ((_,b), (_,a)) in enumerate(zip(_grafo[1:], _grafo))]
-        datapack = Plotter.pack([[c, '{0:0>6}'.format((int(t)-t0)//1)] for c, t in grafo_])
+        _grafp = [(x, b - a + 100) for x, ((_,b), (_,a)) in enumerate(zip(_grafo[1:], _grafo))]
         plt = Plotter(self.grafico.elt, self.titulo)
         x, y = zip(*_grafo)
         plt.plot(x, y)
@@ -80,12 +78,14 @@ class Estados:
         plt.plot(x, y, "magenta")
         paradigma, parax = avaliar(resposta)
         sintax, parax = Plotter.pack(sintax), Plotter.pack(parax)
-        display = "paradigma={}::{}"
-        plt.display(display.format(paradigma, parax) )
-        display = "sintagma={}::{}"
-        plt.display(display.format(sintagma, sintax) )
-        # inv.score(casa=resposta, carta=grafo , _level=2,
-                         #move=self.titulo, ponto=paradigma, valor=sintagma)
+        display_paradigma = "paradigma={}::{}".format(paradigma, parax)
+        plt.display(display_paradigma)
+        sintagma, sintax = responde(resposta, SUJEITOS, VERBOS, OBJETOS)
+        display_sintagma = "sintagma={}::{}".format(sintagma, sintax)
+        plt.display(display_sintagma )
+        datapack = Plotter.pack([[c, '{0:0>6}'.format((int(t)-t0)//1)] for c, t in grafo_])
+        # inv.score(casa=resposta, carta=datapack , _level=2,
+                         #move=self.titulo, ponto=display_paradigma, valor=display_sintagma)
 
         
         
