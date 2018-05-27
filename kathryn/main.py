@@ -5,6 +5,7 @@ from browser import html, doc, window, alert
 
 PR = chr(172)
 MU = chr(181)
+DEBUG = False
 
 OCEANO = "https://i.imgur.com/NRi5i6d.jpg"
 STYLE["width"] = 800
@@ -151,8 +152,9 @@ class Game:
     def indo(self, *_):
         self.t.append(self.texto.area.value)
 
-
-# Game()
-x, y = [2, 4, 6, 8, 10, 12], [50, 100, 40, -80, 140, -10]
-
-Plotter(doc["pydiv"], "imaginário").plot(x, y)
+if __name__ == '__main__':
+    DEBUG = True
+    # Game()
+    x, y = [2, 4, 6, 8, 10, 12], [50, 100, 40, -80, 140, -10]
+    
+    Plotter(doc["pydiv"], "imaginário").plot(x, y)
