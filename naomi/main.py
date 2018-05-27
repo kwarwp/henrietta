@@ -85,7 +85,7 @@ class Estados:
         plt.display(display_sintagma )
         datapack = Plotter.pack([[c, '{0:0>6}'.format((int(t)-t0)//1)] for c, t in grafo_])
         inv.score(casa=resposta, carta=datapack , _level=2,
-                         #move=self.titulo, ponto=display_paradigma, valor=display_sintagma)
+                  move=self.titulo, ponto=display_paradigma, valor=display_sintagma)
 
         
         
