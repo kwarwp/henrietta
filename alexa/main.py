@@ -50,18 +50,29 @@ def responde(tree, item=SUJEITO, item1=VERBO, item2=OBJETO):
     print("responde marcador:", tree_with_branches_and_tagged_berries) if DEBUG else False
     # vamos passar a janela de 2, dar dois pontos se encontrar IMP
     
-    
-    count =sum([2 for branch in twbatb for  (a, _), (b, _) in zip(branch, branch[1:]) if a+b in IMP])
-    print("implicit:", count) if DEBUG else _
-    # vamos passar a janela de 3, dar  pontos correspondendo ÃÂÂÂÃÂÂÂÃÂÂÂÃÂÂÂ  posiÃÂÂÂÃÂÂÂÃÂÂÂÃÂÂÂ§ÃÂÂÂÃÂÂÂÃÂÂÂÃÂÂÂ£o que o synt. estiver no SYNTAX
-    count +=sum([pt+1 for branch in twbatb for  (a, _), (b, _), (c, _) in zip(branch, branch[1:], branch[2:])
-              for pt, syntagma in enumerate(SYNTAX) if a+b+c in syntagma])
-    print("plus syntax:", count) if DEBUG else False
+    if False:
+        count =sum([2 for branch in twbatb for  (a, _), (b, _) in zip(branch, branch[1:]) if a+b in IMP])
+        print("implicit:", count) if DEBUG else _
+        # vamos passar a janela de 3, dar  pontos correspondendo ÃÂÂÂÂÂÃÂÂÂÂÂÃÂÂÂÂÂÃÂÂÂÂÂ  posiÃÂÂÂÂÂÃÂÂÂÂÂÃÂÂÂÂÂÃÂÂÂÂÂ§ÃÂÂÂÂÂÃÂÂÂÂÂÃÂÂÂÂÂÃÂÂÂÂÂ£o que o synt. estiver no SYNTAX
+        count +=sum([pt+1 for branch in twbatb 
+                  for  (a, _), (b, _), (c, _) in zip(branch, branch[1:], branch[2:])
+                  for pt, syntagma in enumerate(SYNTAX) if a+b+c in syntagma])
+        print("plus syntax:", count) if DEBUG else False
+    else:
+        count = [(2, aw, bw) for branch in twbatb 
+                for  (a, aw), (b, bw) in zip(branch, branch[1:]) if a+b in IMP]
+        print("implicit:", count) if DEBUG else _
+        # vamos passar a janela de 3, dar  pontos correspondendo ÃÂÂÂÂÂÃÂÂÂÂÂÃÂÂÂÂÂÃÂÂÂÂÂ  posiÃÂÂÂÂÂÃÂÂÂÂÂÃÂÂÂÂÂÃÂÂÂÂÂ§ÃÂÂÂÂÂÃÂÂÂÂÂÃÂÂÂÂÂÃÂÂÂÂÂ£o que o synt. estiver no SYNTAX
+        count += [(pt+1, aw, bw, cw) for branch in twbatb 
+                  for  (a, aw), (b, bw), (c, cw) in zip(branch, branch[1:], branch[2:])
+                  for pt, syntagma in enumerate(SYNTAX) if a+b+c in syntagma]
+        print("plus syntax:", count) if DEBUG else False
+        counter = sum(points[0] for points in count)
     
     def def_sintax():
                print("syntax", [a+b+c for branch in twbatb for  (a, _), (b, _), (c, _) in zip(branch, branch[1:], branch[2:])
                         for pt, syntagma in enumerate(SYNTAX) if a+b+c in syntagma])  if DEBUG else False
-    return count
+    return counter, count
 
 if __name__ == "__main__":
     #main()
