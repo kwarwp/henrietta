@@ -78,6 +78,10 @@ class Plotter:
     def pack(dataset):
         return PR.join(MU.join([str(ab) for ab in pair]) for pair in dataset)
 
+    @staticmethod
+    def unpack(datapack):
+        return [pair.split(MU) for pair in datapack.split(PR)]
+
     def display(self, text):
         self.prt <= html.P(text)
 
@@ -138,7 +142,7 @@ class Texto(Text):
 class Game:
     def __init__(self):
         # self.elt = Popup.POP.popup
-        self.cena = Cena(OCEANO)
+        self.cena = self.grafico= Cena(OCEANO)
         self.t = []
         foi = lambda *_: Texto(cena=self.cena, tit="score", txt="\n".join(self.texto.sai())).vai()
         # foi=lambda *_: alert("\n".join(self.texto.sai()))
@@ -148,13 +152,25 @@ class Game:
         # self.cena.vai = self.texto.vai
         self.cena.vai()
         # self.texto.vai()
+        
+    def pontua(self, pontos):
+        resposta, grafo = pontos
+        grafo_ = Plotter.unpack(pontos)
+        grafo = [int(t[2:6]) for _, t in grafo_]
+        _grafo = [(x, b - a) for x, (b, a) in enumerate(zip(grafo[1:], grafo))]
+        # "_".join([str((x,y)) for x,y in _grafo])
+        datapack = Plotter.pack([[c, int(t[2:7])] for c, t in grafo_])
+        x, y = zip(*_grafo)
+        # x , y = [2,4,6,8, 10, 12], [50, 100, 40 , -80, 140 , -10]
+        plt = Plotter(self.grafico.elt, self.titulo)
+        plt.plot(x, y)
+        plt.display("grafo: {}, pack: {}".format(grafo, datapack))
 
     def indo(self, *_):
         self.t.append(self.texto.area.value)
 
 if __name__ == '__main__':
     DEBUG = True
-    # Game()
-    x, y = [2, 4, 6, 8, 10, 12], [50, 100, 40, -80, 140, -10]
-    
-    Plotter(doc["pydiv"], "imaginário").plot(x, y)
+    Game()
+    # x, y = [2, 4, 6, 8, 10, 12], [50, 100, 40, -80, 140, -10]
+    # Plotter(doc["pydiv"], "imaginário").plot(x, y)
