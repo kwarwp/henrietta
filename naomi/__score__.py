@@ -45,3 +45,5 @@
 ],
 "d6986f52": {"author_nick": "carlo", "author_name": "carlo", "author_email": "carlo@nce", "author_org": "LABASE", "author_site": "labase", "author_public": "on"},[
   {'doc_id': '401b4d28', 'carta': '', 'casa': 'https://st.depositphotos.com/1718692/2958/i/950/depositphotos_29580473-stock-photo-stones-and-tree-roots-in.jpg', 'move': 'FLORESTA', 'ponto': 0, 'valor': 0, '_level': 1, 'tempo': 1527446129777},
+],
+"428eefd6": {"author_nick": "carlo", "author_name": "carlo", "author_email": "carlo@nce", "author_org": "LABASE", "author_site": "labase", "author_public": "on"},[
