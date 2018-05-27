@@ -8,14 +8,15 @@ MU = chr(181)
 DEBUG = False
 
 OCEANO = "https://i.imgur.com/NRi5i6d.jpg"
-STYLE["width"] = 800
+STYLE["width"] = 600
 STYLE["height"] = "400px"
+CNV = 400
 
 
 class Plotter:
     def __init__(self, cena, tit=""):
 
-        canvas = html.CANVAS(width=300, height=200)
+        canvas = html.CANVAS(width=CNV, height=200)
         cena.html = ""
         cena <= canvas
         self.prt = html.DIV()
@@ -46,13 +47,13 @@ class Plotter:
 
     def axis(self, color="black", linethick=3):
         # Draw of x axis
-        self.draw_line(20, 180, 280, 180, linethick=linethick, color=color)
+        self.draw_line(20, 180, 380, 180, linethick=linethick, color=color)
         # Draw of y axis
         self.draw_line(20, 20, 20, 180, linethick=linethick, color=color)
 
     def figure_title(self):
         self.ctx.fillStyle = "gray"
-        self.ctx.fillRect(0, 0, 300, 300)
+        self.ctx.fillRect(0, 0, 400, 300)
 
         self.ctx.clearRect(410, 0, 400, 30)
         self.ctx.fillStyle = "white"
@@ -136,38 +137,38 @@ class Texto(Text):
 
     def indo(self, ev=NoEv()):
         char = ev.keyCode if ev.keyCode else ev.which
-        self.t.append('{}{}{}'.format(chr(char), MU, str(window.Date.now())[-5:]))
+        # self.t.append('{}{}{}'.format(chr(char), MU, str(window.Date.now())[-6:]))
+        t = str(window.Date.now())[-7:]
+        self.t.append('{}{}{}'.format(chr(char), MU, t))
 
 
 class Game:
     def __init__(self):
         # self.elt = Popup.POP.popup
-        self.cena = self.grafico= Cena(OCEANO)
+        self.cena = self.grafico = Cena(OCEANO)
         self.t = []
-        foi = lambda *_: Texto(cena=self.cena, tit="score", txt="\n".join(self.texto.sai())).vai()
+        foi = lambda *_: Texto(cena=self.cena, tit="score", txt="\n".join(self.texto.sai())).vai() or self.pontua(self.texto.sai())
         # foi=lambda *_: alert("\n".join(self.texto.sai()))
         self.texto = Texto(cena=self.cena, tit="diga, com q paus a canoa?", texto="",
                            foi=foi)  # lambda *_:alert(self.texto.sai()[0])) #"\n".join(self.texto.sai())))
         self.cena.meio.vai = self.texto.vai
         # self.cena.vai = self.texto.vai
         self.cena.vai()
-        self.pontua(self.texto.sai())
+        
         # self.texto.vai()
         
     def pontua(self, pontos):
         resposta, grafo = pontos
         grafo_ = Plotter.unpack(grafo)
-        alert(grafo_)
-        return
-        grafo = [int(t[2:6]) for _, t in grafo_]
+        t0 = int(grafo_[0][1])
+        grafo = [(int(t)-t0) // 10 for _, t in grafo_]
         _grafo = [(x, b - a) for x, (b, a) in enumerate(zip(grafo[1:], grafo))]
-        # "_".join([str((x,y)) for x,y in _grafo])
-        datapack = Plotter.pack([[c, int(t[2:7])] for c, t in grafo_])
+        datapack = Plotter.pack([[c, '{0:0>6}'.format((int(t)-t0)//1)] for c, t in grafo_])
         x, y = zip(*_grafo)
-        # x , y = [2,4,6,8, 10, 12], [50, 100, 40 , -80, 140 , -10]
-        plt = Plotter(self.grafico.elt, self.titulo)
+        alert("grafo: {}, pack: {}".format(grafo_, datapack))
+        plt = Plotter(self.grafico.elt, "game")
         plt.plot(x, y)
-        plt.display("grafo: {}, pack: {}".format(grafo, datapack))
+        plt.display("grafo: {}, pack: {}".format(_grafo, datapack))
 
     def indo(self, *_):
         self.t.append(self.texto.area.value)
