@@ -39,3 +39,4 @@
   {'doc_id': '30dd6078', 'carta': '', 'casa': 'https://st.depositphotos.com/1718692/2958/i/950/depositphotos_29580473-stock-photo-stones-and-tree-roots-in.jpg', 'move': 'FLORESTA', 'ponto': 0, 'valor': 0, '_level': 1, 'tempo': 1527445239083},
   {'doc_id': '30dd6078', 'carta': '', 'casa': 'https://st.depositphotos.com/1718692/2958/i/950/depositphotos_29580473-stock-photo-stones-and-tree-roots-in.jpg', 'move': 'FLORESTA', 'ponto': 0, 'valor': 0, '_level': 1, 'tempo': 1527445352178},
   {'doc_id': '30dd6078', 'carta': '', 'casa': 'https://st.depositphotos.com/1718692/2958/i/950/depositphotos_29580473-stock-photo-stones-and-tree-roots-in.jpg', 'move': 'FLORESTA', 'ponto': 0, 'valor': 0, '_level': 1, 'tempo': 1527445390410},
+  {'doc_id': '10c192c4', 'carta': '', 'casa': 'https://st.depositphotos.com/1718692/2958/i/950/depositphotos_29580473-stock-photo-stones-and-tree-roots-in.jpg', 'move': 'FLORESTA', 'ponto': 0, 'valor': 0, '_level': 1, 'tempo': 1527445499030},
