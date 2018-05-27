@@ -11,11 +11,13 @@ OCEANO = "https://i.imgur.com/NRi5i6d.jpg"
 STYLE["width"] = 600
 STYLE["height"] = "400px"
 CNV = 400
+MX = 400//4 - 10
+STK = 2
 
 
 class Plotter:
     def __init__(self, cena, tit=""):
-
+        self.color = "blue"
         canvas = html.CANVAS(width=CNV, height=200)
         cena.html = ""
         cena <= canvas
@@ -35,7 +37,7 @@ class Plotter:
 
     @staticmethod
     def change_ref_system(_x, _y):
-        return 20 + _x * 8, 180 - _y * 1
+        return 20 + _x * 4, 180 - _y * 1
 
     def draw_line(self, x1, y1, x2, y2, linethick=3, color="black"):
         self.ctx.beginPath()
@@ -64,15 +66,16 @@ class Plotter:
         self.figure_title()
 
     def graph(self, absiss, data):
+        color = self.color
         self.dataset.append((absiss, data))
         if len(self.dataset) == 1:
             _x, _y = self.change_ref_system(absiss, data)
-            self.draw_line(_x, _y, _x, _y, linethick=3, color="blue")
+            self.draw_line(_x, _y, _x, _y, linethick=STK, color=color)
         else:
             cur, prev = self.dataset[-1], self.dataset[-2]
             x1, y1 = self.change_ref_system(*prev)
             x2, y2 = self.change_ref_system(*cur)
-            self.draw_line(x1, y1, x2, y2, linethick=3, color="blue")
+            self.draw_line(x1, y1, x2, y2, linethick=STK, color=color)
             # self.prt <= '{}\n'.format((x1, y1, x2, y2))
 
     @staticmethod
@@ -86,8 +89,10 @@ class Plotter:
     def display(self, text):
         self.prt <= html.P(text)
 
-    def plot(self, x_, y_):
-        [self.graph(_x, _y) for _x, _y in zip(x_, y_)]
+    def plot(self, x_, y_, color="blue"):
+        self.color = color
+        self.dataset = []
+        [self.graph(_x, _y) for _x, _y in zip(x_[:MX], y_[:MX])]
         self.display(self.pack(self.dataset)) if DEBUG else False
 
 
@@ -163,12 +168,15 @@ class Game:
         t0 = int(grafo_[0][1])
         grafo = [(int(t)-t0) // 10 for _, t in grafo_]
         _grafo = [(x, b - a) for x, (b, a) in enumerate(zip(grafo[1:], grafo))]
+        _grafp = [(x, b - a + 80) for x, ((_,b), (_,a)) in enumerate(zip(_grafo[1:], _grafo))]
         datapack = Plotter.pack([[c, '{0:0>6}'.format((int(t)-t0)//1)] for c, t in grafo_])
-        x, y = zip(*_grafo)
         alert("grafo: {}, pack: {}".format(grafo_, datapack))
         plt = Plotter(self.grafico.elt, "game")
+        x, y = zip(*_grafo)
         plt.plot(x, y)
-        plt.display("grafo: {}, pack: {}".format(_grafo, datapack))
+        x, y = zip(*_grafp)
+        plt.plot(x, y, "magenta")
+        plt.display("grafo: {}, pack: {}".format(_grafp, datapack))
 
     def indo(self, *_):
         self.t.append(self.texto.area.value)
