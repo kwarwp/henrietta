@@ -419,3 +419,10 @@ AttributeError: 'tuple' object has no attribute 'split'
     alert(pontos.split(PR))
 AttributeError: 'tuple' object has no attribute 'split'
 '''},
+{'date': 'Sun May 27 2018 12:26:01.231 GMt-0300 (-03) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 141
+  self.t.append('{}{}{}'.format(chr(char), MU, t)
+                                                     ^
+SyntaxError: invalid syntax
+'''},
