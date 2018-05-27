@@ -65,20 +65,24 @@ class Estados:
         
     def pontua(self, pontos):
         resposta, grafo = pontos
-        sintagma = responde(resposta, SUJEITOS, VERBOS, OBJETOS)
+        sintagma, sintax = responde(resposta, SUJEITOS, VERBOS, OBJETOS)
         #grafo = [t for data in grafo.split(chr(172)) for _, t in data.split(chr(181))]
-        grafo = [int(t[2:6]) for x,t in enumerate(grafo.split(chr(172)))]
-        _grafo = [(x, b-a) for x, (b, a) in enumerate(zip(grafo[1:], grafo))]
-        # "_".join([str((x,y)) for x,y in _grafo])
-        grafo = Plotter.pack(_grafo)
+        grafo_ = Plotter.unpack(grafo)
+        t0 = int(grafo_[0][1])
+        grafo = [(int(t)-t0) // 10 for _, t in grafo_]
+        _grafo = [(x, b - a) for x, (b, a) in enumerate(zip(grafo[1:], grafo))]
+        datapack = Plotter.pack([[c, '{0:0>6}'.format((int(t)-t0)//1)] for c, t in grafo_])
         x, y = zip(*_grafo)
-        # x , y = [2,4,6,8, 10, 12], [50, 100, 40 , -80, 140 , -10]
         plt = Plotter(self.grafico.elt, self.titulo)
         plt.plot(x,y) 
-        paradigma = avaliar(resposta)
-        plt.display("paradigma: {}, sintagma: {}".format(paradigma, sintagma) )
-        inv.score(casa=resposta, carta=grafo , _level=2,
-                         move=self.titulo, ponto=paradigma, valor=sintagma)
+        paradigma, parax = avaliar(resposta)
+        sintax, parax = Plotter.pack(sintax), Plotter.pack(parax)
+        display = "paradigma={}::{}"
+        plt.display(display.format(paradigma, parax) )
+        display = "sintagma={}::{}"
+        plt.display(display.format(sintagma, sintax) )
+        # inv.score(casa=resposta, carta=grafo , _level=2,
+                         #move=self.titulo, ponto=paradigma, valor=sintagma)
 
         
         
@@ -112,10 +116,14 @@ class Estados:
 
 def avaliar(you):
     pontuacao = 0
+    pontos = [(peso, prefixo) for peso,verbo in verbos for prefixo in verbo if prefixo in you]
+    pontuacao = sum(peso for peso, _ in pontos)
+    '''
     for peso,verbo in verbos:
         for prefixo in verbo:
             pontuacao += peso if prefixo in you else 0 
-    return pontuacao
+    '''
+    return pontuacao, pontos
     
 
     
