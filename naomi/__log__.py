@@ -36,3 +36,10 @@ SyntaxError: invalid syntax
                                                                    ^
 SyntaxError: invalid syntax
 '''},
+{'date': 'Sun May 27 2018 13:58:52.638 GMt-0300 (-03) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 82
+  move=self.titulo, ponto=paradigma, valor=sintagma)
+  ^
+IndentationError: unexpected indent
+'''},
