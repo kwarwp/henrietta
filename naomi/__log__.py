@@ -43,3 +43,10 @@ SyntaxError: invalid syntax
   ^
 IndentationError: unexpected indent
 '''},
+{'date': 'Sun May 27 2018 13:59:30.559 GMt-0300 (-03) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 116
+  pontos = [(peso, prefixo) for peso,verbo in verbos for prefixo in verbo if prefixo in you else 0]
+                                                                                             ^
+SyntaxError: invalid syntax
+'''},
