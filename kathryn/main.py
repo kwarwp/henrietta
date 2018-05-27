@@ -156,7 +156,9 @@ class Game:
         
     def pontua(self, pontos):
         resposta, grafo = pontos
-        grafo_ = Plotter.unpack(pontos)
+        grafo_ = Plotter.unpack(grafo)
+        alert(grafo_)
+        return
         grafo = [int(t[2:6]) for _, t in grafo_]
         _grafo = [(x, b - a) for x, (b, a) in enumerate(zip(grafo[1:], grafo))]
         # "_".join([str((x,y)) for x,y in _grafo])
