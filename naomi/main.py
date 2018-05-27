@@ -67,15 +67,16 @@ class Estados:
         #grafo = [t for data in grafo.split(chr(172)) for _, t in data.split(chr(181))]
         grafo = [int(t[2:6]) for x,t in enumerate(grafo.split(chr(172)))]
         _grafo = [(x, b-a) for x, (b, a) in enumerate(zip(grafo[1:], grafo))]
-        grafo = "_".join([str((x,y)) for x,y in _grafo])
+        # "_".join([str((x,y)) for x,y in _grafo])
+        grafo = Plotter.pack(_grafo)
         x, y = zip(*_grafo)
         # x , y = [2,4,6,8, 10, 12], [50, 100, 40 , -80, 140 , -10]
         plt = Plotter(self.grafico.elt, self.titulo)
         plt.plot(x,y) 
         paradigma = avaliar(resposta)
         plt.display("paradigma: {}, sintagma: {}".format(paradigma, sintagma) )
-        inv.score(casa=self.titulo, carta=grafo , _level=2,
-                         move="FOGO", ponto=paradigma, valor=sintagma)
+        inv.score(casa=resposta, carta=grafo , _level=2,
+                         move=self.titulo, ponto=paradigma, valor=sintagma)
 
         
         
