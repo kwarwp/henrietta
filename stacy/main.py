@@ -1,8 +1,9 @@
 # henrietta.stacy.main.py
-from _spy.vitollino.main import Cena, Texto, Elemento, INVENTARIO, STYLE
+from _spy.vitollino.main import Cena, Elemento, INVENTARIO, STYLE
 from browser import alert
 from soraya.main import Bloco
-STYLE["width"] = 800
+from kathryn.main import Texto
+STYLE["width"] = 900
 STYLE["height"] = "600px"
 
 TEMPLO = "http://3.bp.blogspot.com/-UsnGAupu3XM/VHvU2M5BHUI/AAAAAAAAdCE/UKbq_5dTM7k/s1600/IMG_6098.JPG"
@@ -64,90 +65,91 @@ class Corredor:
         Corredor._templo.meio = Corredor._corredor
         Corredor.singleton_templo = lambda *_: None
 
-    @property
+    #@property
     def vai(self):
-        return self.cena.vai
+        return self.cena.vai()
 
     def elemento(self, **kwargs):
         elemento = Elemento(**kwargs)
         elemento.entra(self.cena)
-        elemento.vai = kwargs["vai"]
+        #elemento.vai = kwargs["vai"]
 
 class Templo(Corredor):
     def __init__(self):
         super().__init__()
+        INVENTARIO.inicia()
         #Corredor()
         Corredor.singleton_templo()
         _salas = {"salatemplo{}".format(n+1): SalaTemplo(tema, x, y) for n, (tema, x, y) in enumerate([
             [OCEANO, 2, 2],
-            [FLORESTA, 3, 3],
-            [MUSICA, 4, 4],
-            [MUSEU, 5, 5],
-            [COZINHA, 5, 5],
-            [ESPORTE, 6, 6]
+            [MUSICA, 3, 3],
+            [MUSEU, 4, 4],
+            [FLORESTA, 5, 5],
+            [ESPORTE, 5, 5],
+            [COZINHA, 6, 6]
         ])}
         _salas.update(corredor=Corredor._corredor)
         # [print(s, v) for s, v in _salas.items()]
         # return
         _design =[
-            ('corredor', dict(vai=_salas['salatemplo6'].tabuleiro.vai, img=COZINHA, tit="cozinha",
-                              style=dict(left=680, top=160, width=60, height="100px")),),
-            ('corredor', dict(vai=_salas['salatemplo5'].tabuleiro.vai, img=ESPORTE, tit="esporte",
-                              style=dict(left=760, top=160, width=60, height="100px")),),
-            ('corredor', dict(vai=_salas['salatemplo4'].tabuleiro.vai, img=FLORESTA, tit="floresta",
-                              style=dict(left=180, top=160, width=60, height="100px")),),
-            ('corredor', dict(vai=_salas['salatemplo3'].tabuleiro.vai, img=MUSEU, tit="museu",
-                              style=dict(left=600, top=160, width=60, height="100px")),),
-            ('corredor', dict(vai=_salas['salatemplo2'].tabuleiro.vai, img=MUSICA, tit="musica",
-                              style=dict(left=260, top=160, width=60, height="100px")),),
-            ('corredor', dict(vai=_salas['salatemplo1'].tabuleiro.vai, img=OCEANO, tit="oceano",
-                              style=dict(left=100, top=160, width=60, height="100px")),),
+            ('corredor', dict(vai=_salas['salatemplo6'].abre, img=COZINHA, tit="cozinha",
+                              style=dict(left=680, top=160, width=60, height="80px")),),
+            ('corredor', dict(vai=_salas['salatemplo5'].abre, img=ESPORTE, tit="esporte",
+                              style=dict(left=760, top=160, width=60, height="80px")),),
+            ('corredor', dict(vai=_salas['salatemplo4'].abre, img=FLORESTA, tit="floresta",
+                              style=dict(left=180, top=160, width=60, height="80px")),),
+            ('corredor', dict(vai=_salas['salatemplo3'].abre, img=MUSEU, tit="museu",
+                              style=dict(left=600, top=160, width=60, height="80px")),),
+            ('corredor', dict(vai=_salas['salatemplo2'].abre, img=MUSICA, tit="musica",
+                              style=dict(left=260, top=160, width=60, height="80px")),),
+            ('corredor', dict(vai=_salas['salatemplo1'].abre, img=OCEANO, tit="oceano",
+                              style=dict(left=100, top=160, width=60, height="80px")),),
             ('salatemplo1', dict(vai=_salas['salatemplo1'].vai, img=ALGA, tit="alga",
-                                 style=dict(left=200, top=160, width=60, height="100px")),),
-            ('salatemplo1', dict(vai=_salas['salatemplo1'].vai, img=AQUARIO, tit="alga",
-                                 style=dict(left=100, top=160, width=60, height="100px")),),
+                                 style=dict(left=200, top=160, width=60, height="80px")),),
+            ('salatemplo1', dict(vai=_salas['salatemplo1'].vai, img=AQUARIO, tit="peixe",
+                                 style=dict(left=100, top=160, width=60, height="80px")),),
             ('salatemplo1', dict(vai=_salas['salatemplo1'].vai, img=CONCHA, tit="concha",
-                                 style=dict(left=300, top=160, width=60, height="100px")),),
+                                 style=dict(left=300, top=160, width=60, height="80px")),),
             ('salatemplo2', dict(vai=_salas['salatemplo2'].vai, img=CORUJA, tit="coruja",
-                                 style=dict(left=200, top=160, width=60, height="100px")),),
+                                 style=dict(left=200, top=160, width=60, height="80px")),),
             ('salatemplo2', dict(vai=_salas['salatemplo2'].vai, img=FLORES, tit="pato",
-                                 style=dict(left=300, top=160, width=60, height="100px")),),
+                                 style=dict(left=300, top=160, width=60, height="80px")),),
             ('salatemplo2', dict(vai=_salas['salatemplo2'].vai, img=MACACO, tit="macaco",
-                                 style=dict(left=100, top=160, width=60, height="100px")),),
+                                 style=dict(left=100, top=160, width=60, height="80px")),),
             ('salatemplo2', dict(vai=_salas['salatemplo2'].vai, img=PASSAROS, tit="passaros",
-                                 style=dict(left=300, top=160, width=60, height="100px")),),
+                                 style=dict(left=300, top=160, width=60, height="80px")),),
             ('salatemplo2', dict(vai=_salas['salatemplo2'].vai, img=PATOS, tit="pato",
-                                 style=dict(left=300, top=160, width=60, height="100px")),),
+                                 style=dict(left=300, top=160, width=60, height="80px")),),
             ('salatemplo3', dict(vai=_salas['salatemplo3'].vai, img=CHOCALHO, tit="chocalho",
-                                 style=dict(left=100, top=160, width=60, height="100px")),),
+                                 style=dict(left=100, top=160, width=60, height="80px")),),
             ('salatemplo3', dict(vai=_salas['salatemplo3'].vai, img=HEADPHONES, tit="Headphones",
-                                 style=dict(left=50, top=160, width=60, height="100px")),),
+                                 style=dict(left=50, top=160, width=60, height="80px")),),
             ('salatemplo3', dict(vai=_salas['salatemplo3'].vai, img=TAMBOR, tit="tambor",
-                                 style=dict(left=300, top=130, width=30, height="100px")),),
+                                 style=dict(left=300, top=130, width=30, height="80px")),),
             ('salatemplo3', dict(vai=_salas['salatemplo3'].vai, img=VIOLAO, tit="violao",
-                                 style=dict(left=200, top=160, width=60, height="100px")),),
+                                 style=dict(left=200, top=160, width=60, height="80px")),),
             ('salatemplo4', dict(vai=_salas['salatemplo4'].vai, img=COROA, tit="coroa",
-                                 style=dict(left=50, top=160, width=60, height="100px")),),
+                                 style=dict(left=50, top=160, width=60, height="80px")),),
             ('salatemplo4', dict(vai=_salas['salatemplo4'].vai, img=LUNETA, tit="luneta",
-                                 style=dict(left=300, top=130, width=60, height="100px")),),
+                                 style=dict(left=300, top=130, width=60, height="80px")),),
             ('salatemplo4', dict(vai=_salas['salatemplo4'].vai, img=RELOGIO, tit="relogio",
-                                 style=dict(left=100, top=160, width=60, height="100px")),),
+                                 style=dict(left=100, top=160, width=60, height="80px")),),
             ('salatemplo4', dict(vai=_salas['salatemplo4'].vai, img=VASO, tit="vaso",
-                                 style=dict(left=200, top=160, width=60, height="100px")),),
+                                 style=dict(left=200, top=160, width=60, height="80px")),),
             ('salatemplo5', dict(vai=_salas['salatemplo5'].vai, img=CADEIRA, tit="cadeira",
-                                 style=dict(left=200, top=160, width=60, height="100px")),),
+                                 style=dict(left=200, top=160, width=60, height="80px")),),
             ('salatemplo5', dict(vai=_salas['salatemplo5'].vai, img=COZINHEIRA, tit="cozinheira",
-                                 style=dict(left=50, top=160, width=60, height="100px")),),
+                                 style=dict(left=50, top=160, width=60, height="80px")),),
             ('salatemplo5', dict(vai=_salas['salatemplo5'].vai, img=FOGAO, tit="fogao",
-                                 style=dict(left=300, top=130, width=60, height="100px")),),
+                                 style=dict(left=300, top=130, width=60, height="80px")),),
             ('salatemplo5', dict(vai=_salas['salatemplo5'].vai, img=PANELA, tit="panela",
-                                 style=dict(left=100, top=160, width=60, height="100px")),),
+                                 style=dict(left=100, top=160, width=60, height="80px")),),
             ('salatemplo6', dict(vai=_salas['salatemplo6'].vai, img=BOLA, tit="bola",
-                                 style=dict(left=50, top=160, width=60, height="100px")),),
+                                 style=dict(left=50, top=160, width=60, height="80px")),),
             ('salatemplo6', dict(vai=_salas['salatemplo6'].vai, img=LUVAS, tit="luvas",
-                                 style=dict(left=200, top=160, width=60, height="100px")),),
+                                 style=dict(left=200, top=160, width=60, height="80px")),),
             ('salatemplo6', dict(vai=_salas['salatemplo6'].vai, img=RAQUETE, tit="raquete",
-                                 style=dict(left=300, top=130, width=60, height="100px")),),
+                                 style=dict(left=300, top=130, width=60, height="80px")),),
         ]
         for sala, design in _design:
             _salas[sala].elemento(**design)
@@ -156,27 +158,40 @@ class Templo(Corredor):
 
 class SalaTemplo(Corredor):
     def __init__(self, tema, x=2, y=2):
+        def destrava_templo():
+            self.cena.vai()
+            self.tabuleiro.meio = self.cena
         super().__init__()
         self.tabuleiro = Cena(img=WOOD)
         self.cena = Cena(img=SALATEMPLO1)
-        self.tabuleiro.esquerda = self.cena
+        self.tabuleiro.esquerda = Corredor._corredor
+        self.tabuleiro.direita = Corredor._corredor
         self.cena.direita = Corredor._templo
-        quebra_cabeca = Bloco(tema, x, y, vai=self.cena.vai)
+        quebra_cabeca = Bloco(tema, x, y, vai=destrava_templo)
         quebra_cabeca.entra(self.tabuleiro)
-        tsala = Texto(self.tabuleiro, "Monte o quebra cabeca e entre na sala.")
-
+        self.tsala = Texto(self.tabuleiro, "Monte o quebra cabeca e entre na sala.")
+    def abre(self, *_):
+        self.tabuleiro.vai()
+        self.tsala.vai()
+    def vai(self):
+        self.tsala = Texto(self.tabuleiro, "A Sala está aberta, clique abaixo para entrar.")
+        return self.cena.vai()
     def elemento(self, **kwargs):
-        def conta_historia(*_):
-            historia = input("Conte aqui a sua historia")
-            palavras = len(historia.split())
-            temas = "peix aqu conch templo".split()
-            tema = sum(1 for palavra in temas if palavra in historia)
-            pontos = palavras+ 5*tema
-            alert("pontos: {}".format(pontos))
-            if pontos > 10:
-                INVENTARIO.bota(peixe)
         elemento = Elemento(**kwargs)
         elemento.entra(self.cena)
+        def conta_historia(*_):
+            def foi():
+                historia, _ = self.historia.sai()
+                palavras = len(historia.split())
+                temas = "peix aqu conch templo".split()
+                tema = sum(1 for palavra in temas if palavra in historia)
+                pontos = palavras+ 5*tema
+                alert("pontos: {}".format(pontos))
+                if pontos > 10:
+                    INVENTARIO.bota(elemento)
+            
+            self.historia = Texto(self.cena, "Conte aqui a sua historia", texto="", foi=foi)
+            self.historia.vai()
         elemento.vai = conta_historia
 
 def ilha(prog):
