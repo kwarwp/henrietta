@@ -1,7 +1,9 @@
 # henrietta.stacy.main.py
-from _spy.vitollino.main import Cena, Texto, Elemento, INVENTARIO
+from _spy.vitollino.main import Cena, Texto, Elemento, INVENTARIO, STYLE
 from browser import alert
 from soraya.main import Bloco
+STYLE["width"] = 800
+STYLE["height"] = "600px"
 
 TEMPLO = "http://3.bp.blogspot.com/-UsnGAupu3XM/VHvU2M5BHUI/AAAAAAAAdCE/UKbq_5dTM7k/s1600/IMG_6098.JPG"
 CORREDOR = "http://i.muyinteresante.com.mx/dam/sociedad/historia/17/03/8/rabbit-hole-700-year-old-secret-knights-templar-cave-network-8-58c006f4a30df__880.jpg.imgo.jpg"
@@ -51,6 +53,8 @@ class Corredor:
     @staticmethod
     def singleton_corredor():
         self.cena = Cena(img=CORREDOR)
+        self.cena.direita = Corredor._templo
+        self.cena.esquerda = Corredor._templo
         Corredor._corredor = self
         Corredor.singleton_corredor = lambda *_: None
 
@@ -64,8 +68,8 @@ class Corredor:
     def vai(self):
         return self.cena.vai
 
-    def elemento(self, **kwarg):
-        elemento = Elemento(**kwarg)
+    def elemento(self, **kwargs):
+        elemento = Elemento(**kwargs)
         elemento.entra(self.cena)
         elemento.vai = kwargs["vai"]
 
@@ -82,7 +86,6 @@ class Templo(Corredor):
             [COZINHA, 5, 5],
             [ESPORTE, 6, 6]
         ])}
-        Corredor._templo.vai()
         _salas.update(corredor=Corredor._corredor)
         # [print(s, v) for s, v in _salas.items()]
         # return
@@ -148,6 +151,8 @@ class Templo(Corredor):
         ]
         for sala, design in _design:
             _salas[sala].elemento(**design)
+        # Corredor._templo.vai()
+        _salas['salatemplo6'].vai()
 
 class SalaTemplo(Corredor):
     def __init__(self, tema, x=2, y=2):
