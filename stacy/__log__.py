@@ -111,3 +111,23 @@ NameError: name 'kwargs' is not defined
     elemento.vai = kwargs["vai"]
 NameError: name 'kwargs' is not defined
 '''},
+{'date': 'Wed May 30 2018 17:24:24.688 GMt-0300 (-03) -X- SuPyGirls -X-',
+'error': '''Traceback (most recent call last):
+  module _core.main line 160
+    dialog.action(lambda *_: self.start()
+  module _core.supygirls_factory line 135
+    self.act(self, lambda *_: self.hide() or extra()) if self.act else None
+  module _core.supygirls_factory line 306
+    return self._first_response(lambda: self._executa_acao(), self.extra, self.error)
+  module _core.supygirls_factory line 278
+    traceback.print_exc(file=sys.stderr)
+  module _core.supygirls_factory line 295
+    exec(self.code, glob)  # dict(__name__="__main__"))
+  module <module> line 207
+    Templo()
+  module <module> line 82
+    _salas = {"salatemplo{}".format(n+1): SalaTemplo(tema, x, y) for n, (tema, x, y) in enumerate([
+  module <module> line 171
+    self.tsala = Texto(self.tabuleiro, "Monte o quebra cabeca e entre na sala.")
+NameError: name 'Texto' is not defined
+'''},
