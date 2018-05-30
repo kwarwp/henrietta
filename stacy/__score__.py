@@ -203,3 +203,4 @@
     {'doc_id': 'e0b6776e', 'carta': 'folha_1_0', 'casa': (2, 2), 'move': 'DROP', 'ponto': 75, 'valor': 'casa_1_2', '_level': 2, 'tempo': 1527699806130},
   {'doc_id': 'e0b6776e', 'carta': 303, 'casa': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW0BY3YH52d4HOogtzl4XDXyawkVJeAi-5pNTHvhQZBrB-OF2i', 'move': 'BLOCO', 'ponto': 2, 'valor': 0, '_level': 1, 'tempo': 1527699814412},
   {'doc_id': 'affbde61', 'carta': 202, 'casa': 'https://i.imgur.com/NRi5i6d.jpg', 'move': 'BLOCO', 'ponto': 0, 'valor': 0, '_level': 1, 'tempo': 1527699971790},
+  {'doc_id': 'affbde61', 'carta': 303, 'casa': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW0BY3YH52d4HOogtzl4XDXyawkVJeAi-5pNTHvhQZBrB-OF2i', 'move': 'BLOCO', 'ponto': 0, 'valor': 0, '_level': 1, 'tempo': 1527699972069},
