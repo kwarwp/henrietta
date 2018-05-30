@@ -166,9 +166,18 @@ class SalaTemplo(Corredor):
         tsala = Texto(self.tabuleiro, "Monte o quebra cabeca e entre na sala.")
 
     def elemento(self, **kwargs):
+        def conta_historia(*_):
+            historia = input("Conte aqui a sua historia")
+            palavras = len(historia.split())
+            temas = "peix aqu conch templo".split()
+            tema = sum(1 for palavra in temas if palavra in historia)
+            pontos = palavras+ 5*tema
+            alert("pontos: {}".format(pontos))
+            if pontos > 10:
+                INVENTARIO.bota(peixe)
         elemento = Elemento(**kwargs)
         elemento.entra(self.cena)
-        elemento.vai = self.tabuleiro.vai
+        elemento.vai = conta_historia
 
 def ilha(prog):
     print(123456789)
