@@ -151,8 +151,8 @@ class Templo(Corredor):
         ]
         for sala, design in _design:
             _salas[sala].elemento(**design)
-        # Corredor._templo.vai()
-        _salas['salatemplo6'].vai()
+        Corredor._templo.vai()
+        #_salas['salatemplo6'].vai()
 
 class SalaTemplo(Corredor):
     def __init__(self, tema, x=2, y=2):
@@ -164,6 +164,22 @@ class SalaTemplo(Corredor):
         quebra_cabeca = Bloco(tema, x, y, vai=self.cena.vai)
         quebra_cabeca.entra(self.tabuleiro)
         tsala = Texto(self.tabuleiro, "Monte o quebra cabeca e entre na sala.")
+
+def ilha(prog):
+    print(123456789)
+    prog = prog.split('\n')
+    pg_el = [ln+ent for ln, ent in zip(prog, prog[1:]) if "= Elemento(img=" in ln and "# " not in ln and ".entra(" in ent]
+    pge = ["vai=_salas['{}'].vai, {})".format(l.split(".entra(self.")[1].split(")")[0],l.split("Elemento(")[1].split("))")[0]) for l in pg_el]
+    pge = ["dict(vai=_salas['{}'].vai, {}),)".format(l.split(".entra(self.")[1].split(")")[0],l.split("Elemento(")[1].split("))")[0]) for l in pg_el]
+    pgc = [(l.split("vai, img=")[1].split(", tit=")[0],l) for l in pge]
+
+    pgd = ["        ({}, {}),".format(s if 'corredor' in l else l.split("vai=_salas[")[1].split("].vai,")[0],l) for s, l in pgc]
+
+    pgs = sorted(pgd)
+
+    for l in pgs:
+        print(l)
+    #[print(l) for l in pge]
 
 
 if __name__ == '__main__':
