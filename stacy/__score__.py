@@ -477,3 +477,4 @@
   {'doc_id': '4aeac7cb', 'carta': 5, 'casa': 'https://images.vexels.com/media/users/3/148533/list/ab32e2a639adb5969b49b6420daf0514-boys-band-cartoon-illustration.jpg', 'move': 'CONTA', 'ponto': 180, 'valor': 0, '_level': 1, 'tempo': 1527774062205},
     {'doc_id': '4aeac7cb', 'carta': 'folha_1_0', 'casa': (1, 0), 'move': 'DROP', 'ponto': 200, 'valor': 'casa_0_0', '_level': 2, 'tempo': 1527774255214},
     {'doc_id': '4aeac7cb', 'carta': 'folha_1_1', 'casa': (1, 1), 'move': 'DROP', 'ponto': 200, 'valor': 'casa_0_1', '_level': 2, 'tempo': 1527774279905},
+    {'doc_id': '4aeac7cb', 'carta': 'folha_0_0', 'casa': (0, 0), 'move': 'DROP', 'ponto': 200, 'valor': 'casa_1_0', '_level': 2, 'tempo': 1527774284310},
