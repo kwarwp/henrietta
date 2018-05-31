@@ -515,3 +515,4 @@
     {'doc_id': '4aeac7cb', 'carta': 'folha_0_0', 'casa': (0, 0), 'move': 'DROP', 'ponto': 200, 'valor': 'casa_3_2', '_level': 2, 'tempo': 1527774916011},
     {'doc_id': '4aeac7cb', 'carta': 'folha_1_0', 'casa': (1, 0), 'move': 'DROP', 'ponto': 200, 'valor': 'casa_1_2', '_level': 2, 'tempo': 1527774933185},
     {'doc_id': '4aeac7cb', 'carta': 'folha_2_0', 'casa': (3, 0), 'move': 'DROP', 'ponto': 150, 'valor': 'casa_3_1', '_level': 2, 'tempo': 1527774950870},
+  {'doc_id': '4aeac7cb', 'carta': 2, 'casa': 'https://cdna.artstation.com/p/assets/images/images/004/585/984/large/kamila-redkiewicz-museum.jpg?1484770586', 'move': 'CONTA', 'ponto': 326, 'valor': 0, '_level': 1, 'tempo': 1527774958168},
