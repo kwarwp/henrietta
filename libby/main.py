@@ -41,4 +41,7 @@ floresta = SalaDoTemplo()
 entrada = EntradaDoTemplo()
 corredor = entrada.corredor
 entrada.entra()
-#mostra_templo()
+mostra_templo()
+
+entrada.sai()
+mostra_templo()
