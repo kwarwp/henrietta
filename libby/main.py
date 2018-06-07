@@ -31,10 +31,10 @@ class SalaDoTemplo(Templo):
 musica = SalaDoTemplo()
 oceano = SalaDoTemplo()
 floresta = SalaDoTemplo()
-floresta.entra()
-oceano.entra()
+#floresta.entra()
+#oceano.entra()
 entrada = EntradaDoTemplo()
-corredor = CorredorDoTemplo()
+corredor = entrada.corredor
 entrada.entra()
 print("musica:{}, oceano:{}, floresta:{}, entrada: {}, cd:{}".format(
         musica.entrou(), oceano.entrou(),
