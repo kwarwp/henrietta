@@ -29,3 +29,10 @@ TypeError: 'bool' object is not callable
        ^
 SyntaxError: Unbalanced bracket (
 '''},
+{'date': 'Thu Jun 07 2018 11:41:50.439 GMt-0300 (Hora oficial do Brasil) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 31
+  print("musica:{}, oceano:{}, floresta:{}, entrada:{}, corredor:{}".format(
+       ^
+SyntaxError: Unbalanced bracket (
+'''},
