@@ -22,3 +22,10 @@ SyntaxError: Unbalanced bracket (
     print("musica:{}, oceano:{}, floresta:{}".format(
 TypeError: 'bool' object is not callable
 '''},
+{'date': 'Thu Jun 07 2018 11:26:26.156 GMt-0300 (Hora oficial do Brasil) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 26
+  print("musica:{}, oceano:{}, floresta:{}, entrada:{}".format( #chaves significa lacuna
+       ^
+SyntaxError: Unbalanced bracket (
+'''},
