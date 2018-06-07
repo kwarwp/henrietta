@@ -14,7 +14,8 @@ class Templo:
 class EntradaDoTemplo(Templo):
     def __init__(self):#redefinindo em particular o init
         super().__init__()
-        self.corredor = CorredorDoTemplo #significa que a entrada do templo esta conectada ao corredor
+        self.corredor = CorredorDoTemplo() #significa que a entrada do templo esta conectada ao corredor
+        
     def sai(self):
         Templo.sai(self) #sai do templo
         self.corredor.entra() # e entra no corredor
@@ -32,14 +33,14 @@ class SalaDoTemplo(Templo):
 musica = SalaDoTemplo()#não vai poder ser templo pq não existem muitos templos
 oceano = SalaDoTemplo()
 floresta = SalaDoTemplo()
-floresta.entra()
-oceano.entra()
+#floresta.entra()
+#oceano.entra()
 entrada = EntradaDoTemplo()
-corredor = CorredorDoTemplo()
-sala = SalaDoTemplo()
-print("musica:{}, oceano:{}, floresta:{}, entrada:{}, corredor:{}, sala: {}".format(
+corredor = entrada.corredor
+#sala = SalaDoTemplo()
+print("musica:{}, oceano:{}, floresta:{}, entrada:{}, corredor:{}".format(
         musica.entrou(), oceano.entrou(), 
-        floresta.entrou(), entrada.entrou(), corredor.entrou(), sala.entrou())
+        floresta.entrou(), entrada.entrou(), corredor.entrou())
         )
          #chaves significa lacuna
         #crianças escreva na lacuna se o menino entrou ou não
