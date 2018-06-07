@@ -1,14 +1,30 @@
 # henrietta.libby.main.py
-class A:
+class Templo:
     def __init__(self):
-        self.templo = False
+        self._esta_no_templo = False
     def entra(self):
-        self.templo = True
+        self._esta_no_templo = True
         
     def sai(self):
-        self.templo = False
+        self._esta_no_templo = False
         
-musica = A()
-oceano = A()
-floresta = A()
-print("musica:{}, oceano:{}, floresta:{}".format(musica.templo, oceano.templo, floresta.templo))
+    def entrou(self):
+        return self._esta_no_templo
+        
+class EntradaDoTemplo():
+    def __init__(self):
+        super().__init__()
+
+        
+musica = Templo()
+oceano = Templo()
+floresta = Templo()
+floresta.entra()
+oceano.entra()
+entrada = EntradaDoTemplo()
+entrada.entra()
+print("musica:{}, oceano:{}, floresta:{}, entrada: {}".format(
+        musica.entrou(), oceano.entrou(),
+        floresta.entrou(), entrada.entrou()
+        )
+    )
