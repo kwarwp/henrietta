@@ -28,7 +28,13 @@ class SalaDoTemplo(Templo):
     def __init__(self):#redefinindo em particular o init
         super().__init__()
     
-        
+def mostra_templo():
+    print("musica:{}, oceano:{}, floresta:{}, entrada:{}, corredor:{}".format(
+        musica.entrou(), oceano.entrou(), 
+        floresta.entrou(), entrada.entrou(), corredor.entrou())
+        )
+         #chaves significa lacuna
+        #crianças escreva na lacuna se o menino entrou ou não        
         
 musica = SalaDoTemplo()#não vai poder ser templo pq não existem muitos templos
 oceano = SalaDoTemplo()
@@ -38,9 +44,5 @@ floresta = SalaDoTemplo()
 entrada = EntradaDoTemplo()
 corredor = entrada.corredor
 #sala = SalaDoTemplo()
-print("musica:{}, oceano:{}, floresta:{}, entrada:{}, corredor:{}".format(
-        musica.entrou(), oceano.entrou(), 
-        floresta.entrou(), entrada.entrou(), corredor.entrou())
-        )
-         #chaves significa lacuna
-        #crianças escreva na lacuna se o menino entrou ou não
+entrada.entra()
+mostra_templo()
