@@ -14,6 +14,10 @@ class Templo:
 class EntradaDoTemplo(Templo):
     def __init__(self):#redefinindo em particular o init
         super().__init__()
+        
+class CorredorDoTemplo(Templo):
+    def __init__(self):#redefinindo em particular o init
+        super().__init__()
     
         
         
@@ -23,6 +27,7 @@ floresta = Templo()
 floresta.entra()
 oceano.entra()
 entrada = EntradaDoTemplo()
+corredor = CorredorDoTemplo()
 print("musica:{}, oceano:{}, floresta:{}, entrada:{}".format( #chaves significa lacuna
         musica.entrou(), oceano.entrou(), 
         floresta.entrou(), entrada.entrou()
