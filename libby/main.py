@@ -11,7 +11,7 @@ class Templo:
     def entrou(self):
         return self._esta_no_templo
         
-class EntradaDoTemplo():
+class EntradaDoTemplo(Templo):
     def __init__(self):
         super().__init__()
 
