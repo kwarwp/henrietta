@@ -22,6 +22,9 @@ class EntradaDoTemplo(Templo):
 class CorredorDoTemplo(Templo):
     def __init__(self):
         super().__init__()
+        self.musica = SalaDoTemplo()
+        self.oceano = SalaDoTemplo()
+        self.floresta = SalaDoTemplo()
         
 class SalaDoTemplo(Templo):
     def __init__(self):
