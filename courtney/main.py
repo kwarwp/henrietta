@@ -23,6 +23,9 @@ class EntradaDoTemplo(Templo):
 class CorredorDoTemplo(Templo):
     def __init__(self):#redefinindo em particular o init
         super().__init__()
+        self.musica = SalaDoTemplo()#não vai poder ser templo pq não existem muitos templos
+        self.oceano = SalaDoTemplo()
+        self.floresta = SalaDoTemplo() #dever de casa
         
 class SalaDoTemplo(Templo):
     def __init__(self):#redefinindo em particular o init
@@ -36,9 +39,7 @@ def mostra_templo():
          #chaves significa lacuna
         #crianças escreva na lacuna se o menino entrou ou não        
         
-musica = SalaDoTemplo()#não vai poder ser templo pq não existem muitos templos
-oceano = SalaDoTemplo()
-floresta = SalaDoTemplo()
+
 #floresta.entra()
 #oceano.entra()
 entrada = EntradaDoTemplo()
