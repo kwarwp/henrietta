@@ -25,7 +25,7 @@ class CorredorDoTemplo(Templo):
         super().__init__()
         self.musica = SalaDoTemplo()#não vai poder ser templo pq não existem muitos templos
         self.oceano = SalaDoTemplo()
-        self.floresta = SalaDoTemplo() #dever de casa
+        self.floresta = SalaDoTemplo() #dever de casa entrar em alguma sala do templo, saindo do corredor
         
 class SalaDoTemplo(Templo):
     def __init__(self):#redefinindo em particular o init
