@@ -27,7 +27,12 @@ class SalaDoTemplo(Templo):
     def __init__(self):
         super().__init__()
 
-        
+def mostra_templo():
+    print("musica:{}, oceano:{}, floresta:{}, entrada: {}, cd:{}".format(
+            musica.entrou(), oceano.entrou(),
+            floresta.entrou(), entrada.entrou(), corredor.entrou()
+            )
+        )
 musica = SalaDoTemplo()
 oceano = SalaDoTemplo()
 floresta = SalaDoTemplo()
@@ -36,8 +41,4 @@ floresta = SalaDoTemplo()
 entrada = EntradaDoTemplo()
 corredor = entrada.corredor
 entrada.entra()
-print("musica:{}, oceano:{}, floresta:{}, entrada: {}, cd:{}".format(
-        musica.entrou(), oceano.entrou(),
-        floresta.entrou(), entrada.entrou(), corredor.entrou()
-        )
-    )
+#mostra_templo()
