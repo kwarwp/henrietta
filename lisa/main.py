@@ -14,11 +14,16 @@ class CenaRecepcao():
     self.cena_norte = Cena(img = R_NORTE)
     self.cena_leste = Cena(img = R_LESTE, esquerda=self.cena_norte)
     self.cena_oeste = Cena(img = R_OESTE, direita=self.cena_norte)
+    
+    self.cena_norte.direita = self.cena_leste
+    self.cena_norte.esquerda = self.cena_oeste
+    self.cena_norte.vai()
+    
    
    
    def vai_CenaRecepcao():
-  cenaImporta = CenaRecepcao()
-  cenaImporta.vai()
+       cenaImporta = CenaRecepcao()
+       cenaImporta.vai()
  
 if __name__ == "__main__":
 	vai_CenaRecepcao()
