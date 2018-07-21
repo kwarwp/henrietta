@@ -77,3 +77,10 @@ NameError: name 'mostra_templo' is not defined
                    ^
 SyntaxError: invalid syntax
 '''},
+{'date': 'Sat Jul 21 2018 23:28:15.534 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 30
+  def mostra:      
+             ^
+SyntaxError: invalid syntax
+'''},
