@@ -70,3 +70,10 @@ NameError: name 'corredor' is not defined
     mostra_templo()
 NameError: name 'mostra_templo' is not defined
 '''},
+{'date': 'Sat Jul 21 2018 23:27:17.988 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 30
+  def mostra      
+                   ^
+SyntaxError: invalid syntax
+'''},
