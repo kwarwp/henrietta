@@ -19,7 +19,7 @@ TRANSPARENTE = "http://1.bp.blogspot.com/-eK24sreQNsg/Uvy1AT5iVSI/AAAAAAAAAGo/TR
 FLORESTA = "https://st.depositphotos.com/1718692/2958/i/950/depositphotos_29580473-stock-photo-stones-and-tree-roots-in.jpg"
 OCULOS = "https://www.dvosky.com/media/catalog/product/cache/1/image/1200x1200/9df78eab33525d08d6e5fb8d27136e95/d/v/dvsk1003-preto-prata.png"
 historia = "eu friccionei a pedra e gerou fogo"
-verbos_altos = ["ger", "atrit", "roç", "direcion", "friccion", "elev", "decid", "faz", "concl", "us",
+verbos_altos = ["ger", "atrit", "roÃ§", "direcion", "friccion", "elev", "decid", "faz", "concl", "us",
                 "remanej" ,"erg", "suspend", "ate", "esfreg", "trisc"] 
 verbos_altos ==  3
 verbos_medios = ["bat", "gir", "colo", "manipul", "mov", "surg", "peg", "levant", "bat"]
