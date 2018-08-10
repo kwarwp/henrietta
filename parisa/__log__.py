@@ -20,3 +20,10 @@ SyntaxError: invalid syntax
     ^
 SyntaxError: invalid syntax
 '''},
+{'date': 'Fri Aug 10 2018 17:26:36.224 GMt-0300 (-03) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 152
+  self.troll = Elemento(trf, style=dict(left=10, top=100)
+                                                                   ^
+SyntaxError: invalid syntax
+'''},
