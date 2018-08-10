@@ -13,3 +13,10 @@ SyntaxError: invalid syntax
                                                                    ^
 SyntaxError: invalid syntax
 '''},
+{'date': 'Fri Aug 10 2018 17:25:51.665 GMt-0300 (-03) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 35
+  2w
+    ^
+SyntaxError: invalid syntax
+'''},
