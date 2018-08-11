@@ -28,3 +28,4 @@
   {'doc_id': 'a259aa11', 'carta': 505, 'casa': 'https://cdna.artstation.com/p/assets/images/images/004/585/984/large/kamila-redkiewicz-museum.jpg?1484770586', 'move': 'BLOCO', 'ponto': 0, 'valor': 0, '_level': 1, 'tempo': 1533989038644},
   {'doc_id': 'a259aa11', 'carta': 505, 'casa': 'https://image.freepik.com/vettori-gratuito/interno-cucina-moderna-piatto_6280-115.jpg ', 'move': 'BLOCO', 'ponto': 0, 'valor': 0, '_level': 1, 'tempo': 1533989038978},
   {'doc_id': 'a259aa11', 'carta': 606, 'casa': 'https://img3.stockfresh.com/files/d/ddraw/m/72/2405156_stock-photo-sport-characters-with-background.jpg', 'move': 'BLOCO', 'ponto': 0, 'valor': 0, '_level': 1, 'tempo': 1533989039310},
+    {'doc_id': 'a259aa11', 'carta': 'folha_1_2', 'casa': (2, 0), 'move': 'DROP', 'ponto': 75, 'valor': 'casa_1_1', '_level': 2, 'tempo': 1533989062975},
