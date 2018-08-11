@@ -30,3 +30,4 @@
   {'doc_id': 'a259aa11', 'carta': 606, 'casa': 'https://img3.stockfresh.com/files/d/ddraw/m/72/2405156_stock-photo-sport-characters-with-background.jpg', 'move': 'BLOCO', 'ponto': 0, 'valor': 0, '_level': 1, 'tempo': 1533989039310},
     {'doc_id': 'a259aa11', 'carta': 'folha_1_2', 'casa': (2, 0), 'move': 'DROP', 'ponto': 75, 'valor': 'casa_1_1', '_level': 2, 'tempo': 1533989062975},
     {'doc_id': 'a259aa11', 'carta': 'folha_0_0', 'casa': (1, 1), 'move': 'DROP', 'ponto': 100, 'valor': 'casa_0_1', '_level': 2, 'tempo': 1533989064554},
+    {'doc_id': 'a259aa11', 'carta': 'folha_2_1', 'casa': (0, 0), 'move': 'DROP', 'ponto': 75, 'valor': 'casa_0_2', '_level': 2, 'tempo': 1533989066110},
