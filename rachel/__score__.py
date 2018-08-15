@@ -60,3 +60,4 @@
     {'doc_id': '0cd40315', 'carta': 'folha_2_1', 'casa': (0, 0), 'move': 'DROP', 'ponto': 75, 'valor': 'casa_2_1', '_level': 2, 'tempo': 1534339134503},
     {'doc_id': '0cd40315', 'carta': 'folha_2_1', 'casa': (0, 2), 'move': 'DROP', 'ponto': 75, 'valor': 'casa_2_1', '_level': 2, 'tempo': 1534339142382},
   {'doc_id': '0cd40315', 'carta': 1, 'casa': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW0BY3YH52d4HOogtzl4XDXyawkVJeAi-5pNTHvhQZBrB-OF2i', 'move': 'CONTA', 'ponto': 185, 'valor': 0, '_level': 1, 'tempo': 1534339144290},
+  {'doc_id': '0cd40315', 'carta': 303, 'casa': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW0BY3YH52d4HOogtzl4XDXyawkVJeAi-5pNTHvhQZBrB-OF2i', 'move': 'BLOCO', 'ponto': 0, 'valor': 0, '_level': 1, 'tempo': 1534340351144},
