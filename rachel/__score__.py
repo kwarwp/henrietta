@@ -51,3 +51,4 @@
     {'doc_id': '0cd40315', 'carta': 'folha_0_2', 'casa': (1, 2), 'move': 'DROP', 'ponto': 150, 'valor': 'casa_0_2', '_level': 2, 'tempo': 1534339069853},
     {'doc_id': '0cd40315', 'carta': 'folha_2_0', 'casa': (0, 2), 'move': 'DROP', 'ponto': 50, 'valor': 'casa_1_2', '_level': 2, 'tempo': 1534339076102},
     {'doc_id': '0cd40315', 'carta': 'folha_2_2', 'casa': (0, 0), 'move': 'DROP', 'ponto': 50, 'valor': 'casa_0_0', '_level': 2, 'tempo': 1534339082195},
+    {'doc_id': '0cd40315', 'carta': 'folha_1_1', 'casa': (2, 1), 'move': 'DROP', 'ponto': 150, 'valor': 'casa_1_0', '_level': 2, 'tempo': 1534339085372},
