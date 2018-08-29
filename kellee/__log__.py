@@ -31,3 +31,10 @@ SyntaxError: invalid syntax
     inicio_e.entra(inicio)
 NameError: name 'inicio_e' is not defined
 '''},
+{'date': 'Wed Aug 29 2018 00:59:57.751 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 20
+  castelo = Cena(img=CASTELO)
+  ^
+IndentationError: expected an indented block
+'''},
