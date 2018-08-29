@@ -49,3 +49,10 @@ IndentationError: expected an indented block
 'error': '''
 Exception: <SyntaxError: Unexpected token {>
 '''},
+{'date': 'Wed Aug 29 2018 01:02:55.863 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 20
+  castelo = Cena(img=CASTELO)
+  ^
+IndentationError: expected an indented block
+'''},
