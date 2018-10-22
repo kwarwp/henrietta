@@ -543,3 +543,4 @@
   {'doc_id': '7bc0bbbf', 'carta': 505, 'casa': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW0BY3YH52d4HOogtzl4XDXyawkVJeAi-5pNTHvhQZBrB-OF2i', 'move': 'BLOCO', 'ponto': 0, 'valor': 0, '_level': 1, 'tempo': 1540213963937},
   {'doc_id': '7bc0bbbf', 'carta': 606, 'casa': 'https://image.freepik.com/vettori-gratuito/interno-cucina-moderna-piatto_6280-115.jpg ', 'move': 'BLOCO', 'ponto': 0, 'valor': 0, '_level': 1, 'tempo': 1540213964635},
     {'doc_id': '7bc0bbbf', 'carta': 'folha_0_1', 'casa': (0, 1), 'move': 'DROP', 'ponto': 200, 'valor': 'casa_0_1', '_level': 2, 'tempo': 1540214088684},
+    {'doc_id': '7bc0bbbf', 'carta': 'folha_1_1', 'casa': (1, 1), 'move': 'DROP', 'ponto': 200, 'valor': 'casa_1_0', '_level': 2, 'tempo': 1540214092176},
