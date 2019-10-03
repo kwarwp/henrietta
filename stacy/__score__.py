@@ -569,3 +569,4 @@
   {'doc_id': '3bca958d', 'carta': 505, 'casa': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW0BY3YH52d4HOogtzl4XDXyawkVJeAi-5pNTHvhQZBrB-OF2i', 'move': 'BLOCO', 'ponto': 0, 'valor': 0, '_level': 1, 'tempo': 1570195407022},
   {'doc_id': '3bca958d', 'carta': 505, 'casa': 'https://img3.stockfresh.com/files/d/ddraw/m/72/2405156_stock-photo-sport-characters-with-background.jpg', 'move': 'BLOCO', 'ponto': 0, 'valor': 0, '_level': 1, 'tempo': 1570195408273},
   {'doc_id': '3bca958d', 'carta': 606, 'casa': 'https://image.freepik.com/vettori-gratuito/interno-cucina-moderna-piatto_6280-115.jpg ', 'move': 'BLOCO', 'ponto': 0, 'valor': 0, '_level': 1, 'tempo': 1570195409548},
+    {'doc_id': '3bca958d', 'carta': 'folha_0_0', 'casa': (0, 1), 'move': 'DROP', 'ponto': 150, 'valor': 'casa_1_0', '_level': 2, 'tempo': 1570195447689},
