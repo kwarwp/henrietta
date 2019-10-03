@@ -564,3 +564,4 @@
   {'doc_id': '07ff07cf', 'carta': 505, 'casa': 'https://img3.stockfresh.com/files/d/ddraw/m/72/2405156_stock-photo-sport-characters-with-background.jpg', 'move': 'BLOCO', 'ponto': 0, 'valor': 0, '_level': 1, 'tempo': 1570035015680},
   {'doc_id': '07ff07cf', 'carta': 606, 'casa': 'https://image.freepik.com/vettori-gratuito/interno-cucina-moderna-piatto_6280-115.jpg ', 'move': 'BLOCO', 'ponto': 0, 'valor': 0, '_level': 1, 'tempo': 1570035016093},
   {'doc_id': '3bca958d', 'carta': 202, 'casa': 'https://i.imgur.com/NRi5i6d.jpg', 'move': 'BLOCO', 'ponto': 0, 'valor': 0, '_level': 1, 'tempo': 1570195403890},
+  {'doc_id': '3bca958d', 'carta': 303, 'casa': 'https://images.vexels.com/media/users/3/148533/list/ab32e2a639adb5969b49b6420daf0514-boys-band-cartoon-illustration.jpg', 'move': 'BLOCO', 'ponto': 0, 'valor': 0, '_level': 1, 'tempo': 1570195404855},
