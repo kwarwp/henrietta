@@ -581,3 +581,4 @@
   {'doc_id': '3bca958d', 'carta': 2, 'casa': 'https://i.imgur.com/NRi5i6d.jpg', 'move': 'CONTA', 'ponto': 80, 'valor': 0, '_level': 1, 'tempo': 1570195486711},
   {'doc_id': '0e0d4332', 'carta': 202, 'casa': 'https://i.imgur.com/NRi5i6d.jpg', 'move': 'BLOCO', 'ponto': 0, 'valor': 0, '_level': 1, 'tempo': 1570654981095},
   {'doc_id': '0e0d4332', 'carta': 303, 'casa': 'https://images.vexels.com/media/users/3/148533/list/ab32e2a639adb5969b49b6420daf0514-boys-band-cartoon-illustration.jpg', 'move': 'BLOCO', 'ponto': 0, 'valor': 0, '_level': 1, 'tempo': 1570654981323},
+  {'doc_id': '0e0d4332', 'carta': 404, 'casa': 'https://cdna.artstation.com/p/assets/images/images/004/585/984/large/kamila-redkiewicz-museum.jpg?1484770586', 'move': 'BLOCO', 'ponto': 0, 'valor': 0, '_level': 1, 'tempo': 1570654981615},
