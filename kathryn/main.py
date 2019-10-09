@@ -154,7 +154,7 @@ class Game:
         self.t = []
         foi = lambda *_: Texto(cena=self.cena, tit="score", txt="\n".join(self.texto.sai())).vai() or self.pontua(self.texto.sai())
         # foi=lambda *_: alert("\n".join(self.texto.sai()))
-        self.texto = Texto(cena=self.cena, tit="diga, com q paus a canoa?", texto="",
+        self.texto = Texto(cena=self.cena, tit="diga, com quantos paus se faz a canoa?", texto="",
                            foi=foi)  # lambda *_:alert(self.texto.sai()[0])) #"\n".join(self.texto.sai())))
         self.cena.meio.vai = self.texto.vai
         # self.cena.vai = self.texto.vai
