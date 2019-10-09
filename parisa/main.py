@@ -32,7 +32,7 @@ class Folha:
     def mouse_over(self, ev):
         ev.target.style.cursor = "pointer"
         return False
-2w
+
     def img_drag_start(self, ev):
         ev.preventDefault()
         ev.stopPropagation()
