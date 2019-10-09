@@ -27,9 +27,9 @@ class SalaDoTemplo(Templo):
     def __init__(self):
         super().__init__()
         
-def mostra      
-    print("musica:{}, oceano:{}, floresta:{}, entrada:{}, corredor:{}".format(musica.entrou(), oceano.entrou(), floresta.entrou(), entrada.entrou(), corredor.entrou()))
-   
+    def mostra(self):      
+        print("musica:{}, oceano:{}, floresta:{}, entrada:{}, corredor:{}".format(musica.entrou(), oceano.entrou(), floresta.entrou(), entrada.entrou(), corredor.entrou()))
+
         
 musica = SalaDoTemplo()
 oceano = SalaDoTemplo()
