@@ -107,3 +107,10 @@ NameError: name 'mostra_templo' is not defined
                    ^
 SyntaxError: invalid syntax
 '''},
+{'date': 'Wed Oct 09 2019 18:09:11.789 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 31
+  print("musica:{}, oceano:{}, floresta:{}, entrada:{}, corredor:{}".format(musica.entrou(), oceano.entrou(), floresta.entrou(), entrada.entrou(), corredor.entrou()))
+  ^
+IndentationError: expected an indented block
+'''},
