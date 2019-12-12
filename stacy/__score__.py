@@ -648,3 +648,4 @@
   {'doc_id': '754fac5d', 'carta': 505, 'casa': 'https://img3.stockfresh.com/files/d/ddraw/m/72/2405156_stock-photo-sport-characters-with-background.jpg', 'move': 'BLOCO', 'ponto': 0, 'valor': 0, '_level': 1, 'tempo': 1576170901040},
   {'doc_id': '754fac5d', 'carta': 606, 'casa': 'https://image.freepik.com/vettori-gratuito/interno-cucina-moderna-piatto_6280-115.jpg ', 'move': 'BLOCO', 'ponto': 0, 'valor': 0, '_level': 1, 'tempo': 1576170901370},
     {'doc_id': '754fac5d', 'carta': 'folha_1_4', 'casa': (3, 1), 'move': 'DROP', 'ponto': 42, 'valor': 'casa_3_1', '_level': 2, 'tempo': 1576170918137},
+    {'doc_id': '754fac5d', 'carta': 'folha_4_3', 'casa': (4, 3), 'move': 'DROP', 'ponto': 200, 'valor': 'casa_0_3', '_level': 2, 'tempo': 1576170921830},
