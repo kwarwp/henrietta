@@ -641,3 +641,4 @@
     {'doc_id': '562fe2e8', 'carta': 'folha_0_0', 'casa': (3, 2), 'move': 'DROP', 'ponto': 41, 'valor': 'casa_1_1', '_level': 2, 'tempo': 1574041950515},
     {'doc_id': '562fe2e8', 'carta': 'folha_2_3', 'casa': (1, 2), 'move': 'DROP', 'ponto': 100, 'valor': 'casa_3_3', '_level': 2, 'tempo': 1574041958059},
     {'doc_id': '562fe2e8', 'carta': 'folha_3_3', 'casa': (2, 2), 'move': 'DROP', 'ponto': 100, 'valor': 'casa_0_3', '_level': 2, 'tempo': 1574041965041},
+  {'doc_id': '754fac5d', 'carta': 202, 'casa': 'https://i.imgur.com/NRi5i6d.jpg', 'move': 'BLOCO', 'ponto': 0, 'valor': 0, '_level': 1, 'tempo': 1576170899861},
