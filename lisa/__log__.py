@@ -36,3 +36,10 @@ NameError: name 'vai_CenaRecepcao' is not defined
   ^
 IndentationError: unexpected indent
 '''},
+{'date': 'Fri Dec 04 2020 14:25:14.941 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 24
+  def vai_CenaRecepcao():
+  ^
+IndentationError: unexpected indent
+'''},
