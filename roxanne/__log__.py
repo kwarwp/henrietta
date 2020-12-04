@@ -41,3 +41,10 @@ IndentationError: expected an indented block
   ^
 IndentationError: expected an indented block
 '''},
+{'date': 'Fri Dec 04 2020 14:25:02.245 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 35
+  self.cena_o.vai()
+  ^
+IndentationError: expected an indented block
+'''},
