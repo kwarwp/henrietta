@@ -125,3 +125,10 @@ SyntaxError: invalid syntax
                                                                    ^
 SyntaxError: invalid syntax
 '''},
+{'date': 'Tue Sep 24 2024 18:41:43.906 GMt-0300 (Horário Padrão de Brasília) -X- SuPyGirls -X-',
+'error': '''
+ module <string> line 152
+  self.troll = Elemento(trf, style=dict(left=10, top=100)
+                                                                   ^
+SyntaxError: invalid syntax
+'''},
